@@ -13,6 +13,8 @@
         @yield('content')
     </main>
 
+    @include('components.whatsapp-button')
+
     @include('layouts.footer')
 
     @vite('resources/js/app.js')

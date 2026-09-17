@@ -13,7 +13,7 @@ class HomeController extends Controller
         $trainings = TrainingCatalog::all();
         $services = ServiceCatalog::primary();
 
-        return view('pages.home', [
+        return view('index', [
             // Program unggulan: tampilkan beberapa contoh saja di homepage,
             // JANGAN tampilkan seluruh 169 program sekaligus (blueprint #20).
             'featuredTrainings' => array_slice($trainings, 0, 6),
