@@ -11,7 +11,7 @@
     <article class="mx-auto max-w-4xl px-4 py-10 lg:px-8">
 
         {{-- Label Artikel --}}
-        <div class="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-orange-600">
+        <div class="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-green-600">
             PANDUAN KOMPREHENSIF
         </div>
 
@@ -31,7 +31,7 @@
 
             <h2 class="flex items-center gap-2 text-xl font-bold text-slate-900 md:text-2xl">
                 <span
-                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-600 text-sm font-bold text-white"
+                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-green-600 text-sm font-bold text-white"
                 >
                     1
                 </span>
@@ -102,7 +102,7 @@
 
             <h2 class="flex items-center gap-2 text-xl font-bold text-slate-900 md:text-2xl">
                 <span
-                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-600 text-sm font-bold text-white"
+                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-green-600 text-sm font-bold text-white"
                 >
                     2
                 </span>
@@ -151,7 +151,7 @@
 
             <h2 class="flex items-center gap-2 text-xl font-bold text-slate-900 md:text-2xl">
                 <span
-                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-600 text-sm font-bold text-white"
+                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-green-600 text-sm font-bold text-white"
                 >
                     3
                 </span>
@@ -196,7 +196,7 @@
 
             <h2 class="flex items-center gap-2 text-xl font-bold text-slate-900 md:text-2xl">
                 <span
-                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-600 text-sm font-bold text-white"
+                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-green-600 text-sm font-bold text-white"
                 >
                     4
                 </span>
@@ -240,7 +240,7 @@
 
             <h2 class="flex items-center gap-2 text-xl font-bold text-slate-900 md:text-2xl">
                 <span
-                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-600 text-sm font-bold text-white"
+                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-green-600 text-sm font-bold text-white"
                 >
                     5
                 </span>
@@ -284,7 +284,7 @@
 
             <h2 class="flex items-center gap-2 text-xl font-bold text-slate-900 md:text-2xl">
                 <span
-                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-600 text-sm font-bold text-white"
+                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-green-600 text-sm font-bold text-white"
                 >
                     6
                 </span>
