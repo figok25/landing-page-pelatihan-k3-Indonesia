@@ -1,34 +1,143 @@
-<header class="sticky top-0 z-40 border-b border-slate-100 bg-white/95 backdrop-blur">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
-        <a href="{{ route('home') }}" class="flex items-center gap-2 font-bold text-emerald-700">
-            <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-600 text-white">K3</span>
-            <span class="leading-tight">
-                PelatihanK3<br>
-                <span class="text-xs font-medium text-slate-500">Indonesia</span>
+<header class="navbar">
+    <div class="container navbar-container">
+        {{-- Logo --}}
+        <a href="{{ route('home') }}" class="navbar-logo">
+            <span class="navbar-logo-icon">
+                <i class="bx bx-shield-quarter"></i>
+            </span>
+
+            <span class="navbar-logo-text">
+                PelatihanK3
+                <small>Indonesia</small>
             </span>
         </a>
 
-        <nav class="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
-            <a href="{{ route('home') }}" class="hover:text-emerald-700">Beranda</a>
-            <a href="{{ route('training.index') }}" class="hover:text-emerald-700">Pelatihan</a>
-            <a href="{{ route('service.index') }}" class="hover:text-emerald-700">Jasa</a>
-            <a href="{{ route('about') }}" class="hover:text-emerald-700">Tentang Kami</a>
-            <a href="{{ route('contact') }}" class="hover:text-emerald-700">Kontak</a>
+        {{-- Desktop Navigation --}}
+        <nav class="navbar-menu">
+            <a href="{{ route('home') }}" class="navbar-link {{ request()->routeIs('home') ? 'active' : '' }}">
+                Beranda
+            </a>
+
+            {{-- Pelatihan Dropdown --}}
+            <div class="navbar-dropdown">
+                <button type="button" class="navbar-link navbar-dropdown-toggle">
+                    Pelatihan
+                    <i class="bx bx-chevron-down"></i>
+                </button>
+
+                <div class="navbar-dropdown-menu">
+                    <a href="{{ route('training.index') }}">
+                        <i class="bx bx-book-open"></i>
+                        Semua Pelatihan
+                    </a>
+
+                    <a href="{{ route('training.index') }}">
+                        <i class="bx bx-certification"></i>
+                        Program Sertifikasi
+                    </a>
+                </div>
+            </div>
+
+            {{-- Jasa Dropdown --}}
+            <div class="navbar-dropdown">
+                <button type="button" class="navbar-link navbar-dropdown-toggle">
+                    Jasa
+                    <i class="bx bx-chevron-down"></i>
+                </button>
+
+                <div class="navbar-dropdown-menu">
+                    <a href="{{ route('service.index') }}">
+                        <i class="bx bx-briefcase"></i>
+                        Semua Jasa
+                    </a>
+
+                    <a href="{{ route('service.index') }}">
+                        <i class="bx bx-shield-quarter"></i>
+                        Konsultasi K3
+                    </a>
+                </div>
+            </div>
+
+            <a href="{{ route('about') }}" class="navbar-link {{ request()->routeIs('about') ? 'active' : '' }}">
+                Tentang Kami
+            </a>
+
+            <a href="{{ route('contact') }}" class="navbar-link {{ request()->routeIs('contact') ? 'active' : '' }}">
+                Kontak
+            </a>
         </nav>
+
+        {{-- Right Actions --}}
+        <div class="navbar-actions">
+            {{-- Search --}}
+            <button type="button" class="navbar-search" aria-label="Cari">
+                <i class="bx bx-search"></i>
+            </button>
+
+            {{-- WhatsApp --}}
+            <a
+                href="https://wa.me/6281100000000?text=Halo%20Admin%2C%20saya%20ingin%20bertanya%20mengenai%20pelatihan%20K3."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="navbar-contact">
+                <i class="bx bxl-whatsapp"></i>
+                Hubungi Kami
+            </a>
+
+            {{-- Mobile Toggle --}}
+            <button
+                type="button"
+                class="navbar-mobile-toggle"
+                id="navbarMobileToggle"
+                aria-label="Buka menu"
+                aria-expanded="false"
+                aria-controls="navbarMobileMenu">
+                <i class="bx bx-menu"></i>
+            </button>
+        </div>
+    </div>
+
+    {{-- Mobile Menu --}}
+    <div class="navbar-mobile-menu" id="navbarMobileMenu">
+        <a href="{{ route('home') }}" class="navbar-mobile-link"> Beranda </a>
+
+        <details class="navbar-mobile-dropdown">
+            <summary>
+                Pelatihan
+                <i class="bx bx-chevron-down"></i>
+            </summary>
+
+            <div>
+                <a href="{{ route('training.index') }}"> Semua Pelatihan </a>
+
+                <a href="{{ route('training.index') }}"> Program Sertifikasi </a>
+            </div>
+        </details>
+
+        <details class="navbar-mobile-dropdown">
+            <summary>
+                Jasa
+                <i class="bx bx-chevron-down"></i>
+            </summary>
+
+            <div>
+                <a href="{{ route('service.index') }}"> Semua Jasa </a>
+
+                <a href="{{ route('service.index') }}"> Konsultasi K3 </a>
+            </div>
+        </details>
+
+        <a href="{{ route('about') }}" class="navbar-mobile-link"> Tentang Kami </a>
+
+        <a href="{{ route('contact') }}" class="navbar-mobile-link"> Kontak </a>
 
         <a
             href="https://wa.me/6281100000000?text=Halo%20Admin%2C%20saya%20ingin%20bertanya%20mengenai%20pelatihan%20K3."
             target="_blank"
-            rel="noopener"
-            class="hidden items-center gap-2 rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-700 md:inline-flex"
-        >
+            rel="noopener noreferrer"
+            class="navbar-mobile-contact">
+            <i class="bx bxl-whatsapp"></i>
             Hubungi Kami
         </a>
-
-        <button type="button" class="md:hidden" aria-label="Buka menu">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
     </div>
 </header>

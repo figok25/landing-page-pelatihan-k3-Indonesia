@@ -1,1 +1,75 @@
-<section class="w-full bg-primary text-on-primary py-space-3xl relative overflow-hidden"><div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none"></div><div class="absolute -left-20 -top-20 w-96 h-96 rounded-full bg-tertiary-fixed-dim/10 blur-3xl pointer-events-none"></div><div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10"><div class="bg-primary-container/80 backdrop-blur-md rounded-2xl p-space-xl md:p-space-2xl shadow-xl flex flex-col lg:flex-row items-center justify-between gap-space-xl"><div class="flex flex-col gap-space-sm max-w-2xl"><div class="flex items-center gap-space-2xs text-secondary-fixed font-label-code text-badge-id font-bold uppercase tracking-widest"><i class="ri-customer-service-2-fill text-[18px]"></i> LAYANAN PRIORITAS KORPORAT &amp; INSTITUSI</div><h2 class="font-headline-lg text-headline-lg text-on-primary leading-tight">Konsultasikan Kebutuhan Pelatihan K3 In-House, Sertifikasi Personil, atau Audit Riksa Uji Perusahaan Anda</h2><p class="font-body-md text-body-md text-on-primary-container">Tim teknis dan legal compliance kami siap membantu audit kepatuhan, penjadwalan batch pelatihan privat, hingga perizinan SLF &amp; SILO resmi di seluruh Indonesia.</p></div><div class="flex flex-col sm:flex-row lg:flex-col gap-space-sm w-full lg:w-auto flex-shrink-0"><a class="px-space-xl py-space-sm bg-secondary-container hover:bg-secondary text-on-secondary font-label-lg text-label-lg font-bold rounded flex items-center justify-center gap-space-2xs transition-all shadow-md" href="https://wa.me/628118500177?text=Halo%20Pelatihan%20K3%20Indonesia%2C%20saya%20ingin%20bertanya%20mengenai%20jadwal%20dan%20biaya%20pelatihan%20K3.%20Mohon%20bantuannya%2C%20terima%20kasih." target="_blank" rel="noreferrer"><i class="ri-whatsapp-fill text-[20px]"></i> Hubungi WhatsApp 24/7</a><a class="px-space-xl py-space-sm bg-surface-container-highest hover:bg-surface-container-high text-primary font-label-lg text-label-lg font-bold rounded flex items-center justify-center gap-space-2xs transition-all" href="https://wa.me/628118500177?text=Halo%20Pelatihan%20K3%20Indonesia%2C%20saya%20ingin%20bertanya%20mengenai%20jadwal%20dan%20biaya%20pelatihan%20K3.%20Mohon%20bantuannya%2C%20terima%20kasih."><i class="ri-download-2-fill text-[20px]"></i> Download Jadwal Batch 2026</a></div></div></div></section>
+@vite ('resources/css/home/consultation.css')
+<section class="consultation-section">
+    <div class="consultation-decoration consultation-decoration-right"></div>
+    <div class="consultation-decoration consultation-decoration-left"></div>
+
+    <div class="container consultation-container">
+        <div class="consultation-card">
+            {{-- Content --}}
+            <div class="consultation-content">
+                <div class="consultation-label">
+                    <i class="bx bx-headphone"></i>
+                    LAYANAN PRIORITAS KORPORAT & INSTITUSI
+                </div>
+
+                <h2 class="consultation-title">
+                    Konsultasikan Kebutuhan
+                    <span>Pelatihan K3</span>
+                    Perusahaan Anda
+                </h2>
+
+                <p class="consultation-description">Tim kami siap membantu kebutuhan pelatihan in-house, sertifikasi personil, audit K3, hingga konsultasi keselamatan dan kepatuhan perusahaan.</p>
+
+                <div class="consultation-points">
+                    <div class="consultation-point">
+                        <i class="bx bx-check"></i>
+                        <span>Pelatihan in-house</span>
+                    </div>
+
+                    <div class="consultation-point">
+                        <i class="bx bx-check"></i>
+                        <span>Sertifikasi personil</span>
+                    </div>
+
+                    <div class="consultation-point">
+                        <i class="bx bx-check"></i>
+                        <span>Konsultasi & audit K3</span>
+                    </div>
+
+                    <div class="consultation-point">
+                        <i class="bx bx-check"></i>
+                        <span>Riksa uji & perizinan</span>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Actions --}}
+            <div class="consultation-actions">
+                <a
+                    href="https://wa.me/628118500177?text=Halo%20Pelatihan%20K3%20Indonesia%2C%20saya%20ingin%20bertanya%20mengenai%20jadwal%20dan%20biaya%20pelatihan%20K3.%20Mohon%20bantuannya%2C%20terima%20kasih."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="consultation-btn consultation-btn-primary">
+                    <i class="bx bxl-whatsapp"></i>
+                    <span>
+                        <small>Hubungi Kami</small>
+                        WhatsApp
+                    </span>
+                    <i class="bx bx-right-arrow-alt consultation-btn-arrow"></i>
+                </a>
+
+                <a
+                    href="https://wa.me/628118500177?text=Halo%20Pelatihan%20K3%20Indonesia%2C%20saya%20ingin%20meminta%20jadwal%20batch%20pelatihan%20K3%202026."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="consultation-btn consultation-btn-secondary">
+                    <i class="bx bx-calendar"></i>
+                    <span>
+                        <small>Informasi</small>
+                        Jadwal Batch 2026
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

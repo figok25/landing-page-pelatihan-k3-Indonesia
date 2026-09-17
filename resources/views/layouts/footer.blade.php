@@ -1,45 +1,164 @@
-<footer class="border-t border-slate-800 bg-slate-900 text-slate-300">
-    <div class="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-4 lg:px-8">
-        <div>
-            <div class="mb-3 flex items-center gap-2 font-bold text-white">
-                <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-600">K3</span>
-                PelatihanK3 Indonesia
+<footer class="site-footer">
+    {{-- Footer Main --}}
+    <div class="container footer-container">
+        {{-- Brand --}}
+        <div class="footer-brand">
+            <a href="{{ route('home') }}" class="footer-logo">
+                <span class="footer-logo-icon">
+                    <i class="bx bx-shield-quarter"></i>
+                </span>
+
+                <span class="footer-logo-text">
+                    PelatihanK3
+                    <small>Indonesia</small>
+                </span>
+            </a>
+
+            <p class="footer-description">Solusi Pelatihan dan Jasa Keselamatan Kerja untuk Kompetensi yang Lebih Baik dan Masa Depan yang Lebih Aman.</p>
+
+            <div class="footer-socials">
+                <a href="#" aria-label="Instagram">
+                    <i class="bx bxl-instagram"></i>
+                </a>
+
+                <a href="#" aria-label="Facebook">
+                    <i class="bx bxl-facebook"></i>
+                </a>
+
+                <a href="#" aria-label="LinkedIn">
+                    <i class="bx bxl-linkedin"></i>
+                </a>
+
+                <a href="https://wa.me/6281100000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i class="bx bxl-whatsapp"></i>
+                </a>
             </div>
-            <p class="text-sm text-slate-400">
-                Solusi Pelatihan dan Jasa Keselamatan Kerja dan Masa Depan yang Lebih Baik.
-            </p>
         </div>
 
-        <div>
-            <h3 class="mb-3 text-sm font-semibold uppercase tracking-wide text-white">Navigasi</h3>
-            <ul class="space-y-2 text-sm">
-                <li><a href="{{ route('home') }}" class="hover:text-white">Beranda</a></li>
-                <li><a href="{{ route('training.index') }}" class="hover:text-white">Pelatihan</a></li>
-                <li><a href="{{ route('service.index') }}" class="hover:text-white">Jasa</a></li>
-                <li><a href="{{ route('about') }}" class="hover:text-white">Tentang Kami</a></li>
-                <li><a href="{{ route('contact') }}" class="hover:text-white">Kontak</a></li>
+        {{-- Navigation --}}
+        <div class="footer-column">
+            <h3 class="footer-heading">Navigasi</h3>
+
+            <ul class="footer-links">
+                <li>
+                    <a href="{{ route('home') }}">
+                        <i class="bx bx-chevron-right"></i>
+                        Beranda
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('training.index') }}">
+                        <i class="bx bx-chevron-right"></i>
+                        Pelatihan
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('service.index') }}">
+                        <i class="bx bx-chevron-right"></i>
+                        Jasa
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('about') }}">
+                        <i class="bx bx-chevron-right"></i>
+                        Tentang Kami
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('contact') }}">
+                        <i class="bx bx-chevron-right"></i>
+                        Kontak
+                    </a>
+                </li>
             </ul>
         </div>
 
-        <div>
-            <h3 class="mb-3 text-sm font-semibold uppercase tracking-wide text-white">Layanan</h3>
-            <ul class="space-y-2 text-sm">
-                <li><a href="{{ route('training.index') }}" class="hover:text-white">Pelatihan K3</a></li>
-                <li><a href="{{ route('service.index') }}" class="hover:text-white">Jasa Konsultasi</a></li>
-                <li><a href="{{ route('service.index') }}" class="hover:text-white">Perizinan &amp; Riksa Uji</a></li>
+        {{-- Services --}}
+        <div class="footer-column">
+            <h3 class="footer-heading">Layanan</h3>
+
+            <ul class="footer-links">
+                <li>
+                    <a href="{{ route('training.index') }}">
+                        <i class="bx bx-chevron-right"></i>
+                        Pelatihan K3
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('service.index') }}">
+                        <i class="bx bx-chevron-right"></i>
+                        Jasa Konsultasi
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('service.index') }}">
+                        <i class="bx bx-chevron-right"></i>
+                        Perizinan & Riksa Uji
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('training.index') }}">
+                        <i class="bx bx-chevron-right"></i>
+                        Program Sertifikasi
+                    </a>
+                </li>
             </ul>
         </div>
 
-        <div>
-            <h3 class="mb-3 text-sm font-semibold uppercase tracking-wide text-white">Kontak Kami</h3>
-            <ul class="space-y-2 text-sm">
-                <li>+62 811-0000-000 (WA)</li>
-                <li>info@pelatihank3indonesia.com</li>
+        {{-- Contact --}}
+        <div class="footer-column">
+            <h3 class="footer-heading">Kontak Kami</h3>
+
+            <ul class="footer-contact-list">
+                <li>
+                    <i class="bx bx-phone"></i>
+
+                    <div>
+                        <span>Telepon / WhatsApp</span>
+                        <a href="https://wa.me/6281100000000" target="_blank" rel="noopener noreferrer">
+                            +62 811-0000-000
+                        </a>
+                    </div>
+                </li>
+
+                <li>
+                    <i class="bx bx-envelope"></i>
+
+                    <div>
+                        <span>Email</span>
+                        <a href="mailto:info@pelatihank3indonesia.com"> info@pelatihank3indonesia.com </a>
+                    </div>
+                </li>
+
+                <li>
+                    <i class="bx bx-map"></i>
+
+                    <div>
+                        <span>Alamat</span>
+                        <p>Jl. Pendidikan No. 123, Jakarta, Indonesia</p>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
 
-    <div class="border-t border-slate-800 py-4 text-center text-xs text-slate-500">
-        &copy; {{ date('Y') }} PelatihanK3 Indonesia. All rights reserved.
+    {{-- Footer Bottom --}}
+    <div class="footer-bottom">
+        <div class="container footer-bottom-container">
+            <p>&copy; {{ date('Y') }} PelatihanK3 Indonesia. All rights reserved.</p>
+
+            <div class="footer-bottom-links">
+                <a href="#">Kebijakan Privasi</a>
+                <span>|</span>
+                <a href="#">Syarat & Ketentuan</a>
+            </div>
+        </div>
     </div>
 </footer>

@@ -1,0 +1,375 @@
+/* =========================================================
+   SERVICE AREA / JANGKAUAN LAYANAN
+   ========================================================= */
+
+.service-area-section {
+    width: 100%;
+    padding: 80px 0;
+    background: var(--bg-light);
+    border-top: 1px solid var(--border-color);
+}
+
+.service-area-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+/* ---------------------------------------------------------
+   Header
+   --------------------------------------------------------- */
+
+.service-area-header {
+    max-width: 760px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.service-area-eyebrow {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 6px 12px;
+
+    border-radius: var(--radius-sm);
+
+    background: var(--bg-soft);
+    color: var(--secondary-color);
+
+    font-size: 0.6875rem;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.service-area-title {
+    margin-top: 10px;
+
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.service-area-title span {
+    color: var(--secondary-color);
+}
+
+.service-area-description {
+    max-width: 700px;
+    margin: 12px auto 0;
+
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* ---------------------------------------------------------
+   Main Card
+   --------------------------------------------------------- */
+
+.service-area-card {
+    padding: 32px;
+
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+}
+
+/* ---------------------------------------------------------
+   Search
+   --------------------------------------------------------- */
+
+.service-area-search {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.service-area-search i {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+
+    transform: translateY(-50%);
+
+    color: var(--text-secondary);
+    font-size: 20px;
+
+    pointer-events: none;
+}
+
+.service-area-search input {
+    width: 100%;
+    height: 48px;
+
+    padding: 0 16px 0 46px;
+
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    font-size: 0.875rem;
+
+    outline: none;
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast),
+        background var(--transition-fast);
+}
+
+.service-area-search input::placeholder {
+    color: var(--text-muted);
+}
+
+.service-area-search input:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.service-area-search input:focus {
+    background: var(--bg-color);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(0, 155, 98, 0.1);
+}
+
+/* ---------------------------------------------------------
+   Province / City List
+   --------------------------------------------------------- */
+
+.service-area-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px 20px;
+
+    height: 400px;
+    padding-right: 10px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+}
+
+.service-area-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.service-area-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.service-area-list::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: var(--radius-full);
+}
+
+.service-area-list::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* Province */
+
+.service-province {
+    min-width: 0;
+}
+
+.service-province-title {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+    margin-bottom: 10px;
+    padding: 7px 4px;
+
+    background: var(--bg-color);
+
+    color: var(--text-primary);
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+/* City List */
+
+.service-city-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    list-style: none;
+}
+
+.service-city-item {
+    min-width: 0;
+}
+
+.service-city-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    padding: 5px 4px;
+
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.5;
+
+    border-radius: var(--radius-sm);
+
+    transition:
+        color var(--transition-fast),
+        background var(--transition-fast);
+}
+
+.service-city-link i {
+    flex: 0 0 auto;
+
+    margin-top: 2px;
+
+    color: var(--secondary-color);
+    font-size: 16px;
+
+    transition: transform var(--transition-fast);
+}
+
+.service-city-link span {
+    min-width: 0;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.service-city-link:hover {
+    background: var(--bg-light);
+    color: var(--secondary-color);
+}
+
+.service-city-link:hover i {
+    transform: translateY(-1px);
+}
+
+/* ---------------------------------------------------------
+   Footer
+   --------------------------------------------------------- */
+
+.service-area-footer {
+    margin-top: 28px;
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border-color);
+
+    text-align: center;
+}
+
+.service-area-footer p {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    line-height: 1.6;
+}
+
+.service-area-footer a {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.service-area-footer a:hover {
+    color: var(--secondary-dark);
+    text-decoration: underline;
+}
+
+/* ---------------------------------------------------------
+   Search Empty State
+   --------------------------------------------------------- */
+
+.service-province.is-hidden {
+    display: none;
+}
+
+.service-area-empty {
+    display: none;
+
+    grid-column: 1 / -1;
+
+    padding: 48px 20px;
+
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.service-area-empty.is-visible {
+    display: block;
+}
+
+.service-area-empty i {
+    display: block;
+    margin-bottom: 8px;
+
+    font-size: 32px;
+}
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+    .service-area-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .service-area-section {
+        padding: 64px 0;
+    }
+
+    .service-area-card {
+        padding: 24px;
+    }
+
+    .service-area-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .service-area-section {
+        padding: 56px 0;
+    }
+
+    .service-area-header {
+        margin-bottom: 32px;
+    }
+
+    .service-area-title {
+        font-size: 1.6rem;
+    }
+
+    .service-area-description {
+        font-size: 0.875rem;
+    }
+
+    .service-area-card {
+        padding: 16px;
+        border-radius: var(--radius-md);
+    }
+
+    .service-area-list {
+        grid-template-columns: 1fr;
+        height: 420px;
+        gap: 20px;
+    }
+
+    .service-area-footer {
+        margin-top: 20px;
+        padding-top: 16px;
+    }
+}

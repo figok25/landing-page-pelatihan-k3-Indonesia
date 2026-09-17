@@ -1,8 +1,9 @@
 <x-layouts::app :title="'Tentang Kami | PelatihanK3 Indonesia'">
-    <x-breadcrumb :items="[
-        ['label' => 'Home', 'url' => route('home')],
-        ['label' => 'Tentang Kami', 'url' => null],
-    ]" />
+    <x-breadcrumb
+        :items="[
+            ['label' => 'Home', 'url' => route('home')],
+            ['label' => 'Tentang Kami', 'url' => null],
+        ]" />
 
     <section class="mx-auto max-w-4xl px-4 py-12 lg:px-8">
         <h1 class="text-3xl font-bold text-slate-900">Tentang PelatihanK3 Indonesia</h1>

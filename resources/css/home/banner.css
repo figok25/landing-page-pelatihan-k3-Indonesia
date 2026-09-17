@@ -1,0 +1,251 @@
+/* ========================================
+   TOP INFORMATION BANNER
+======================================== */
+
+.top-info-banner {
+    width: 100%;
+
+    background: var(--primary-color);
+    color: var(--text-light);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.top-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    min-height: 42px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.top-info-left,
+.top-info-right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.top-info-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 4px 9px;
+
+    border-radius: 4px;
+
+    background: var(--secondary-color);
+    color: var(--text-light);
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+}
+
+.top-info-regulations,
+.top-info-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.top-info-item i {
+    color: var(--accent-light);
+    font-size: 16px;
+}
+
+.top-info-programs {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* ========================================
+   STATISTICS BANNER
+======================================== */
+
+.stats-banner {
+    width: 100%;
+
+    background: var(--primary-dark);
+    color: var(--text-light);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px;
+
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+
+.stats-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    min-width: 0;
+}
+
+.stats-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+
+    background: var(--secondary-color);
+    color: var(--text-light);
+
+    font-size: 25px;
+}
+
+.stats-icon-gold {
+    background: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.stats-content {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.stats-number {
+    color: var(--text-light);
+
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.stats-label {
+    margin-top: 5px;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* ========================================
+   HOVER EFFECT
+======================================== */
+
+.stats-item {
+    transition: transform var(--transition-normal);
+}
+
+.stats-item:hover {
+    transform: translateY(-2px);
+}
+
+.stats-item:hover .stats-icon {
+    background: var(--secondary-light);
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1100px) {
+    .stats-container {
+        gap: 20px;
+    }
+
+    .stats-item {
+        gap: 10px;
+    }
+
+    .stats-number {
+        font-size: 21px;
+    }
+
+    .stats-label {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-info-container {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .top-info-left,
+    .top-info-right {
+        gap: 10px;
+    }
+
+    .top-info-regulations {
+        font-size: 9px;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px 16px;
+
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-info-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .top-info-programs {
+        display: inline-flex;
+    }
+
+    .stats-container {
+        gap: 20px 12px;
+    }
+
+    .stats-item {
+        align-items: flex-start;
+        gap: 9px;
+    }
+
+    .stats-icon {
+        width: 38px;
+        height: 38px;
+
+        border-radius: 8px;
+        font-size: 20px;
+    }
+
+    .stats-number {
+        font-size: 19px;
+    }
+
+    .stats-label {
+        font-size: 9px;
+    }
+}

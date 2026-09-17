@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
-    @include('layouts.head')
+    @include ('layouts.head')
 </head>
 
 <body>
-
-    @include('layouts.navbar')
+    @include ('layouts.navbar')
 
     <main>
-        @yield('content')
+        @yield ('content')
     </main>
 
-    @include('components.whatsapp-button')
+    @include ('components.whatsapp-button')
 
-    @include('layouts.footer')
+    @include ('layouts.footer')
 
-    @vite('resources/js/app.js')
+    @vite ('resources/js/app.js')
 
-    @stack('scripts')
+    @stack ('scripts')
 </body>
-
 </html>

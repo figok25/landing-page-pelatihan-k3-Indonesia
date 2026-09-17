@@ -4,5 +4,15 @@
     "tabWidth": 4,
     "useTabs": false,
     "trailingComma": "es5",
-    "printWidth": 100
+    "printWidth": 120,
+    "plugins": ["prettier-plugin-blade"],
+    "bracketSameLine": true,
+    "overrides": [
+        {
+            "files": "*.blade.php",
+            "options": {
+                "parser": "blade"
+            }
+        }
+    ]
 }

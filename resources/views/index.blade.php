@@ -1,16 +1,16 @@
-@extends('layouts.master')
+@extends ('layouts.master')
 
-@section('title', 'Home')
+@section ('title', 'Home')
 
-@section('description', 'Welcome to our website.')
+@section ('description', 'Welcome to our website.')
 
-@section('content')
-
-    @include('partials.hero')
-    @include('partials.banner')
-    @include('partials.layanan')
-    @include('partials.katalog')
-    @include('partials.about')
-    @include('partials.konsultasi')
+@section ('content')
+    @include ('partials.hero')
+    @include ('partials.stat')
+    @include ('partials.info')
+    @include ('partials.layanan')
+    @include ('partials.katalog')
+    @include ('partials.about')
+    @include ('partials.konsultasi')
 
 @endsection
