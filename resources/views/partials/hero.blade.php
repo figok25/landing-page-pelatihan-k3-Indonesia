@@ -1,4 +1,4 @@
-@vite ('resources\css\home\hero.css')
+@vite ('resources/css/home/hero.css')
 <section class="hero-section">
     {{-- Background Decoration --}}
     <div class="hero-bg hero-bg-green"></div>

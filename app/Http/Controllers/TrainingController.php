@@ -18,9 +18,9 @@ class TrainingController extends Controller
         $categories = TrainingCatalog::categories();
 
         $grouped = [];
-        foreach ($categories as $key => $label) {
+        foreach ($categories as $key => $meta) {
             $grouped[$key] = [
-                'label' => $label,
+                'label' => $meta['label'],
                 'items' => array_values(array_filter(
                     $trainings,
                     fn ($t) => $t['category'] === $key

@@ -27,4 +27,7 @@ Route::get('/jasa/{service}', [ServiceController::class, 'show'])->name('service
 // Halaman regional jasa (Level 2), sama aturannya dengan pelatihan.
 Route::get('/jasa/{service}/{kota}', [ServiceController::class, 'location'])->name('service.location');
 
+// Alias lama dari draft katalog awal: /artikel/{slug} -> /pelatihan/{slug}.
+Route::redirect('/artikel/{training}', '/pelatihan/{training}', 301);
+
 Route::get('/sitemap.xml', [SeoController::class, 'sitemap'])->name('sitemap');
