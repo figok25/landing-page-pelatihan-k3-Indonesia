@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\RegionController;
 use App\Http\Controllers\SeoController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TrainingController;
@@ -23,6 +24,12 @@ Route::get('/pelatihan/{training}/{kota}', [TrainingController::class, 'location
 // Katalog jasa (Level 1) + halaman jasa.
 Route::get('/jasa', [ServiceController::class, 'index'])->name('service.index');
 Route::get('/jasa/{service}', [ServiceController::class, 'show'])->name('service.show');
+
+Route::get('/kota/{kota}', [RegionController::class, 'city'])->name('region.city');
+
+// Alias lama dari draft katalog awal: /artikel/{slug} -> /pelatihan/{slug}.
+Route::redirect('/artikel/{training}', '/pelatihan/{training}', 301);
+
 
 // Halaman regional jasa (Level 2), sama aturannya dengan pelatihan.
 Route::get('/jasa/{service}/{kota}', [ServiceController::class, 'location'])->name('service.location');

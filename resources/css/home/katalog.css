@@ -445,7 +445,8 @@
     transition: color var(--transition-fast);
 }
 
-.catalog-item:hover .catalog-item-title {
+.catalog-item:hover .catalog-item-title,
+.catalog-item-detail {
     color: var(--secondary-color);
 }
 
@@ -455,6 +456,24 @@
     color: var(--text-secondary);
     font-size: 0.875rem;
     line-height: 1.6;
+}
+
+.catalog-item-detail {
+    margin-top: 8px;
+
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    line-height: 1.4;
+    font-weight: 700;
+
+    transition: color var(--transition-fast);
+}
+
+.catalog-item-detail:hover{
+    color: var(--secondary-color);
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 /* Responsive */
