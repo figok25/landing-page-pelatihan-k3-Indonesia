@@ -9,15 +9,15 @@
         <div class="hero-content">
             <span class="hero-badge">
                 <span class="hero-badge-dot"></span>
-                PUSAT PELATIHAN & JASA K3 TERPERCAYA
+                DIREKTORI NASIONAL KOMPETENSI TEKNIK & K3 TAHUN 2026
             </span>
 
             <h1 class="hero-title">
-                Tingkatkan Kompetensi, Wujudkan Lingkungan Kerja yang <span>Aman</span> dan
-                <span>Produktif</span>
+                Portal Resmi Informasi <span>Pelatihan</span>, <span>Sertifikasi Profesi K3</span>, dan
+                <span>Jasa Riksa Uji Nasional</span>
             </h1>
 
-            <p class="hero-description">PelatihanK3 Indonesia menyediakan
+            <p class="hero-description">Pusat rujukan regulasi Kemnaker RI, BNSP, KLHK, dan Ditjen Migas. Menjangkau lebih dari
             <strong>{{ $stats['total_trainings'] }}</strong>
             program pelatihan dan
             <strong>{{ $stats['total_services'] }}</strong>
@@ -84,7 +84,7 @@
         <div class="hero-visual">
             <div class="hero-image-wrapper">
                 {{-- Replace with your actual K3 image --}}
-                <img src="{{ asset('images/hero-k3.jpg') }}" alt="Petugas keselamatan kerja K3" class="hero-image" />
+                <img src="{{ asset('storage/images/k3.jpg') }}" alt="Petugas keselamatan kerja K3" class="hero-image" />
 
                 <div class="hero-image-overlay"></div>
 
