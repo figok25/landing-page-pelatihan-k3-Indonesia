@@ -14,25 +14,8 @@
                 </span>
             </a>
 
-            <p class="footer-description">Solusi Pelatihan dan Jasa Keselamatan Kerja untuk Kompetensi yang Lebih Baik dan Masa Depan yang Lebih Aman.</p>
+            <p class="footer-description">Lembaga Pembinaan Keselamatan dan Kesehatan Kerja (PJK3) terakreditasi resmi Kemnaker RI dan LSP Terlisensi BNSP. Menyelenggarakan sertifikasi kompetensi personil K3 industri, inspeksi riksa uji kelayakan teknis, dan audit SMK3 nasional.</p>
 
-            <div class="footer-socials">
-                <a href="#" aria-label="Instagram">
-                    <i class="bx bxl-instagram"></i>
-                </a>
-
-                <a href="#" aria-label="Facebook">
-                    <i class="bx bxl-facebook"></i>
-                </a>
-
-                <a href="#" aria-label="LinkedIn">
-                    <i class="bx bxl-linkedin"></i>
-                </a>
-
-                <a href="https://wa.me/6281100000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                    <i class="bx bxl-whatsapp"></i>
-                </a>
-            </div>
         </div>
 
         {{-- Navigation --}}
@@ -122,8 +105,8 @@
 
                     <div>
                         <span>Telepon / WhatsApp</span>
-                        <a href="https://wa.me/6281100000000" target="_blank" rel="noopener noreferrer">
-                            +62 811-0000-000
+                        <a href="https://wa.me/628118500177" target="_blank" rel="noopener noreferrer">
+                            0811-8500-177 (WA 24/7)
                         </a>
                     </div>
                 </li>
@@ -133,18 +116,10 @@
 
                     <div>
                         <span>Email</span>
-                        <a href="mailto:info@pelatihank3indonesia.com"> info@pelatihank3indonesia.com </a>
+                        <a href="mailto:info@pelatihank3indonesia.com"> Cs@pelatihank3indonesia.com </a>
                     </div>
                 </li>
 
-                <li>
-                    <i class="bx bx-map"></i>
-
-                    <div>
-                        <span>Alamat</span>
-                        <p>Jl. Pendidikan No. 123, Jakarta, Indonesia</p>
-                    </div>
-                </li>
             </ul>
         </div>
     </div>

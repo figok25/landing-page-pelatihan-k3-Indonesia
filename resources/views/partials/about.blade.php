@@ -14,9 +14,8 @@
             </h1>
 
             <p class="about-intro">
-                Mengenal lebih dekat PelatihanK3 Indonesia sebagai penyedia
-                informasi, pelatihan, sertifikasi, dan layanan keselamatan
-                dan kesehatan kerja.
+                Lembaga Pembinaan Keselamatan dan Kesehatan Kerja (PJK3) terakreditasi resmi Kemnaker RI dan LSP Terlisensi BNSP.
+                Menyelenggarakan sertifikasi kompetensi personil K3 industri, inspeksi riksa uji kelayakan teknis, dan audit SMK3 nasional.
             </p>
         </div>
 
@@ -30,12 +29,11 @@
 
                 <div>
                     <h2 class="about-card-title">
-                        Profil PelatihanK3 Indonesia
+                        LAYANAN PRIORITAS KORPORAT & INSTITUSI
                     </h2>
 
                     <p class="about-card-text">
-                        Konten profil perusahaan akan disusun dan ditampilkan
-                        berdasarkan materi resmi yang diberikan oleh client.
+                        Konsultasikan Kebutuhan Pelatihan K3 In-House, Sertifikasi Personil, atau Audit Riksa Uji Perusahaan Anda
                     </p>
                 </div>
             </div>
@@ -46,14 +44,8 @@
 
                 <div>
                     <h3>
-                        Materi profil sedang dipersiapkan
+                        Tim teknis dan legal compliance kami siap membantu audit kepatuhan, penjadwalan batch pelatihan privat, hingga perizinan SLF & SILO resmi di seluruh Indonesia.
                     </h3>
-
-                    <p>
-                        Informasi mengenai profil perusahaan, visi dan misi,
-                        pengalaman, legalitas, serta layanan akan diperbarui
-                        setelah materi resmi tersedia.
-                    </p>
                 </div>
             </div>
 
