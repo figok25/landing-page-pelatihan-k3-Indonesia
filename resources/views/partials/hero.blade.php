@@ -1,5 +1,8 @@
 @vite ('resources/css/home/hero.css')
 <section class="hero-section">
+    {{-- Background Image (full-bleed, dim & desaturated) --}}
+    <img src="{{ asset('images/k3.jpg') }}" alt="Petugas keselamatan kerja K3" class="hero-bg-image" />
+
     {{-- Background Decoration --}}
     <div class="hero-bg hero-bg-green"></div>
     <div class="hero-bg hero-bg-navy"></div>
@@ -9,7 +12,7 @@
         <div class="hero-content">
             <span class="hero-badge">
                 <span class="hero-badge-dot"></span>
-                DIREKTORI NASIONAL KOMPETENSI TEKNIK & K3 TAHUN 2026
+                PUSAT PELATIHAN & JASA K3 TERPERCAYA
             </span>
 
             <h1 class="hero-title">
@@ -80,23 +83,30 @@
             </div>
         </div>
 
-        {{-- Hero Visual --}}
+        {{-- Hero Visual (status card saja, foto sudah jadi background section) --}}
         <div class="hero-visual">
             <div class="hero-image-wrapper">
-                {{-- Replace with your actual K3 image --}}
-                <img src="{{ asset('storage/images/k3.jpg') }}" alt="Petugas keselamatan kerja K3" class="hero-image" />
-
-                <div class="hero-image-overlay"></div>
-
-                {{-- Floating Information Card --}}
-                <div class="hero-floating-card">
-                    <div class="hero-floating-icon">
-                        <i class="bx bx-shield-quarter"></i>
+                {{-- Status/Stat Overlay Card (gaya seperti referensi) --}}
+                <div class="hero-status-card">
+                    <div class="hero-status-top">
+                        <span class="hero-status-badge">Status Operasional</span>
+                        <span class="hero-status-year">Tahun {{ date('Y') }}/{{ date('Y') + 1 }}</span>
                     </div>
 
-                    <div>
-                        <strong>Keselamatan Kerja</strong>
-                        <span>Prioritas Utama Kami</span>
+                    <span class="hero-status-eyebrow">Pelatihan K3 Indonesia Authority</span>
+                    <h3 class="hero-status-title">Sertifikasi Legal, Resmi & Terverifikasi</h3>
+                    <p class="hero-status-desc">
+                        Seluruh SKP, Lisensi K3, dan Surat Tanda Lulus diuji langsung oleh Pengawas Ketenagakerjaan
+                        Kemnaker RI & Asesor Berlisensi BNSP.
+                    </p>
+
+                    <div class="hero-status-stats">
+                        <div class="hero-status-stat">
+                            <strong>{{ $stats['total_trainings'] + $stats['total_services'] }}+</strong>
+                            <span>Skema Sertifikasi</span>
+                        </div>
+                        {{-- TODO: angka tingkat kelulusan belum ada datanya dari client,
+                        jangan diisi angka karangan sebelum ada datanya. --}}
                     </div>
                 </div>
             </div>
