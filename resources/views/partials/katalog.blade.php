@@ -50,3 +50,22 @@
         </div>
     </div>
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filters = document.querySelectorAll('.catalog-filter');
+        const groups = document.querySelectorAll('.catalog-group');
+
+        filters.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const category = btn.dataset.category;
+
+                filters.forEach((b) => b.classList.toggle('active', b === btn));
+                filters.forEach((b) => b.setAttribute('aria-selected', b === btn ? 'true' : 'false'));
+
+                groups.forEach((g) => {
+                    g.style.display = (category === 'all' || g.dataset.category === category) ? '' : 'none';
+                });
+            });
+        });
+    });
+</script>
