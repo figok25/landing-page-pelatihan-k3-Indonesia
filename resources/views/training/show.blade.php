@@ -14,7 +14,7 @@
             <div class="training-breadcrumb">
                 <a href="{{ url('/') }}">Beranda</a>
                 <i class="bx bx-chevron-right"></i>
-                <a href="{{ url('/training') }}">Pelatihan</a>
+                <a href="{{ route('training.index') }}">Pelatihan</a>
                 <i class="bx bx-chevron-right"></i>
                 <span>{{ $training['name'] }}</span>
             </div>
