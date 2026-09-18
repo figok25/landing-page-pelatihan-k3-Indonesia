@@ -16,7 +16,11 @@
         <div class="service-area-card">
             <div class="service-area-search">
                 <i class="bx bx-search"></i>
-                <input type="text" id="serviceAreaSearch" placeholder="Cari provinsi atau kota/kabupaten..." autocomplete="off" />
+                <input
+                    type="text"
+                    id="serviceAreaSearch"
+                    placeholder="Cari provinsi atau kota/kabupaten..."
+                    autocomplete="off" />
             </div>
 
             <div class="service-area-list" id="serviceAreaList">
@@ -28,7 +32,9 @@
                             @foreach ($cities as $city)
                                 @php $kec = \App\Data\KecamatanCatalog::forCity($city['code']); @endphp
                                 <li class="service-city-item">
-                                    <a href="{{ route('region.city', ['kota' => $city['slug']]) }}" class="service-city-link">
+                                    <a
+                                        href="{{ route('region.city', ['kota' => $city['slug']]) }}"
+                                        class="service-city-link">
                                         <i class="bx bx-map-pin"></i>
                                         <span title="{{ $city['name'] }}">{{ $city['type'] }} {{ $city['name'] }}</span>
                                     </a>
@@ -46,7 +52,12 @@
                 <p>
                     <em>
                         * Klik pada kota untuk melihat artikel dan jadwal pelatihan khusus di wilayah tersebut.
-                        <a href="https://wa.me/628118500177?text=Halo%20Pelatihan%20K3%20Indonesia%2C%20saya%20ingin%20bertanya%20mengenai%20jadwal%20dan%20biaya%20pelatihan%20K3.%20Mohon%20bantuannya%2C%20terima%20kasih." target="_blank" rel="noopener noreferrer">Hubungi kami</a>
+                        <a
+                            href="https://wa.me/628118500177?text=Halo%20Pelatihan%20K3%20Indonesia%2C%20saya%20ingin%20bertanya%20mengenai%20jadwal%20dan%20biaya%20pelatihan%20K3.%20Mohon%20bantuannya%2C%20terima%20kasih."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >Hubungi kami</a
+                        >
                         jika kota Anda belum tercantum.
                     </em>
                 </p>

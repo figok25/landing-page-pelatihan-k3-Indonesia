@@ -34,7 +34,12 @@
             </button>
 
             @foreach ($categories as $key => $meta)
-                <button type="button" class="catalog-filter" data-category="{{ $key }}" role="tab" aria-selected="false">
+                <button
+                    type="button"
+                    class="catalog-filter"
+                    data-category="{{ $key }}"
+                    role="tab"
+                    aria-selected="false">
                     {{ $meta['label'] }}
                 </button>
             @endforeach
@@ -44,7 +49,7 @@
         <div class="catalog-groups">
             @foreach ($categories as $key => $meta)
                 <div class="catalog-group" data-category="{{ $key }}">
-                    @include('partials.katalog.group', ['category' => $key, 'icon' => $icons[$key]])
+                    @include ('partials.katalog.group', ['category' => $key, 'icon' => $icons[$key]])
                 </div>
             @endforeach
         </div>
@@ -63,7 +68,7 @@
                 filters.forEach((b) => b.setAttribute('aria-selected', b === btn ? 'true' : 'false'));
 
                 groups.forEach((g) => {
-                    g.style.display = (category === 'all' || g.dataset.category === category) ? '' : 'none';
+                    g.style.display = category === 'all' || g.dataset.category === category ? '' : 'none';
                 });
             });
         });

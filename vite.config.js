@@ -14,7 +14,9 @@ export default defineConfig({
                 'resources/css/home/consultation.css',
                 'resources/css/home/katalog.css',
                 'resources/css/home/layanan.css',
-                'resources/css/home/about.css'
+                'resources/css/home/about.css',
+                'resources/css/pages/training.css',
+                'resources/css/pages/services.css',
             ],
             refresh: true,
             fonts: [

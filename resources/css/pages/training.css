@@ -1,0 +1,362 @@
+/* =========================================================
+   TRAINING CATALOG
+   ========================================================= */
+
+.training-section {
+    width: 100%;
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+.training-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+/* ---------------------------------------------------------
+   Header
+   --------------------------------------------------------- */
+
+.training-header {
+    max-width: 760px;
+    margin: 0 auto 52px;
+    text-align: center;
+}
+
+.training-eyebrow {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 6px 12px;
+
+    border-radius: var(--radius-sm);
+
+    background: var(--bg-soft);
+    color: var(--secondary-color);
+
+    font-size: 0.6875rem;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.training-title {
+    margin-top: 12px;
+
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.training-title span {
+    color: var(--secondary-color);
+}
+
+.training-description {
+    max-width: 680px;
+    margin: 14px auto 0;
+
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* ---------------------------------------------------------
+   Groups
+   --------------------------------------------------------- */
+
+.training-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.training-group {
+    padding: 24px;
+
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+}
+
+/* ---------------------------------------------------------
+   Group Header
+   --------------------------------------------------------- */
+
+.training-group-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-bottom: 20px;
+    padding: 14px 16px;
+
+    background: var(--bg-soft);
+    border-radius: var(--radius-md);
+}
+
+.training-group-icon {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: var(--radius-md);
+
+    background: var(--bg-color);
+    color: var(--secondary-color);
+
+    font-size: 22px;
+}
+
+.training-group-title {
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.training-group-count {
+    margin-top: 3px;
+
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    line-height: 1.5;
+}
+
+/* ---------------------------------------------------------
+   Training Grid
+   --------------------------------------------------------- */
+
+.training-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+/* ---------------------------------------------------------
+   Training Card
+   --------------------------------------------------------- */
+
+.training-card {
+    position: relative;
+
+    display: block;
+
+    min-height: 170px;
+    padding: 20px;
+
+    background: var(--bg-color);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-sm);
+
+    overflow: hidden;
+
+    transition:
+        transform var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.training-card::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: var(--secondary-color);
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform var(--transition-normal);
+}
+
+.training-card:hover {
+    transform: translateY(-4px);
+
+    border-color: var(--secondary-color);
+
+    box-shadow: var(--shadow-md);
+}
+
+.training-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* ---------------------------------------------------------
+   Card Top
+   --------------------------------------------------------- */
+
+.training-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+}
+
+.training-card-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 4px 8px;
+
+    border-radius: var(--radius-sm);
+
+    background: var(--primary-color);
+    color: var(--text-light);
+
+    font-size: 0.625rem;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.training-card-arrow {
+    color: var(--text-muted);
+    font-size: 20px;
+
+    transition:
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.training-card:hover .training-card-arrow {
+    color: var(--secondary-color);
+    transform: translateX(3px);
+}
+
+/* ---------------------------------------------------------
+   Card Content
+   --------------------------------------------------------- */
+
+.training-card-title {
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-size: 1.0625rem;
+    line-height: 1.45;
+    font-weight: 700;
+
+    transition: color var(--transition-fast);
+}
+
+.training-card:hover .training-card-title {
+    color: var(--secondary-color);
+}
+
+.training-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+
+    margin-top: 18px;
+
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    line-height: 1.4;
+    font-weight: 600;
+
+    transition: color var(--transition-fast);
+}
+
+.training-card-link i {
+    font-size: 15px;
+
+    transition: transform var(--transition-fast);
+}
+
+.training-card:hover .training-card-link {
+    color: var(--secondary-color);
+}
+
+.training-card:hover .training-card-link i {
+    transform: translateX(3px);
+}
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    .training-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .training-section {
+        padding: 64px 0;
+    }
+
+    .training-header {
+        margin-bottom: 36px;
+    }
+
+    .training-title {
+        font-size: 1.875rem;
+    }
+
+    .training-description {
+        font-size: 0.9375rem;
+    }
+
+    .training-group {
+        padding: 18px;
+    }
+
+    .training-group-header {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .training-section {
+        padding: 52px 0;
+    }
+
+    .training-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .training-group {
+        padding: 14px;
+    }
+
+    .training-group-header {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .training-group-icon {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+
+        font-size: 20px;
+    }
+
+    .training-group-title {
+        font-size: 1rem;
+    }
+
+    .training-card {
+        min-height: auto;
+        padding: 18px;
+    }
+}

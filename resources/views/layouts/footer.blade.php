@@ -15,7 +15,6 @@
             </a>
 
             <p class="footer-description">Lembaga Pembinaan Keselamatan dan Kesehatan Kerja (PJK3) terakreditasi resmi Kemnaker RI dan LSP Terlisensi BNSP. Menyelenggarakan sertifikasi kompetensi personil K3 industri, inspeksi riksa uji kelayakan teknis, dan audit SMK3 nasional.</p>
-
         </div>
 
         {{-- Navigation --}}
@@ -97,32 +96,31 @@
 
         {{-- Contact --}}
         <section id="kontak">
-        <div class="footer-column">
-            <h3 class="footer-heading">Kontak Kami</h3>
+            <div class="footer-column">
+                <h3 class="footer-heading">Kontak Kami</h3>
 
-            <ul class="footer-contact-list">
-                <li>
-                    <i class="bx bx-phone"></i>
+                <ul class="footer-contact-list">
+                    <li>
+                        <i class="bx bx-phone"></i>
 
-                    <div>
-                        <span>Telepon / WhatsApp</span>
-                        <a href="https://wa.me/628118500177" target="_blank" rel="noopener noreferrer">
-                            0811-8500-177 (WA 24/7)
-                        </a>
-                    </div>
-                </li>
+                        <div>
+                            <span>Telepon / WhatsApp</span>
+                            <a href="https://wa.me/628118500177" target="_blank" rel="noopener noreferrer">
+                                0811-8500-177 (WA 24/7)
+                            </a>
+                        </div>
+                    </li>
 
-                <li>
-                    <i class="bx bx-envelope"></i>
+                    <li>
+                        <i class="bx bx-envelope"></i>
 
-                    <div>
-                        <span>Email</span>
-                        <a href="mailto:info@pelatihank3indonesia.com"> Cs@pelatihank3indonesia.com </a>
-                    </div>
-                </li>
-
-            </ul>
-        </div>
+                        <div>
+                            <span>Email</span>
+                            <a href="mailto:info@pelatihank3indonesia.com"> Cs@pelatihank3indonesia.com </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
     </div>
 
     {{-- Footer Bottom --}}

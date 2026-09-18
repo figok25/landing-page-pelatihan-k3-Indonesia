@@ -8,8 +8,8 @@
     @include ('partials.hero')
     @include ('partials.stat')
     @include ('partials.info')
-    @include ('partials.about')
     @include ('partials.layanan')
+    @include ('partials.about')
     @include ('partials.katalog')
     @include ('partials.konsultasi')
 

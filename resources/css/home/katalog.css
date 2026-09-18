@@ -470,7 +470,7 @@
     transition: color var(--transition-fast);
 }
 
-.catalog-item-detail:hover{
+.catalog-item-detail:hover {
     color: var(--secondary-color);
     text-decoration: underline;
     font-weight: bold;

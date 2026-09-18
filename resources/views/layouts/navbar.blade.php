@@ -58,21 +58,13 @@
                 </div>
             </div>
 
-            <a href="#tentang" class="navbar-link {{ request()->routeIs('about') ? 'active' : '' }}">
-                Tentang Kami
-            </a>
+            <a href="#tentang" class="navbar-link {{ request()->routeIs('about') ? 'active' : '' }}"> Tentang Kami </a>
 
-            <a href="#kontak" class="navbar-link {{ request()->routeIs('contact') ? 'active' : '' }}">
-                Kontak
-            </a>
+            <a href="#kontak" class="navbar-link {{ request()->routeIs('contact') ? 'active' : '' }}"> Kontak </a>
         </nav>
 
         {{-- Right Actions --}}
         <div class="navbar-actions">
-            {{-- Search --}}
-            <button type="button" class="navbar-search" aria-label="Cari">
-                <i class="bx bx-search"></i>
-            </button>
 
             {{-- WhatsApp --}}
             <a

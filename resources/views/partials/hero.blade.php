@@ -95,10 +95,7 @@
 
                     <span class="hero-status-eyebrow">Pelatihan K3 Indonesia Authority</span>
                     <h3 class="hero-status-title">Sertifikasi Legal, Resmi & Terverifikasi</h3>
-                    <p class="hero-status-desc">
-                        Seluruh SKP, Lisensi K3, dan Surat Tanda Lulus diuji langsung oleh Pengawas Ketenagakerjaan
-                        Kemnaker RI & Asesor Berlisensi BNSP.
-                    </p>
+                    <p class="hero-status-desc">Seluruh SKP, Lisensi K3, dan Surat Tanda Lulus diuji langsung oleh Pengawas Ketenagakerjaan Kemnaker RI & Asesor Berlisensi BNSP.</p>
 
                     <div class="hero-status-stats">
                         <div class="hero-status-stat">
