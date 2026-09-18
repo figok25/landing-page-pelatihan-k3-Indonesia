@@ -12,7 +12,7 @@
                 <strong>{{ $city['name'] }}, {{ $city['province'] }}</strong> menyusul.
             </p>
         </div>
-        <a href="{{ 'https://wa.me/6281100000000?text=' . urlencode('Halo Admin, saya ingin mendapatkan informasi mengenai Pelatihan '.$training['name'].' di '.$city['name'].'.') }}" target="_blank" rel="noopener" class="mt-8 inline-block rounded-lg bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700">
+        <a href="{{ 'https://wa.me/628118500177?text=' . urlencode('Halo Admin, saya ingin mendapatkan informasi mengenai Pelatihan '.$training['name'].' di '.$city['name'].'.') }}" target="_blank" rel="noopener" class="mt-8 inline-block rounded-lg bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700">
             Konsultasi Sekarang →
         </a>
     </section>

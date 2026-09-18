@@ -96,6 +96,7 @@
         </div>
 
         {{-- Contact --}}
+        <section id="kontak">
         <div class="footer-column">
             <h3 class="footer-heading">Kontak Kami</h3>
 

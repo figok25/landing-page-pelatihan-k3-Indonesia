@@ -3,6 +3,7 @@
     <div class="container about-container">
 
         {{-- Header --}}
+        <section id="tentang" class="py-16">
         <div class="about-header">
             <span class="about-eyebrow">
                 TENTANG KAMI
@@ -18,6 +19,7 @@
                 Menyelenggarakan sertifikasi kompetensi personil K3 industri, inspeksi riksa uji kelayakan teknis, dan audit SMK3 nasional.
             </p>
         </div>
+        </section>
 
         {{-- Main Content --}}
         <div class="about-content">

@@ -1,7 +1,7 @@
 @props (['message' => 'Halo Admin, saya ingin mendapatkan informasi mengenai pelatihan K3.'])
 
 <a
-    href="https://wa.me/6281100000000?text={{ urlencode($message) }}"
+    href="https://wa.me/628118500177?text={{ urlencode($message) }}"
     target="_blank"
     rel="noopener"
     class="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-emerald-600 px-4 py-3 text-sm font-semibold text-white shadow-lg hover:bg-emerald-700"

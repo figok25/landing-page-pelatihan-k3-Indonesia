@@ -58,11 +58,11 @@
                 </div>
             </div>
 
-            <a href="{{ route('about') }}" class="navbar-link {{ request()->routeIs('about') ? 'active' : '' }}">
+            <a href="#tentang" class="navbar-link {{ request()->routeIs('about') ? 'active' : '' }}">
                 Tentang Kami
             </a>
 
-            <a href="{{ route('contact') }}" class="navbar-link {{ request()->routeIs('contact') ? 'active' : '' }}">
+            <a href="#kontak" class="navbar-link {{ request()->routeIs('contact') ? 'active' : '' }}">
                 Kontak
             </a>
         </nav>
@@ -76,7 +76,7 @@
 
             {{-- WhatsApp --}}
             <a
-                href="https://wa.me/6281100000000?text=Halo%20Admin%2C%20saya%20ingin%20bertanya%20mengenai%20pelatihan%20K3."
+                href="https://wa.me/628118500177?text=Halo%20Admin%2C%20saya%20ingin%20bertanya%20mengenai%20pelatihan%20K3."
                 target="_blank"
                 rel="noopener noreferrer"
                 class="navbar-contact">
@@ -132,7 +132,7 @@
         <a href="{{ route('contact') }}" class="navbar-mobile-link"> Kontak </a>
 
         <a
-            href="https://wa.me/6281100000000?text=Halo%20Admin%2C%20saya%20ingin%20bertanya%20mengenai%20pelatihan%20K3."
+            href="https://wa.me/628118500177?text=Halo%20Admin%2C%20saya%20ingin%20bertanya%20mengenai%20pelatihan%20K3."
             target="_blank"
             rel="noopener noreferrer"
             class="navbar-mobile-contact">
