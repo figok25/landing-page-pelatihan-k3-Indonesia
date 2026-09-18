@@ -17,6 +17,7 @@ export default defineConfig({
                 'resources/css/home/about.css',
                 'resources/css/pages/training.css',
                 'resources/css/pages/services.css',
+                'resources/css/pages/city.css'
             ],
             refresh: true,
             fonts: [
