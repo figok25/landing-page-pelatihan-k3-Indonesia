@@ -127,9 +127,9 @@
             </div>
         </details>
 
-        <a href="{{ route('about') }}" class="navbar-mobile-link"> Tentang Kami </a>
+        <a href="{{ route('home') }}#tentang" class="navbar-mobile-link"> Tentang Kami </a>
 
-        <a href="{{ route('contact') }}" class="navbar-mobile-link"> Kontak </a>
+        <a href="{{ route('home') }}#kontak" class="navbar-mobile-link"> Kontak </a>
 
         <a
             href="https://wa.me/628118500177?text=Halo%20Admin%2C%20saya%20ingin%20bertanya%20mengenai%20pelatihan%20K3."

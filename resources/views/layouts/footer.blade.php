@@ -45,14 +45,14 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('about') }}">
+                    <a href="{{ route('home') }}#tentang">
                         <i class="bx bx-chevron-right"></i>
                         Tentang Kami
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{ route('contact') }}">
+                    <a href="{{ route('home') }}#kontak">
                         <i class="bx bx-chevron-right"></i>
                         Kontak
                     </a>
