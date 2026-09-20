@@ -149,52 +149,267 @@
                 {{-- Artikel generik: template sama untuk semua program,
                 hanya nama program yang berubah. Ganti dengan konten resmi
                 dari client bila sudah tersedia. --}}
-                <p>
-                    {{ $training['name'] }} merupakan salah satu program yang
-                    dirancang untuk membekali peserta dengan pemahaman dan
-                    kompetensi di bidang Keselamatan dan Kesehatan Kerja (K3).
-                    Program ini disusun mengikuti kebutuhan industri saat ini,
-                    sehingga peserta dapat menerapkan prinsip-prinsip K3 secara
-                    tepat di lingkungan kerja masing-masing.
-                </p>
-                <p>
-                    Penerapan K3 yang baik tidak hanya membantu perusahaan
-                    memenuhi ketentuan regulasi yang berlaku, tetapi juga
-                    berperan penting dalam menciptakan lingkungan kerja yang
-                    aman, sehat, dan produktif. Melalui program
-                    {{ $training['name'] }}, peserta diajak memahami risiko
-                    kerja, cara pengendaliannya, serta tanggung jawab masing-
-                    masing pihak dalam menjaga keselamatan bersama.
-                </p>
-                <p>
-                    Materi pada program {{ $training['name'] }} disampaikan
-                    secara bertahap, mulai dari pemahaman dasar hingga
-                    penerapan praktis, sehingga peserta dari berbagai latar
-                    belakang dapat mengikuti dengan baik. Pendekatan ini
-                    bertujuan agar pengetahuan yang diperoleh benar-benar dapat
-                    diterapkan, bukan sekadar dipahami secara teori.
-                </p>
-                <p>
-                    Selain aspek teknis, program {{ $training['name'] }} juga
-                    menekankan pentingnya budaya keselamatan kerja sebagai
-                    bagian dari kebiasaan sehari-hari, bukan hanya kewajiban
-                    administratif. Hal ini sejalan dengan tujuan jangka panjang
-                    untuk menurunkan angka kecelakaan kerja dan meningkatkan
-                    kesadaran keselamatan di seluruh lini organisasi.
-                </p>
-                <p>
-                    Bagi perusahaan, mengikutsertakan tenaga kerja dalam
-                    program {{ $training['name'] }} juga menjadi salah satu
-                    bentuk pemenuhan tanggung jawab terhadap keselamatan
-                    karyawan, sekaligus mendukung kepatuhan terhadap standar
-                    dan regulasi K3 yang berlaku secara nasional.
-                </p>
-                <p>
-                    Untuk informasi lebih lanjut mengenai jadwal, materi, dan
-                    persyaratan program {{ $training['name'] }}, silakan
-                    menghubungi tim kami melalui tombol konsultasi yang
-                    tersedia pada halaman ini.
-                </p>
+                    <p>
+                        <strong>{{ $training['name'] }}</strong> merupakan salah satu program
+                        pelatihan yang dirancang untuk membekali peserta dengan pengetahuan,
+                        keterampilan, dan pemahaman yang berkaitan dengan Keselamatan dan
+                        Kesehatan Kerja (K3). Program ini dapat menjadi bagian dari upaya
+                        peningkatan kompetensi tenaga kerja sekaligus mendukung penerapan budaya
+                        keselamatan di lingkungan kerja.
+                    </p>
+
+                    <p>
+                        Keselamatan dan kesehatan kerja tidak hanya berkaitan dengan penggunaan
+                        alat pelindung diri atau prosedur keselamatan, tetapi mencakup berbagai
+                        aspek mulai dari identifikasi bahaya, penilaian risiko, pengendalian
+                        risiko, prosedur kerja yang aman, hingga tanggung jawab setiap pihak di
+                        dalam organisasi. Melalui {{ $training['name'] }}, peserta diarahkan untuk
+                        memahami aspek-aspek tersebut sesuai dengan ruang lingkup pelatihan.
+                    </p>
+
+                    <h2>Tentang {{ $training['name'] }}</h2>
+
+                    <p>
+                        {{ $training['name'] }} disusun untuk memberikan pembelajaran yang
+                        sistematis sesuai dengan bidang atau kompetensi yang menjadi fokus
+                        program. Materi pelatihan dapat mencakup konsep dasar K3, ketentuan yang
+                        relevan, potensi bahaya di tempat kerja, metode pengendalian risiko,
+                        prosedur keselamatan, serta penerapan K3 sesuai dengan kebutuhan bidang
+                        pekerjaan peserta.
+                    </p>
+
+                    <p>
+                        Setiap peserta memiliki latar belakang pendidikan dan pengalaman kerja
+                        yang berbeda. Oleh karena itu, penyampaian materi dilakukan secara
+                        bertahap agar peserta dapat memahami konsep yang diberikan sebelum
+                        menghubungkannya dengan kondisi nyata di lingkungan kerja.
+                    </p>
+
+                    <h2>Tujuan Pelatihan</h2>
+
+                    <p>
+                        Tujuan utama dari {{ $training['name'] }} adalah meningkatkan pemahaman
+                        dan kompetensi peserta dalam menerapkan prinsip-prinsip K3 sesuai dengan
+                        bidang yang dipelajari. Peserta diharapkan tidak hanya memahami teori,
+                        tetapi juga mampu mengenali berbagai kondisi yang berhubungan dengan
+                        keselamatan kerja.
+                    </p>
+
+                    <p>
+                        Setelah mengikuti pelatihan, peserta diharapkan memiliki pemahaman yang
+                        lebih baik mengenai potensi bahaya, faktor risiko, tindakan pencegahan,
+                        serta prosedur yang dapat diterapkan untuk menciptakan lingkungan kerja
+                        yang lebih aman dan terkontrol.
+                    </p>
+
+                    <h2>Materi {{ $training['name'] }}</h2>
+
+                    <p>
+                        Materi yang diberikan dalam {{ $training['name'] }} disesuaikan dengan
+                        tujuan dan ruang lingkup program. Secara umum, pembelajaran dapat
+                        mencakup pengenalan konsep K3, peraturan dan ketentuan terkait,
+                        identifikasi bahaya, penilaian risiko, pengendalian risiko, prosedur
+                        kerja aman, serta penerapan keselamatan sesuai dengan karakteristik
+                        pekerjaan.
+                    </p>
+
+                    <p>
+                        Untuk pelatihan yang memiliki fokus teknis tertentu, materi juga dapat
+                        mencakup pembahasan mengenai peralatan, aktivitas kerja, kondisi
+                        operasional, maupun aspek teknis lain yang berkaitan dengan bidang
+                        pelatihan. Detail materi mengikuti kurikulum dan ruang lingkup
+                        {{ $training['name'] }} yang diselenggarakan.
+                    </p>
+
+                    <h2>Metode Pembelajaran</h2>
+
+                    <p>
+                        Proses pembelajaran {{ $training['name'] }} dapat dilakukan melalui
+                        kombinasi penyampaian materi, diskusi, studi kasus, pembahasan kondisi
+                        lapangan, maupun metode pembelajaran lainnya sesuai dengan karakteristik
+                        program.
+                    </p>
+
+                    <p>
+                        Pendekatan tersebut bertujuan agar peserta dapat menghubungkan materi
+                        yang dipelajari dengan kondisi yang mungkin ditemui dalam pekerjaan
+                        sehari-hari. Dengan demikian, pembelajaran K3 tidak berhenti pada
+                        pemahaman teori, tetapi dapat menjadi dasar dalam mengambil tindakan yang
+                        lebih tepat ketika menghadapi potensi bahaya di tempat kerja.
+                    </p>
+
+                    <h2>Siapa yang Dapat Mengikuti?</h2>
+
+                    <p>
+                        {{ $training['name'] }} ditujukan bagi peserta yang membutuhkan
+                        pengetahuan atau kompetensi sesuai dengan bidang pelatihan. Peserta dapat
+                        berasal dari berbagai latar belakang pekerjaan, perusahaan, instansi,
+                        maupun organisasi selama memenuhi persyaratan yang ditentukan untuk
+                        program tersebut.
+                    </p>
+
+                    <p>
+                        Program ini dapat menjadi pilihan bagi tenaga kerja yang ingin meningkatkan
+                        kompetensi, personel yang memiliki tanggung jawab terhadap aspek K3,
+                        maupun perusahaan yang ingin meningkatkan kemampuan tenaga kerjanya.
+                        Persyaratan peserta dapat berbeda berdasarkan jenis dan jenjang pelatihan.
+                    </p>
+
+                    <h2>Manfaat bagi Peserta</h2>
+
+                    <p>
+                        Mengikuti {{ $training['name'] }} dapat membantu peserta meningkatkan
+                        pemahaman mengenai keselamatan dan kesehatan kerja yang relevan dengan
+                        bidang pekerjaannya. Pengetahuan tersebut dapat digunakan sebagai dasar
+                        untuk mengenali potensi bahaya dan memahami tindakan pengendalian yang
+                        diperlukan.
+                    </p>
+
+                    <p>
+                        Selain peningkatan pengetahuan, pelatihan juga dapat membantu peserta
+                        memahami tanggung jawab dan peran masing-masing dalam penerapan K3.
+                        Pemahaman tersebut penting karena keselamatan kerja merupakan tanggung
+                        jawab bersama yang melibatkan pekerja, pengawas, manajemen, dan pihak
+                        terkait lainnya sesuai dengan peran masing-masing.
+                    </p>
+
+                    <h2>Manfaat bagi Perusahaan</h2>
+
+                    <p>
+                        Bagi perusahaan, penyelenggaraan atau pengikutsertaan tenaga kerja dalam
+                        {{ $training['name'] }} dapat menjadi bagian dari program pengembangan
+                        kompetensi dan peningkatan kesadaran K3. Tenaga kerja yang memiliki
+                        pemahaman K3 dapat lebih memahami prosedur keselamatan yang diterapkan
+                        dalam kegiatan operasional.
+                    </p>
+
+                    <p>
+                        Pelatihan juga dapat mendukung perusahaan dalam membangun budaya
+                        keselamatan yang lebih konsisten. Dengan adanya peningkatan pengetahuan
+                        dan kesadaran, perusahaan memiliki dasar yang lebih baik untuk menjalankan
+                        program K3 sesuai dengan kebutuhan operasional dan ketentuan yang
+                        berlaku.
+                    </p>
+
+                    <h2>Kompetensi yang Dipelajari</h2>
+
+                    <p>
+                        Kompetensi yang diperoleh peserta melalui {{ $training['name'] }}
+                        bergantung pada tujuan dan kurikulum masing-masing program. Secara umum,
+                        peserta dapat memperoleh pemahaman mengenai prinsip K3, pengenalan
+                        bahaya, pengendalian risiko, prosedur keselamatan, serta penerapan
+                        ketentuan K3 pada aktivitas kerja yang relevan.
+                    </p>
+
+                    <p>
+                        Pada program dengan kompetensi khusus, kemampuan yang dipelajari dapat
+                        mencakup aspek teknis maupun prosedural sesuai dengan bidangnya. Oleh
+                        karena itu, peserta perlu memperhatikan kurikulum dan persyaratan program
+                        sebelum melakukan pendaftaran.
+                    </p>
+
+                    <h2>Pelaksanaan Pelatihan</h2>
+
+                    <p>
+                        Pelaksanaan {{ $training['name'] }} dilakukan berdasarkan jadwal dan
+                        ketentuan program yang telah ditetapkan. Informasi mengenai waktu,
+                        lokasi, metode pelaksanaan, durasi, serta ketentuan peserta dapat berbeda
+                        pada setiap penyelenggaraan.
+                    </p>
+
+                    <p>
+                        Sebelum pelatihan dimulai, peserta akan mendapatkan informasi mengenai
+                        jadwal dan persiapan yang diperlukan. Untuk pelaksanaan tertentu,
+                        peserta juga dapat diminta menyiapkan dokumen atau persyaratan
+                        administratif sesuai dengan ketentuan program.
+                    </p>
+
+                    <h2>Evaluasi Peserta</h2>
+
+                    <p>
+                        Untuk memastikan peserta memahami materi yang diberikan, program
+                        {{ $training['name'] }} dapat dilengkapi dengan proses evaluasi sesuai
+                        dengan ketentuan pelatihan. Evaluasi dapat dilakukan melalui tes,
+                        tugas, studi kasus, praktik, atau bentuk penilaian lain sesuai dengan
+                        karakteristik program.
+                    </p>
+
+                    <p>
+                        Evaluasi tersebut bertujuan untuk mengetahui tingkat pemahaman peserta
+                        terhadap materi yang telah disampaikan serta memastikan proses
+                        pembelajaran berjalan sesuai dengan tujuan program.
+                    </p>
+
+                    <h2>Sertifikat Pelatihan</h2>
+
+                    <p>
+                        Peserta yang mengikuti {{ $training['name'] }} sesuai dengan ketentuan
+                        program dapat memperoleh sertifikat atau dokumen hasil pelatihan sesuai
+                        dengan skema yang berlaku. Ketentuan mengenai sertifikat, persyaratan
+                        kelulusan, dan bentuk dokumen yang diberikan dapat berbeda pada setiap
+                        jenis pelatihan.
+                    </p>
+
+                    <p>
+                        Informasi mengenai jenis sertifikat, lembaga penerbit, masa berlaku
+                        apabila ada, serta persyaratan untuk mendapatkannya perlu diperhatikan
+                        sebelum peserta melakukan pendaftaran. Hal tersebut penting agar peserta
+                        memahami hasil yang akan diperoleh setelah menyelesaikan program.
+                    </p>
+
+                    <h2>Persyaratan Peserta</h2>
+
+                    <p>
+                        Persyaratan untuk mengikuti {{ $training['name'] }} dapat meliputi
+                        pendidikan, pengalaman kerja, jabatan, usia, dokumen identitas, maupun
+                        persyaratan khusus lainnya tergantung pada jenis program.
+                    </p>
+
+                    <p>
+                        Tidak semua pelatihan memiliki persyaratan yang sama. Oleh karena itu,
+                        peserta disarankan memastikan persyaratan program terlebih dahulu agar
+                        proses pendaftaran dan pelaksanaan pelatihan dapat berjalan dengan
+                        lancar.
+                    </p>
+
+                    <h2>Mengapa Pelatihan K3 Penting?</h2>
+
+                    <p>
+                        Lingkungan kerja memiliki berbagai potensi bahaya yang dapat berbeda
+                        berdasarkan jenis industri dan aktivitas yang dilakukan. Tanpa pemahaman
+                        yang memadai, pekerja dapat mengalami kesulitan dalam mengenali risiko
+                        maupun menentukan tindakan yang tepat ketika menghadapi kondisi tertentu.
+                    </p>
+
+                    <p>
+                        Pelatihan K3 menjadi salah satu sarana untuk meningkatkan pengetahuan dan
+                        kesadaran tersebut. Melalui pembelajaran yang terstruktur, peserta dapat
+                        memahami prinsip keselamatan yang relevan dengan pekerjaannya dan
+                        menggunakannya sebagai bagian dari aktivitas kerja sehari-hari.
+                    </p>
+
+                    <h2>Daftar {{ $training['name'] }}</h2>
+
+                    <p>
+                        Bagi perusahaan maupun individu yang ingin mengikuti
+                        {{ $training['name'] }}, informasi mengenai jadwal, lokasi, metode
+                        pelaksanaan, biaya, persyaratan peserta, serta fasilitas yang tersedia
+                        dapat dikonsultasikan terlebih dahulu kepada tim kami.
+                    </p>
+
+                    <p>
+                        Konsultasi awal juga dapat membantu peserta menentukan kesesuaian program
+                        dengan kebutuhan kompetensi yang ingin dikembangkan. Dengan mengetahui
+                        detail program sejak awal, peserta dapat mempersiapkan dokumen dan
+                        kebutuhan lainnya sebelum pelatihan dimulai.
+                    </p>
+
+                    <p>
+                        Untuk informasi lebih lanjut mengenai {{ $training['name'] }} dan jadwal
+                        pelaksanaan terbaru, silakan menghubungi tim kami melalui tombol
+                        konsultasi yang tersedia pada halaman ini.
+                    </p>
+
             </article>
         </div>
     </section>

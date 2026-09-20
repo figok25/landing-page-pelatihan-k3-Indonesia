@@ -149,44 +149,259 @@
                 hanya nama layanan yang berubah. Ganti dengan konten resmi
                 dari client bila sudah tersedia. --}}
                 <p>
-                    {{ $service['name'] }} merupakan salah satu layanan yang
-                    kami sediakan untuk membantu perusahaan memenuhi kebutuhan
-                    kepatuhan dan keselamatan kerja sesuai dengan ketentuan
-                    yang berlaku. Layanan ini dirancang agar prosesnya jelas,
-                    terukur, dan sesuai dengan standar yang ditetapkan.
+                    <strong>{{ $service['name'] }}</strong> merupakan salah satu layanan yang
+                    kami sediakan untuk membantu perusahaan, instansi, maupun pelaku usaha dalam
+                    memenuhi kebutuhan keselamatan dan kesehatan kerja sesuai dengan ketentuan
+                    yang berlaku. Setiap layanan memiliki ruang lingkup dan persyaratan yang
+                    berbeda, sehingga pelaksanaannya perlu disesuaikan dengan jenis kegiatan,
+                    kondisi tempat kerja, peralatan yang digunakan, serta kebutuhan perusahaan.
                 </p>
+
                 <p>
-                    Melalui {{ $service['name'] }}, perusahaan dapat
-                    memastikan bahwa aspek teknis maupun administratif terkait
-                    keselamatan kerja telah dipenuhi dengan baik. Hal ini
-                    penting tidak hanya untuk kepatuhan regulasi, tetapi juga
-                    untuk mendukung kelancaran operasional secara keseluruhan.
+                    Dalam penerapannya, {{ $service['name'] }} tidak hanya berkaitan dengan
+                    pemenuhan dokumen atau persyaratan administratif. Layanan ini juga menjadi
+                    bagian dari upaya perusahaan dalam memastikan bahwa aspek keselamatan kerja
+                    telah diperhatikan secara menyeluruh. Dengan penerapan yang tepat,
+                    perusahaan dapat memiliki dasar yang lebih jelas dalam mengidentifikasi
+                    potensi risiko, memenuhi persyaratan teknis, serta mendukung penerapan
+                    sistem keselamatan kerja di lingkungan operasional.
                 </p>
+
+                <h2>Apa Itu {{ $service['name'] }}?</h2>
+
                 <p>
-                    Proses pengerjaan {{ $service['name'] }} umumnya diawali
-                    dengan konsultasi awal untuk memahami kebutuhan spesifik
-                    perusahaan, dilanjutkan dengan peninjauan atau pemeriksaan
-                    teknis, hingga penyusunan dokumen sesuai dengan ketentuan
-                    yang berlaku pada jenis layanan terkait.
+                    Secara umum, {{ $service['name'] }} merupakan layanan yang berkaitan dengan
+                    kebutuhan keselamatan dan kesehatan kerja, baik dari sisi pemeriksaan,
+                    pengujian, sertifikasi, pelatihan, konsultasi, maupun pemenuhan persyaratan
+                    tertentu sesuai dengan jenis layanan yang dipilih. Pelaksanaan layanan
+                    dilakukan berdasarkan ruang lingkup pekerjaan dan ketentuan yang relevan
+                    dengan objek atau kegiatan yang ditangani.
                 </p>
+
                 <p>
-                    Tim kami berupaya memastikan setiap tahapan pada layanan
-                    {{ $service['name'] }} dikerjakan secara profesional dan
-                    sesuai dengan dasar hukum yang relevan, sehingga hasil
-                    yang diperoleh dapat dipertanggungjawabkan dan digunakan
-                    sebagaimana mestinya oleh perusahaan.
+                    Setiap perusahaan dapat memiliki kebutuhan yang berbeda. Perusahaan dengan
+                    aktivitas produksi, konstruksi, pergudangan, manufaktur, perkantoran,
+                    fasilitas publik, maupun sektor lainnya dapat memiliki karakteristik risiko
+                    yang tidak sama. Oleh karena itu, penerapan {{ $service['name'] }} perlu
+                    mempertimbangkan kondisi aktual di lapangan agar hasil yang diperoleh
+                    benar-benar sesuai dengan kebutuhan.
                 </p>
+
+                <h2>Tujuan Pelaksanaan {{ $service['name'] }}</h2>
+
                 <p>
-                    Bagi perusahaan yang beroperasi di berbagai sektor, memiliki
-                    kelengkapan dokumen dan legalitas melalui layanan seperti
-                    {{ $service['name'] }} menjadi bagian penting dari
-                    manajemen risiko dan keberlangsungan usaha jangka panjang.
+                    Salah satu tujuan utama dari {{ $service['name'] }} adalah membantu
+                    perusahaan memastikan bahwa aspek keselamatan kerja telah diperhatikan
+                    sesuai dengan persyaratan yang berlaku. Pelaksanaan layanan dapat membantu
+                    perusahaan memperoleh informasi, dokumen, hasil pemeriksaan, maupun
+                    rekomendasi yang dibutuhkan dalam mendukung pengelolaan keselamatan kerja.
                 </p>
+
                 <p>
-                    Untuk informasi lebih lanjut mengenai ruang lingkup,
-                    estimasi waktu, dan proses layanan {{ $service['name'] }},
-                    silakan menghubungi tim kami melalui tombol konsultasi
-                    yang tersedia pada halaman ini.
+                    Selain aspek kepatuhan, {{ $service['name'] }} juga dapat menjadi bagian
+                    dari proses pengendalian risiko di tempat kerja. Identifikasi terhadap
+                    kondisi yang berpotensi menimbulkan bahaya dapat membantu perusahaan
+                    menentukan tindakan perbaikan yang diperlukan sebelum risiko tersebut
+                    berkembang menjadi gangguan operasional maupun kecelakaan kerja.
+                </p>
+
+                <h2>Manfaat {{ $service['name'] }} bagi Perusahaan</h2>
+
+                <p>
+                    Pelaksanaan {{ $service['name'] }} dapat memberikan manfaat yang berbeda
+                    sesuai dengan jenis dan ruang lingkup layanan. Salah satunya adalah
+                    membantu perusahaan memperoleh gambaran yang lebih jelas mengenai kondisi
+                    keselamatan kerja pada objek atau kegiatan yang diperiksa.
+                </p>
+
+                <p>
+                    Dari sisi administratif, hasil layanan juga dapat menjadi bagian dari
+                    dokumentasi perusahaan. Dokumen dan laporan yang dihasilkan dapat digunakan
+                    sebagai arsip, bahan evaluasi internal, maupun sebagai bagian dari
+                    pemenuhan persyaratan tertentu sesuai dengan kebutuhan perusahaan dan
+                    ketentuan yang berlaku.
+                </p>
+
+                <p>
+                    Dari sisi operasional, penerapan keselamatan kerja yang baik dapat
+                    mendukung terciptanya lingkungan kerja yang lebih terorganisir. Perusahaan
+                    dapat memiliki dasar untuk melakukan evaluasi terhadap peralatan, prosedur,
+                    maupun aktivitas kerja yang memiliki potensi risiko.
+                </p>
+
+                <h2>Ruang Lingkup {{ $service['name'] }}</h2>
+
+                <p>
+                    Ruang lingkup {{ $service['name'] }} bergantung pada jenis layanan, objek
+                    pekerjaan, serta kebutuhan perusahaan. Dalam pelaksanaannya, ruang lingkup
+                    dapat mencakup aspek administratif maupun teknis yang berkaitan dengan
+                    keselamatan dan kesehatan kerja.
+                </p>
+
+                <p>
+                    Aspek yang diperhatikan dapat meliputi identifikasi objek, pemeriksaan
+                    kondisi, pengumpulan data teknis, peninjauan dokumen pendukung, pelaksanaan
+                    kegiatan sesuai prosedur, hingga penyusunan hasil pekerjaan. Detail ruang
+                    lingkup akan ditentukan berdasarkan jenis layanan yang dipilih dan kondisi
+                    objek yang menjadi bagian dari pekerjaan.
+                </p>
+
+                <h2>Proses Pelaksanaan {{ $service['name'] }}</h2>
+
+                <p>
+                    Pelaksanaan {{ $service['name'] }} pada umumnya dimulai dengan komunikasi
+                    awal antara perusahaan dan tim layanan. Pada tahap ini, kebutuhan
+                    perusahaan akan dipelajari untuk mengetahui jenis layanan yang sesuai,
+                    objek yang akan ditangani, lokasi pekerjaan, serta dokumen atau informasi
+                    yang perlu dipersiapkan.
+                </p>
+
+                <p>
+                    Setelah kebutuhan diketahui, dilakukan persiapan pelaksanaan sesuai dengan
+                    ruang lingkup pekerjaan. Persiapan dapat mencakup penjadwalan kegiatan,
+                    pemeriksaan dokumen pendukung, koordinasi dengan pihak terkait, serta
+                    persiapan teknis apabila layanan membutuhkan kegiatan di lokasi.
+                </p>
+
+                <p>
+                    Tahap berikutnya adalah pelaksanaan layanan sesuai dengan prosedur dan
+                    ruang lingkup yang telah ditentukan. Untuk layanan yang berkaitan dengan
+                    pemeriksaan atau pengujian, kegiatan dapat melibatkan peninjauan kondisi
+                    objek maupun pengambilan data teknis yang diperlukan.
+                </p>
+
+                <p>
+                    Setelah seluruh tahapan selesai, hasil pekerjaan kemudian didokumentasikan
+                    dalam bentuk laporan, dokumen, rekomendasi, sertifikat, atau keluaran
+                    lainnya sesuai dengan karakteristik {{ $service['name'] }}. Hasil tersebut
+                    selanjutnya dapat digunakan perusahaan sesuai dengan tujuan dan ketentuan
+                    yang berlaku.
+                </p>
+
+                <h2>Dokumen dan Persiapan yang Perlu Disiapkan</h2>
+
+                <p>
+                    Persyaratan dokumen untuk {{ $service['name'] }} dapat berbeda antara satu
+                    perusahaan dengan perusahaan lainnya. Perbedaan tersebut dapat dipengaruhi
+                    oleh jenis layanan, objek yang diperiksa, jenis usaha, serta lokasi
+                    pelaksanaan.
+                </p>
+
+                <p>
+                    Oleh karena itu, perusahaan sebaiknya menyiapkan informasi dasar mengenai
+                    objek atau kegiatan yang akan dilayani. Apabila terdapat dokumen teknis,
+                    dokumen legalitas, data peralatan, gambar teknis, atau dokumen pendukung
+                    lainnya yang berkaitan dengan layanan, informasi tersebut dapat disiapkan
+                    sejak tahap konsultasi awal.
+                </p>
+
+                <p>
+                    Tim kami dapat membantu memberikan informasi mengenai dokumen dan
+                    persyaratan yang perlu dipersiapkan sebelum kegiatan dilaksanakan. Dengan
+                    persiapan yang lebih lengkap, proses koordinasi dan pelaksanaan layanan
+                    dapat dilakukan secara lebih terarah.
+                </p>
+
+                <h2>Siapa yang Membutuhkan {{ $service['name'] }}?</h2>
+
+                <p>
+                    {{ $service['name'] }} dapat dibutuhkan oleh berbagai jenis perusahaan,
+                    instansi, maupun pelaku usaha yang memiliki kewajiban atau kebutuhan
+                    tertentu dalam pengelolaan keselamatan dan kesehatan kerja. Kebutuhan
+                    tersebut dapat muncul karena karakteristik kegiatan usaha, penggunaan
+                    peralatan tertentu, persyaratan operasional, maupun kebutuhan pemenuhan
+                    regulasi.
+                </p>
+
+                <p>
+                    Beberapa sektor yang dapat memiliki kebutuhan layanan K3 antara lain
+                    manufaktur, konstruksi, pertambangan, energi, pergudangan, transportasi,
+                    perhotelan, rumah sakit, fasilitas publik, perkantoran, pendidikan, serta
+                    berbagai sektor usaha lainnya. Namun, kebutuhan aktual tetap perlu
+                    disesuaikan dengan jenis kegiatan dan kondisi masing-masing perusahaan.
+                </p>
+
+                <h2>Pentingnya Kepatuhan Keselamatan dan Kesehatan Kerja</h2>
+
+                <p>
+                    Keselamatan dan kesehatan kerja merupakan bagian penting dalam pengelolaan
+                    operasional perusahaan. Kepatuhan terhadap ketentuan K3 tidak hanya
+                    berkaitan dengan dokumen, tetapi juga dengan bagaimana perusahaan
+                    mengidentifikasi bahaya, mengendalikan risiko, serta memastikan aktivitas
+                    kerja dapat dilakukan dengan memperhatikan aspek keselamatan.
+                </p>
+
+                <p>
+                    Penerapan K3 yang terencana juga dapat membantu perusahaan mengurangi
+                    potensi gangguan terhadap kegiatan operasional. Pemeriksaan, pengujian,
+                    pelatihan, konsultasi, maupun layanan K3 lainnya dapat menjadi bagian dari
+                    siklus evaluasi yang dilakukan perusahaan secara berkala.
+                </p>
+
+                <h2>Dasar Pelaksanaan Layanan</h2>
+
+                <p>
+                    Pelaksanaan {{ $service['name'] }} dilakukan dengan memperhatikan dasar
+                    hukum, standar, serta ketentuan teknis yang relevan dengan jenis layanan.
+                    Ketentuan yang digunakan dapat berbeda tergantung pada objek, jenis
+                    kegiatan, serta ruang lingkup pekerjaan.
+                </p>
+
+                <p>
+                    Karena peraturan dan persyaratan teknis dapat mengalami perubahan,
+                    perusahaan perlu memastikan bahwa proses pemenuhan persyaratan mengacu
+                    pada ketentuan yang berlaku pada saat layanan dilaksanakan. Tim kami dapat
+                    membantu memberikan informasi awal mengenai persyaratan yang relevan
+                    berdasarkan kebutuhan perusahaan.
+                </p>
+
+                <h2>Kenapa Perlu Menggunakan Layanan yang Sesuai?</h2>
+
+                <p>
+                    Kebutuhan K3 sering kali memiliki aspek teknis dan administratif yang
+                    saling berkaitan. Kesalahan dalam menentukan jenis layanan atau ruang
+                    lingkup pekerjaan dapat menyebabkan proses menjadi kurang efektif atau
+                    dokumen yang diperoleh tidak sesuai dengan kebutuhan.
+                </p>
+
+                <p>
+                    Melalui konsultasi sebelum pelaksanaan, kebutuhan perusahaan dapat
+                    diidentifikasi terlebih dahulu. Hal ini membantu menentukan jenis layanan,
+                    objek pekerjaan, dokumen pendukung, serta tahapan yang perlu dilakukan
+                    sehingga proses dapat berjalan dengan lebih terstruktur.
+                </p>
+
+                <h2>Konsultasi {{ $service['name'] }}</h2>
+
+                <p>
+                    Setiap perusahaan memiliki kondisi dan kebutuhan yang berbeda. Karena itu,
+                    informasi mengenai {{ $service['name'] }} sebaiknya tidak hanya dilihat
+                    dari nama layanan, tetapi juga dari objek, lokasi, jenis usaha, serta tujuan
+                    pelaksanaannya.
+                </p>
+
+                <p>
+                    Jika perusahaan masih belum mengetahui jenis layanan yang dibutuhkan,
+                    konsultasi awal dapat dilakukan untuk membantu mengidentifikasi kebutuhan
+                    tersebut. Tim kami dapat memberikan informasi mengenai ruang lingkup
+                    pekerjaan, persyaratan dokumen, tahapan pelaksanaan, estimasi waktu, dan
+                    kebutuhan teknis lainnya sesuai dengan layanan yang tersedia.
+                </p>
+
+                <h2>Dapatkan Informasi {{ $service['name'] }}</h2>
+
+                <p>
+                    Untuk mendapatkan informasi lebih lanjut mengenai {{ $service['name'] }},
+                    termasuk ruang lingkup layanan, persyaratan, proses pelaksanaan, estimasi
+                    waktu, serta kebutuhan dokumen, perusahaan dapat menghubungi tim kami
+                    melalui kontak yang tersedia pada halaman ini.
+                </p>
+
+                <p>
+                    Kami siap membantu perusahaan memahami kebutuhan layanan K3 secara lebih
+                    jelas sebelum proses pelaksanaan dimulai. Dengan informasi yang lengkap
+                    sejak awal, proses koordinasi dapat dilakukan dengan lebih terarah dan
+                    disesuaikan dengan kebutuhan masing-masing perusahaan.
                 </p>
             </article>
         </div>
