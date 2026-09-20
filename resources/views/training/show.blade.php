@@ -26,6 +26,13 @@
                         Program Pelatihan K3
                     </span>
 
+                    @isset($city)
+                        <span class="section-badge badge-location">
+                            <i class="bx bx-map-pin"></i>
+                            {{ $city['type'] }} {{ $city['name'] }}
+                        </span>
+                    @endisset
+
                     <h1>{{ $training['name'] }}</h1>
 
                     <p>
@@ -127,6 +134,68 @@
                     </p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    {{-- Artikel --}}
+    <section class="training-article section-padding">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="section-badge">Artikel</span>
+                <h2>Mengenal Lebih Dalam {{ $training['name'] }}</h2>
+            </div>
+
+            <article class="training-article-body">
+                {{-- Artikel generik: template sama untuk semua program,
+                hanya nama program yang berubah. Ganti dengan konten resmi
+                dari client bila sudah tersedia. --}}
+                <p>
+                    {{ $training['name'] }} merupakan salah satu program yang
+                    dirancang untuk membekali peserta dengan pemahaman dan
+                    kompetensi di bidang Keselamatan dan Kesehatan Kerja (K3).
+                    Program ini disusun mengikuti kebutuhan industri saat ini,
+                    sehingga peserta dapat menerapkan prinsip-prinsip K3 secara
+                    tepat di lingkungan kerja masing-masing.
+                </p>
+                <p>
+                    Penerapan K3 yang baik tidak hanya membantu perusahaan
+                    memenuhi ketentuan regulasi yang berlaku, tetapi juga
+                    berperan penting dalam menciptakan lingkungan kerja yang
+                    aman, sehat, dan produktif. Melalui program
+                    {{ $training['name'] }}, peserta diajak memahami risiko
+                    kerja, cara pengendaliannya, serta tanggung jawab masing-
+                    masing pihak dalam menjaga keselamatan bersama.
+                </p>
+                <p>
+                    Materi pada program {{ $training['name'] }} disampaikan
+                    secara bertahap, mulai dari pemahaman dasar hingga
+                    penerapan praktis, sehingga peserta dari berbagai latar
+                    belakang dapat mengikuti dengan baik. Pendekatan ini
+                    bertujuan agar pengetahuan yang diperoleh benar-benar dapat
+                    diterapkan, bukan sekadar dipahami secara teori.
+                </p>
+                <p>
+                    Selain aspek teknis, program {{ $training['name'] }} juga
+                    menekankan pentingnya budaya keselamatan kerja sebagai
+                    bagian dari kebiasaan sehari-hari, bukan hanya kewajiban
+                    administratif. Hal ini sejalan dengan tujuan jangka panjang
+                    untuk menurunkan angka kecelakaan kerja dan meningkatkan
+                    kesadaran keselamatan di seluruh lini organisasi.
+                </p>
+                <p>
+                    Bagi perusahaan, mengikutsertakan tenaga kerja dalam
+                    program {{ $training['name'] }} juga menjadi salah satu
+                    bentuk pemenuhan tanggung jawab terhadap keselamatan
+                    karyawan, sekaligus mendukung kepatuhan terhadap standar
+                    dan regulasi K3 yang berlaku secara nasional.
+                </p>
+                <p>
+                    Untuk informasi lebih lanjut mengenai jadwal, materi, dan
+                    persyaratan program {{ $training['name'] }}, silakan
+                    menghubungi tim kami melalui tombol konsultasi yang
+                    tersedia pada halaman ini.
+                </p>
+            </article>
         </div>
     </section>
 

@@ -64,7 +64,7 @@ class TrainingController extends Controller
         abort_if($city === null, 404);
         abort_unless(SeoPriorityCatalog::isTrainingLocationAllowed($training, $kota), 404);
 
-        return view('seo.training-location', [
+        return view('training.show', [
             'training' => $item,
             'city' => $city,
         ]);

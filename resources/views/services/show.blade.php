@@ -26,6 +26,13 @@
                         Jasa Konsultasi & Perizinan K3
                     </span>
 
+                    @isset($city)
+                        <span class="section-badge badge-location">
+                            <i class="bx bx-map-pin"></i>
+                            {{ $city['type'] }} {{ $city['name'] }}
+                        </span>
+                    @endisset
+
                     <h1>{{ $service['name'] }}</h1>
 
                     <p>
@@ -126,6 +133,62 @@
                     </p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    {{-- Artikel --}}
+    <section class="service-article section-padding">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="section-badge">Artikel</span>
+                <h2>Mengenal Lebih Dalam {{ $service['name'] }}</h2>
+            </div>
+
+            <article class="service-article-body">
+                {{-- Artikel generik: template sama untuk semua jasa,
+                hanya nama layanan yang berubah. Ganti dengan konten resmi
+                dari client bila sudah tersedia. --}}
+                <p>
+                    {{ $service['name'] }} merupakan salah satu layanan yang
+                    kami sediakan untuk membantu perusahaan memenuhi kebutuhan
+                    kepatuhan dan keselamatan kerja sesuai dengan ketentuan
+                    yang berlaku. Layanan ini dirancang agar prosesnya jelas,
+                    terukur, dan sesuai dengan standar yang ditetapkan.
+                </p>
+                <p>
+                    Melalui {{ $service['name'] }}, perusahaan dapat
+                    memastikan bahwa aspek teknis maupun administratif terkait
+                    keselamatan kerja telah dipenuhi dengan baik. Hal ini
+                    penting tidak hanya untuk kepatuhan regulasi, tetapi juga
+                    untuk mendukung kelancaran operasional secara keseluruhan.
+                </p>
+                <p>
+                    Proses pengerjaan {{ $service['name'] }} umumnya diawali
+                    dengan konsultasi awal untuk memahami kebutuhan spesifik
+                    perusahaan, dilanjutkan dengan peninjauan atau pemeriksaan
+                    teknis, hingga penyusunan dokumen sesuai dengan ketentuan
+                    yang berlaku pada jenis layanan terkait.
+                </p>
+                <p>
+                    Tim kami berupaya memastikan setiap tahapan pada layanan
+                    {{ $service['name'] }} dikerjakan secara profesional dan
+                    sesuai dengan dasar hukum yang relevan, sehingga hasil
+                    yang diperoleh dapat dipertanggungjawabkan dan digunakan
+                    sebagaimana mestinya oleh perusahaan.
+                </p>
+                <p>
+                    Bagi perusahaan yang beroperasi di berbagai sektor, memiliki
+                    kelengkapan dokumen dan legalitas melalui layanan seperti
+                    {{ $service['name'] }} menjadi bagian penting dari
+                    manajemen risiko dan keberlangsungan usaha jangka panjang.
+                </p>
+                <p>
+                    Untuk informasi lebih lanjut mengenai ruang lingkup,
+                    estimasi waktu, dan proses layanan {{ $service['name'] }},
+                    silakan menghubungi tim kami melalui tombol konsultasi
+                    yang tersedia pada halaman ini.
+                </p>
+            </article>
         </div>
     </section>
 

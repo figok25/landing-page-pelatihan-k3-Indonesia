@@ -1,0 +1,306 @@
+diff --git a/app/Http/Controllers/ServiceController.php b/app/Http/Controllers/ServiceController.php
+index 2713a76..4be7884 100644
+--- a/app/Http/Controllers/ServiceController.php
++++ b/app/Http/Controllers/ServiceController.php
+@@ -50,7 +50,7 @@ public function location(string $service, string $kota)
+         abort_if($city === null, 404);
+         abort_unless(SeoPriorityCatalog::isServiceLocationAllowed($service, $kota), 404);
+ 
+-        return view('seo.service-location', [
++        return view('services.show', [
+             'service' => $item,
+             'city' => $city,
+         ]);
+diff --git a/app/Http/Controllers/TrainingController.php b/app/Http/Controllers/TrainingController.php
+index 1dd5873..d8f3656 100644
+--- a/app/Http/Controllers/TrainingController.php
++++ b/app/Http/Controllers/TrainingController.php
+@@ -64,7 +64,7 @@ public function location(string $training, string $kota)
+         abort_if($city === null, 404);
+         abort_unless(SeoPriorityCatalog::isTrainingLocationAllowed($training, $kota), 404);
+ 
+-        return view('seo.training-location', [
++        return view('training.show', [
+             'training' => $item,
+             'city' => $city,
+         ]);
+diff --git a/resources/css/pages/service-show.css b/resources/css/pages/service-show.css
+index 2c3000b..d93fbd4 100644
+--- a/resources/css/pages/service-show.css
++++ b/resources/css/pages/service-show.css
+@@ -73,6 +73,25 @@ .section-badge {
+     text-transform: uppercase;
+ }
+ 
++.badge-location {
++    margin-left: 8px;
++    border-color: rgba(11, 37, 61, 0.15);
++    background: rgba(11, 37, 61, 0.06);
++    color: var(--primary-color);
++}
++
++.service-article-body {
++    max-width: 840px;
++    margin: 0 auto;
++}
++
++.service-article-body p {
++    margin-bottom: 18px;
++    color: var(--text-secondary);
++    font-size: 16px;
++    line-height: 1.9;
++}
++
+ .service-hero-actions {
+     display: flex;
+     flex-wrap: wrap;
+diff --git a/resources/css/pages/training-show.css b/resources/css/pages/training-show.css
+index b88b517..c3aed30 100644
+--- a/resources/css/pages/training-show.css
++++ b/resources/css/pages/training-show.css
+@@ -73,6 +73,25 @@ .section-badge {
+     text-transform: uppercase;
+ }
+ 
++.badge-location {
++    margin-left: 8px;
++    border-color: rgba(11, 37, 61, 0.15);
++    background: rgba(11, 37, 61, 0.06);
++    color: var(--primary-color);
++}
++
++.training-article-body {
++    max-width: 840px;
++    margin: 0 auto;
++}
++
++.training-article-body p {
++    margin-bottom: 18px;
++    color: var(--text-secondary);
++    font-size: 16px;
++    line-height: 1.9;
++}
++
+ .training-hero-actions {
+     display: flex;
+     flex-wrap: wrap;
+diff --git a/resources/views/seo/service-location.blade.php b/resources/views/seo/service-location.blade.php
+deleted file mode 100644
+index 544321f..0000000
+--- a/resources/views/seo/service-location.blade.php
++++ /dev/null
+@@ -1,20 +0,0 @@
+-@extends ('layouts.master')
+-
+-@section ('title', $service['name'].' di '.$city['name'])
+-@section ('description', 'Informasi '.$service['name'].' di '.$city['name'].': ruang lingkup dan area layanan.')
+-
+-@section ('content')
+-    <section class="mx-auto max-w-4xl px-4 py-10">
+-        <h1 class="text-3xl font-bold text-slate-900">{{ $service['name'] }} di {{ $city['name'] }}</h1>
+-        <div class="prose prose-slate mt-6 max-w-none">
+-            <p>Konten spesifik untuk <strong>{{ $service['name'] }}</strong> di wilayah <strong>{{ $city['name'] }}, {{ $city['province'] }}</strong> menyusul.</p>
+-        </div>
+-        <a
+-            href="{{ 'https://wa.me/628118500177?text=' . urlencode('Halo Admin, saya ingin mendapatkan informasi mengenai '.$service['name'].' di '.$city['name'].'.') }}"
+-            target="_blank"
+-            rel="noopener"
+-            class="mt-8 inline-block rounded-lg bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700">
+-            Konsultasi Sekarang →
+-        </a>
+-    </section>
+-@endsection
+diff --git a/resources/views/seo/training-location.blade.php b/resources/views/seo/training-location.blade.php
+deleted file mode 100644
+index d3a8581..0000000
+--- a/resources/views/seo/training-location.blade.php
++++ /dev/null
+@@ -1,20 +0,0 @@
+-@extends ('layouts.master')
+-
+-@section ('title', 'Pelatihan '.$training['name'].' di '.$city['name'])
+-@section ('description', 'Informasi pelatihan '.$training['name'].' di '.$city['name'].': jadwal, materi, dan cara pendaftaran.')
+-
+-@section ('content')
+-    <section class="mx-auto max-w-4xl px-4 py-10">
+-        <h1 class="text-3xl font-bold text-slate-900">Pelatihan {{ $training['name'] }} di {{ $city['name'] }}</h1>
+-        <div class="prose prose-slate mt-6 max-w-none">
+-            <p>Konten spesifik untuk pelatihan <strong>{{ $training['name'] }}</strong> di wilayah <strong>{{ $city['name'] }}, {{ $city['province'] }}</strong> menyusul.</p>
+-        </div>
+-        <a
+-            href="{{ 'https://wa.me/628118500177?text=' . urlencode('Halo Admin, saya ingin mendapatkan informasi mengenai Pelatihan '.$training['name'].' di '.$city['name'].'.') }}"
+-            target="_blank"
+-            rel="noopener"
+-            class="mt-8 inline-block rounded-lg bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700">
+-            Konsultasi Sekarang →
+-        </a>
+-    </section>
+-@endsection
+diff --git a/resources/views/services/show.blade.php b/resources/views/services/show.blade.php
+index b51ed4d..f378e6f 100644
+--- a/resources/views/services/show.blade.php
++++ b/resources/views/services/show.blade.php
+@@ -26,6 +26,13 @@
+                         Jasa Konsultasi & Perizinan K3
+                     </span>
+ 
++                    @isset($city)
++                        <span class="section-badge badge-location">
++                            <i class="bx bx-map-pin"></i>
++                            {{ $city['type'] }} {{ $city['name'] }}
++                        </span>
++                    @endisset
++
+                     <h1>{{ $service['name'] }}</h1>
+ 
+                     <p>
+@@ -129,6 +136,62 @@ class="btn btn-primary">
+         </div>
+     </section>
+ 
++    {{-- Artikel --}}
++    <section class="service-article section-padding">
++        <div class="container">
++            <div class="section-heading text-center">
++                <span class="section-badge">Artikel</span>
++                <h2>Mengenal Lebih Dalam {{ $service['name'] }}</h2>
++            </div>
++
++            <article class="service-article-body">
++                {{-- Artikel generik: template sama untuk semua jasa,
++                hanya nama layanan yang berubah. Ganti dengan konten resmi
++                dari client bila sudah tersedia. --}}
++                <p>
++                    {{ $service['name'] }} merupakan salah satu layanan yang
++                    kami sediakan untuk membantu perusahaan memenuhi kebutuhan
++                    kepatuhan dan keselamatan kerja sesuai dengan ketentuan
++                    yang berlaku. Layanan ini dirancang agar prosesnya jelas,
++                    terukur, dan sesuai dengan standar yang ditetapkan.
++                </p>
++                <p>
++                    Melalui {{ $service['name'] }}, perusahaan dapat
++                    memastikan bahwa aspek teknis maupun administratif terkait
++                    keselamatan kerja telah dipenuhi dengan baik. Hal ini
++                    penting tidak hanya untuk kepatuhan regulasi, tetapi juga
++                    untuk mendukung kelancaran operasional secara keseluruhan.
++                </p>
++                <p>
++                    Proses pengerjaan {{ $service['name'] }} umumnya diawali
++                    dengan konsultasi awal untuk memahami kebutuhan spesifik
++                    perusahaan, dilanjutkan dengan peninjauan atau pemeriksaan
++                    teknis, hingga penyusunan dokumen sesuai dengan ketentuan
++                    yang berlaku pada jenis layanan terkait.
++                </p>
++                <p>
++                    Tim kami berupaya memastikan setiap tahapan pada layanan
++                    {{ $service['name'] }} dikerjakan secara profesional dan
++                    sesuai dengan dasar hukum yang relevan, sehingga hasil
++                    yang diperoleh dapat dipertanggungjawabkan dan digunakan
++                    sebagaimana mestinya oleh perusahaan.
++                </p>
++                <p>
++                    Bagi perusahaan yang beroperasi di berbagai sektor, memiliki
++                    kelengkapan dokumen dan legalitas melalui layanan seperti
++                    {{ $service['name'] }} menjadi bagian penting dari
++                    manajemen risiko dan keberlangsungan usaha jangka panjang.
++                </p>
++                <p>
++                    Untuk informasi lebih lanjut mengenai ruang lingkup,
++                    estimasi waktu, dan proses layanan {{ $service['name'] }},
++                    silakan menghubungi tim kami melalui tombol konsultasi
++                    yang tersedia pada halaman ini.
++                </p>
++            </article>
++        </div>
++    </section>
++
+     {{-- Service Details --}}
+     <section class="service-details section-padding">
+         <div class="container">
+diff --git a/resources/views/training/show.blade.php b/resources/views/training/show.blade.php
+index 52a523c..2db8327 100644
+--- a/resources/views/training/show.blade.php
++++ b/resources/views/training/show.blade.php
+@@ -26,6 +26,13 @@
+                         Program Pelatihan K3
+                     </span>
+ 
++                    @isset($city)
++                        <span class="section-badge badge-location">
++                            <i class="bx bx-map-pin"></i>
++                            {{ $city['type'] }} {{ $city['name'] }}
++                        </span>
++                    @endisset
++
+                     <h1>{{ $training['name'] }}</h1>
+ 
+                     <p>
+@@ -130,6 +137,68 @@ class="btn btn-primary">
+         </div>
+     </section>
+ 
++    {{-- Artikel --}}
++    <section class="training-article section-padding">
++        <div class="container">
++            <div class="section-heading text-center">
++                <span class="section-badge">Artikel</span>
++                <h2>Mengenal Lebih Dalam {{ $training['name'] }}</h2>
++            </div>
++
++            <article class="training-article-body">
++                {{-- Artikel generik: template sama untuk semua program,
++                hanya nama program yang berubah. Ganti dengan konten resmi
++                dari client bila sudah tersedia. --}}
++                <p>
++                    {{ $training['name'] }} merupakan salah satu program yang
++                    dirancang untuk membekali peserta dengan pemahaman dan
++                    kompetensi di bidang Keselamatan dan Kesehatan Kerja (K3).
++                    Program ini disusun mengikuti kebutuhan industri saat ini,
++                    sehingga peserta dapat menerapkan prinsip-prinsip K3 secara
++                    tepat di lingkungan kerja masing-masing.
++                </p>
++                <p>
++                    Penerapan K3 yang baik tidak hanya membantu perusahaan
++                    memenuhi ketentuan regulasi yang berlaku, tetapi juga
++                    berperan penting dalam menciptakan lingkungan kerja yang
++                    aman, sehat, dan produktif. Melalui program
++                    {{ $training['name'] }}, peserta diajak memahami risiko
++                    kerja, cara pengendaliannya, serta tanggung jawab masing-
++                    masing pihak dalam menjaga keselamatan bersama.
++                </p>
++                <p>
++                    Materi pada program {{ $training['name'] }} disampaikan
++                    secara bertahap, mulai dari pemahaman dasar hingga
++                    penerapan praktis, sehingga peserta dari berbagai latar
++                    belakang dapat mengikuti dengan baik. Pendekatan ini
++                    bertujuan agar pengetahuan yang diperoleh benar-benar dapat
++                    diterapkan, bukan sekadar dipahami secara teori.
++                </p>
++                <p>
++                    Selain aspek teknis, program {{ $training['name'] }} juga
++                    menekankan pentingnya budaya keselamatan kerja sebagai
++                    bagian dari kebiasaan sehari-hari, bukan hanya kewajiban
++                    administratif. Hal ini sejalan dengan tujuan jangka panjang
++                    untuk menurunkan angka kecelakaan kerja dan meningkatkan
++                    kesadaran keselamatan di seluruh lini organisasi.
++                </p>
++                <p>
++                    Bagi perusahaan, mengikutsertakan tenaga kerja dalam
++                    program {{ $training['name'] }} juga menjadi salah satu
++                    bentuk pemenuhan tanggung jawab terhadap keselamatan
++                    karyawan, sekaligus mendukung kepatuhan terhadap standar
++                    dan regulasi K3 yang berlaku secara nasional.
++                </p>
++                <p>
++                    Untuk informasi lebih lanjut mengenai jadwal, materi, dan
++                    persyaratan program {{ $training['name'] }}, silakan
++                    menghubungi tim kami melalui tombol konsultasi yang
++                    tersedia pada halaman ini.
++                </p>
++            </article>
++        </div>
++    </section>
++
+     {{-- Training Details --}}
+     <section class="training-details section-padding">
+         <div class="container">

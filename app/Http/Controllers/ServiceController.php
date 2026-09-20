@@ -50,7 +50,7 @@ class ServiceController extends Controller
         abort_if($city === null, 404);
         abort_unless(SeoPriorityCatalog::isServiceLocationAllowed($service, $kota), 404);
 
-        return view('seo.service-location', [
+        return view('services.show', [
             'service' => $item,
             'city' => $city,
         ]);
