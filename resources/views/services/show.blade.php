@@ -541,7 +541,7 @@
                 <p>Untuk memperoleh informasi mengenai jasa {{ $service['name'] }}, pihak perusahaan atau instansi dapat menghubungi tim layanan.</p>
                 @php $__articleBlocks[] = ob_get_clean(); @endphp
 
-                @php shuffle($__articleBlocks); @endphp
+                @php shuffle($__articleBlocks); $__articleBlocks = array_slice($__articleBlocks, 0, 6); @endphp
                 @foreach ($__articleBlocks as $__articleBlock)
                     {!! $__articleBlock !!}
                 @endforeach

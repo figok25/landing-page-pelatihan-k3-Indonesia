@@ -526,7 +526,7 @@
                 @php $__articleBlocks[] = ob_get_clean(); @endphp
 
                 {{-- Acak urutan artikel --}}
-                @php shuffle($__articleBlocks); @endphp
+                @php shuffle($__articleBlocks); $__articleBlocks = array_slice($__articleBlocks, 0, 6); @endphp
 
                 @foreach ($__articleBlocks as $__articleBlock)
                     {!! $__articleBlock !!}
