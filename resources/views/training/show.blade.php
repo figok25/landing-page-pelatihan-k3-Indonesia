@@ -1,4 +1,3 @@
-
 @extends('layouts.master')
 
 @section('title', $training['name'])
@@ -104,6 +103,7 @@
             <div class="section-heading text-center">
                 <span class="section-badge">Informasi Program</span>
                 <h2>Informasi Pelatihan</h2>
+
                 <p>
                     Informasi lengkap mengenai program
                     {{ $training['name'] }}.
@@ -115,7 +115,9 @@
                     <div class="training-info-icon">
                         <i class="bx bx-book-open"></i>
                     </div>
+
                     <h3>Deskripsi</h3>
+
                     <p>
                         {{-- Ganti dengan deskripsi resmi dari client --}}
                         Deskripsi program pelatihan akan disesuaikan
@@ -127,7 +129,9 @@
                     <div class="training-info-icon">
                         <i class="bx bx-target-lock"></i>
                     </div>
+
                     <h3>Tujuan Pelatihan</h3>
+
                     <p>
                         {{-- Ganti dengan tujuan resmi dari client --}}
                         Membantu peserta memahami prinsip, prosedur,
@@ -139,7 +143,9 @@
                     <div class="training-info-icon">
                         <i class="bx bx-user-check"></i>
                     </div>
+
                     <h3>Persyaratan</h3>
+
                     <p>
                         {{-- Ganti dengan persyaratan resmi dari client --}}
                         Persyaratan peserta mengikuti ketentuan
@@ -151,7 +157,9 @@
                     <div class="training-info-icon">
                         <i class="bx bx-award"></i>
                     </div>
+
                     <h3>Sertifikasi</h3>
+
                     <p>
                         {{-- Ganti dengan informasi sertifikasi resmi --}}
                         Informasi sertifikasi mengikuti skema dan
@@ -176,6 +184,7 @@
                         ->where('slug', '!=', $city['slug'])
                         ->take(8);
                 @endphp
+
                 <div class="training-article-body">
                     <p>
                         {{ $training['name'] }} di {{ $city['type'] }} {{ $city['name'] }} dapat diselenggarakan
@@ -197,6 +206,10 @@
                 {{-- Artikel generik: template sama untuk semua program,
                 hanya nama program yang berubah. Ganti dengan konten resmi
                 dari client bila sudah tersedia. --}}
+
+                @php $__articleBlocks = []; @endphp
+
+                @php ob_start(); @endphp
                     <p>
                         <strong>{{ $training['name'] }}</strong> merupakan salah satu program
                         pelatihan yang dirancang untuk membekali peserta dengan pengetahuan,
@@ -214,7 +227,9 @@
                         dalam organisasi. Melalui {{ $training['name'] }}, peserta diarahkan untuk
                         memahami aspek-aspek tersebut sesuai dengan ruang lingkup pelatihan.
                     </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                     <h2>Tentang {{ $training['name'] }}</h2>
 
                     <p>
@@ -232,7 +247,9 @@
                         bertahap agar peserta dapat memahami konsep yang diberikan sebelum
                         menghubungkannya dengan kondisi nyata di lingkungan kerja.
                     </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                     <h2>Tujuan Pelatihan</h2>
 
                     <p>
@@ -249,7 +266,9 @@
                         serta prosedur yang dapat diterapkan untuk menciptakan lingkungan kerja
                         yang lebih aman dan terkontrol.
                     </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                     <h2>Materi {{ $training['name'] }}</h2>
 
                     <p>
@@ -268,7 +287,9 @@
                         pelatihan. Detail materi mengikuti kurikulum dan ruang lingkup
                         {{ $training['name'] }} yang diselenggarakan.
                     </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                     <h2>Metode Pembelajaran</h2>
 
                     <p>
@@ -285,7 +306,9 @@
                         pemahaman teori, tetapi dapat menjadi dasar dalam mengambil tindakan yang
                         lebih tepat ketika menghadapi potensi bahaya di tempat kerja.
                     </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                     <h2>Siapa yang Dapat Mengikuti?</h2>
 
                     <p>
@@ -302,7 +325,9 @@
                         maupun perusahaan yang ingin meningkatkan kemampuan tenaga kerjanya.
                         Persyaratan peserta dapat berbeda berdasarkan jenis dan jenjang pelatihan.
                     </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                     <h2>Manfaat bagi Peserta</h2>
 
                     <p>
@@ -320,7 +345,9 @@
                         jawab bersama yang melibatkan pekerja, pengawas, manajemen, dan pihak
                         terkait lainnya sesuai dengan peran masing-masing.
                     </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                     <h2>Manfaat bagi Perusahaan</h2>
 
                     <p>
@@ -338,7 +365,9 @@
                         program K3 sesuai dengan kebutuhan operasional dan ketentuan yang
                         berlaku.
                     </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                     <h2>Kompetensi yang Dipelajari</h2>
 
                     <p>
@@ -355,7 +384,9 @@
                         karena itu, peserta perlu memperhatikan kurikulum dan persyaratan program
                         sebelum melakukan pendaftaran.
                     </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                     <h2>Pelaksanaan Pelatihan</h2>
 
                     <p>
@@ -371,7 +402,9 @@
                         peserta juga dapat diminta menyiapkan dokumen atau persyaratan
                         administratif sesuai dengan ketentuan program.
                     </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                     <h2>Evaluasi Peserta</h2>
 
                     <p>
@@ -387,7 +420,9 @@
                         terhadap materi yang telah disampaikan serta memastikan proses
                         pembelajaran berjalan sesuai dengan tujuan program.
                     </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                     <h2>Sertifikat Pelatihan</h2>
 
                     <p>
@@ -404,7 +439,9 @@
                         sebelum peserta melakukan pendaftaran. Hal tersebut penting agar peserta
                         memahami hasil yang akan diperoleh setelah menyelesaikan program.
                     </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                     <h2>Persyaratan Peserta</h2>
 
                     <p>
@@ -419,7 +456,9 @@
                         proses pendaftaran dan pelaksanaan pelatihan dapat berjalan dengan
                         lancar.
                     </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                     <h2>Mengapa Pelatihan K3 Penting?</h2>
 
                     <p>
@@ -435,36 +474,92 @@
                         memahami prinsip keselamatan yang relevan dengan pekerjaannya dan
                         menggunakannya sebagai bagian dari aktivitas kerja sehari-hari.
                     </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
-                    <h2>Daftar {{ $training['name'] }}</h2>
+                @php ob_start(); @endphp
+                    <h2>Kompetensi K3 Praktis {{ $training['name'] }}</h2>
+                    <p>Kompetensi yang dipelajari melalui {{ $training['name'] }} bergantung pada tujuan dan kurikulum masing-masing program. Secara umum, peserta dapat memperoleh pemahaman mengenai prinsip K3, pengenalan bahaya, penilaian risiko, pengendalian risiko, prosedur keselamatan, dan penerapan K3 yang relevan.</p>
+                    <p>Peserta juga dapat mempelajari pentingnya memahami prosedur kerja. Prosedur memberikan acuan mengenai cara menjalankan pekerjaan sesuai dengan kondisi dan ketentuan yang telah ditetapkan.</p>
+                    <p>Untuk program dengan fokus khusus, kompetensi yang dipelajari dapat mencakup aspek teknis atau prosedural sesuai bidangnya. Oleh karena itu, peserta perlu memperhatikan kurikulum {{ $training['name'] }} untuk mengetahui ruang lingkup kompetensi yang diberikan.</p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
+                    <h2>Identifikasi Bahaya dalam Pekerjaan</h2>
+                    <p>Identifikasi bahaya merupakan salah satu bagian penting dalam penerapan K3. Sebelum pekerjaan dilakukan, kondisi lingkungan dan aktivitas yang akan dijalankan perlu diperhatikan untuk mengetahui hal-hal yang berpotensi menimbulkan risiko.</p>
+                    <p>Sumber bahaya dapat berasal dari berbagai aspek. Peralatan, bahan, kondisi tempat kerja, metode kerja, maupun perilaku manusia dapat menjadi faktor yang perlu diperhatikan sesuai dengan jenis aktivitas.</p>
+                    <p>Dalam {{ $training['name'] }}, pembahasan mengenai identifikasi bahaya dapat membantu peserta memahami pentingnya pengamatan terhadap kondisi kerja dan menghubungkan karakteristik pekerjaan dengan potensi bahaya yang mungkin muncul.</p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
+
+                @php ob_start(); @endphp
+                    <h2>Penilaian dan Pengendalian Risiko</h2>
+                    <p>Setelah potensi bahaya dikenali, langkah berikutnya adalah memahami risiko yang berkaitan dengan kondisi tersebut. Penilaian risiko membantu memberikan gambaran mengenai kondisi yang perlu mendapatkan perhatian dalam suatu aktivitas kerja.</p>
+                    <p>Setiap pekerjaan memiliki karakteristik risiko yang berbeda, sehingga pendekatan pengendalian perlu disesuaikan dengan jenis aktivitas, kondisi lingkungan, peralatan yang digunakan, dan faktor lain yang relevan.</p>
+                    <p>Peserta {{ $training['name'] }} dapat mempelajari bagaimana pengendalian menjadi bagian dari proses K3 yang memerlukan perencanaan, bukan hanya tindakan setelah masalah terjadi.</p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
+
+                @php ob_start(); @endphp
+                    <h2>Prosedur Kerja yang Aman</h2>
+                    <p>Prosedur kerja membantu memberikan arahan mengenai bagaimana suatu pekerjaan dilakukan dengan memperhatikan aspek keselamatan. Prosedur dapat menjadi acuan bagi tenaga kerja dalam menjalankan aktivitas sesuai dengan langkah yang telah ditetapkan.</p>
+                    <p>{{ $training['name'] }} dapat membantu peserta memahami hubungan antara prosedur dan pencegahan risiko, bukan hanya apa yang harus dilakukan tetapi juga alasan keselamatan di balik langkah tersebut.</p>
+                    <p>Apabila terdapat kondisi yang berbeda dari prosedur, komunikasi dengan pihak yang bertanggung jawab menjadi penting agar pekerjaan dapat dilakukan berdasarkan arahan yang sesuai.</p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
+
+                @php ob_start(); @endphp
+                    <h2>Peran Tenaga Kerja dalam K3</h2>
+                    <p>Penerapan K3 membutuhkan keterlibatan tenaga kerja dalam setiap aktivitas. Setiap orang yang menjalankan pekerjaan memiliki peran dalam memperhatikan kondisi lingkungan, mengikuti prosedur, dan menjaga keselamatan dirinya maupun pihak lain.</p>
+                    <p>Tenaga kerja juga memiliki peran mengikuti prosedur yang telah ditetapkan serta menyampaikan kondisi tidak aman melalui mekanisme yang tersedia.</p>
+                    <p>Melalui {{ $training['name'] }}, peserta dapat memahami bahwa penerapan K3 membutuhkan kontribusi individu untuk membangun kebiasaan kerja yang lebih peduli terhadap keselamatan.</p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
+
+                @php ob_start(); @endphp
+                    <h2>Peran Perusahaan dalam Penerapan K3</h2>
+                    <p>Penerapan K3 membutuhkan dukungan dari perusahaan dan seluruh pihak yang terlibat dalam kegiatan operasional, melalui kebijakan, prosedur, komunikasi, pembinaan, dan pengawasan.</p>
+                    <p>Perusahaan juga dapat memberikan ruang bagi tenaga kerja untuk menyampaikan kondisi yang berkaitan dengan keselamatan sebagai bagian dari upaya perbaikan berkelanjutan.</p>
+                    <p>Pelatihan seperti {{ $training['name'] }} dapat menjadi salah satu bentuk pengembangan kompetensi tenaga kerja yang diterapkan bersama sistem K3 yang tersedia di perusahaan.</p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
+
+                @php ob_start(); @endphp
+                    <h2>Penerapan K3 di Lingkungan Kerja</h2>
+                    <p>Pemahaman yang diperoleh dari {{ $training['name'] }} dapat menjadi dasar untuk lebih memperhatikan penerapan K3 dalam aktivitas kerja, dimulai dari kebiasaan memperhatikan kondisi sebelum pekerjaan dilakukan.</p>
+                    <p>Penerapan keselamatan juga membutuhkan dukungan lingkungan kerja berupa prosedur, komunikasi, pengawasan, dan kebijakan perusahaan.</p>
+                    <p>Dengan demikian, pembelajaran {{ $training['name'] }} dapat menjadi salah satu bekal untuk memahami penerapan K3 sesuai prosedur di lingkungan kerja masing-masing.</p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
+
+                {{-- Acak urutan artikel --}}
+                @php shuffle($__articleBlocks); @endphp
+
+                @foreach ($__articleBlocks as $__articleBlock)
+                    {!! $__articleBlock !!}
+                @endforeach
+
+                <h2>Daftar {{ $training['name'] }}</h2>
+
+                <p>
+                    Bagi perusahaan maupun individu yang ingin mengikuti
+                    {{ $training['name'] }}, informasi mengenai jadwal, lokasi, metode
+                    pelaksanaan, biaya, persyaratan peserta, serta fasilitas yang tersedia
+                    dapat dikonsultasikan terlebih dahulu kepada tim kami.
+                </p>
+
+                <p>
+                    Konsultasi awal juga dapat membantu peserta menentukan kesesuaian program
+                    dengan kebutuhan kompetensi yang ingin dikembangkan. Dengan mengetahui
+                    detail program sejak awal, peserta dapat mempersiapkan dokumen dan
+                    kebutuhan lainnya sebelum pelatihan dimulai.
+                </p>
+
+                <p>
+                    Untuk informasi lebih lanjut mengenai {{ $training['name'] }} dan jadwal
+                    pelaksanaan terbaru, silakan menghubungi tim kami melalui tombol
+                    konsultasi yang tersedia pada halaman ini.
+                </p>
+
+                @isset($city)
                     <p>
-                        Bagi perusahaan maupun individu yang ingin mengikuti
-                        {{ $training['name'] }}, informasi mengenai jadwal, lokasi, metode
-                        pelaksanaan, biaya, persyaratan peserta, serta fasilitas yang tersedia
-                        dapat dikonsultasikan terlebih dahulu kepada tim kami.
+                        <strong>Apakah {{ $training['name'] }} tersedia di {{ $city['name'] }}?</strong>
+                        Ya, silakan hubungi tim kami untuk jadwal dan penyelenggaraan di wilayah ini.
                     </p>
-
-                    <p>
-                        Konsultasi awal juga dapat membantu peserta menentukan kesesuaian program
-                        dengan kebutuhan kompetensi yang ingin dikembangkan. Dengan mengetahui
-                        detail program sejak awal, peserta dapat mempersiapkan dokumen dan
-                        kebutuhan lainnya sebelum pelatihan dimulai.
-                    </p>
-
-                    <p>
-                        Untuk informasi lebih lanjut mengenai {{ $training['name'] }} dan jadwal
-                        pelaksanaan terbaru, silakan menghubungi tim kami melalui tombol
-                        konsultasi yang tersedia pada halaman ini.
-                    </p>
-
-                    @isset($city)
-                        <p>
-                            <strong>Apakah {{ $training['name'] }} tersedia di {{ $city['name'] }}?</strong>
-                            Ya, silakan hubungi tim kami untuk jadwal dan penyelenggaraan di wilayah ini.
-                        </p>
-                    @endisset
-
+                @endisset
             </article>
         </div>
     </section>

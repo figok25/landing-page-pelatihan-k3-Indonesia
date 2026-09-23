@@ -190,16 +190,17 @@
                         </p>
                     @endif
 
-                    <p>
-                        <strong>Apakah {{ $service['name'] }} tersedia di {{ $city['name'] }}?</strong>
-                        Ya, silakan hubungi tim kami untuk konsultasi kebutuhan di wilayah ini.
-                    </p>
                 </div>
-            @else
+            @endisset
+
             <article class="service-article-body">
                 {{-- Artikel generik: template sama untuk semua jasa,
                 hanya nama layanan yang berubah. Ganti dengan konten resmi
                 dari client bila sudah tersedia. --}}
+
+                @php $__articleBlocks = []; @endphp
+
+                @php ob_start(); @endphp
                 <p>
                     <strong>{{ $service['name'] }}</strong> merupakan salah satu layanan yang
                     kami sediakan untuk membantu perusahaan, instansi, maupun pelaku usaha dalam
@@ -218,7 +219,9 @@
                     potensi risiko, memenuhi persyaratan teknis, serta mendukung penerapan
                     sistem keselamatan kerja di lingkungan operasional.
                 </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                 <h2>Apa Itu {{ $service['name'] }}?</h2>
 
                 <p>
@@ -238,7 +241,9 @@
                     mempertimbangkan kondisi aktual di lapangan agar hasil yang diperoleh
                     benar-benar sesuai dengan kebutuhan.
                 </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                 <h2>Tujuan Pelaksanaan {{ $service['name'] }}</h2>
 
                 <p>
@@ -256,7 +261,9 @@
                     menentukan tindakan perbaikan yang diperlukan sebelum risiko tersebut
                     berkembang menjadi gangguan operasional maupun kecelakaan kerja.
                 </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                 <h2>Manfaat {{ $service['name'] }} bagi Perusahaan</h2>
 
                 <p>
@@ -280,7 +287,9 @@
                     dapat memiliki dasar untuk melakukan evaluasi terhadap peralatan, prosedur,
                     maupun aktivitas kerja yang memiliki potensi risiko.
                 </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                 <h2>Ruang Lingkup {{ $service['name'] }}</h2>
 
                 <p>
@@ -297,7 +306,9 @@
                     lingkup akan ditentukan berdasarkan jenis layanan yang dipilih dan kondisi
                     objek yang menjadi bagian dari pekerjaan.
                 </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                 <h2>Proses Pelaksanaan {{ $service['name'] }}</h2>
 
                 <p>
@@ -329,7 +340,9 @@
                     selanjutnya dapat digunakan perusahaan sesuai dengan tujuan dan ketentuan
                     yang berlaku.
                 </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                 <h2>Dokumen dan Persiapan yang Perlu Disiapkan</h2>
 
                 <p>
@@ -353,7 +366,9 @@
                     persiapan yang lebih lengkap, proses koordinasi dan pelaksanaan layanan
                     dapat dilakukan secara lebih terarah.
                 </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                 <h2>Siapa yang Membutuhkan {{ $service['name'] }}?</h2>
 
                 <p>
@@ -372,7 +387,9 @@
                     berbagai sektor usaha lainnya. Namun, kebutuhan aktual tetap perlu
                     disesuaikan dengan jenis kegiatan dan kondisi masing-masing perusahaan.
                 </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                 <h2>Pentingnya Kepatuhan Keselamatan dan Kesehatan Kerja</h2>
 
                 <p>
@@ -389,7 +406,9 @@
                     pelatihan, konsultasi, maupun layanan K3 lainnya dapat menjadi bagian dari
                     siklus evaluasi yang dilakukan perusahaan secara berkala.
                 </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                 <h2>Dasar Pelaksanaan Layanan</h2>
 
                 <p>
@@ -406,7 +425,9 @@
                     membantu memberikan informasi awal mengenai persyaratan yang relevan
                     berdasarkan kebutuhan perusahaan.
                 </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                 <h2>Kenapa Perlu Menggunakan Layanan yang Sesuai?</h2>
 
                 <p>
@@ -422,7 +443,9 @@
                     objek pekerjaan, dokumen pendukung, serta tahapan yang perlu dilakukan
                     sehingga proses dapat berjalan dengan lebih terstruktur.
                 </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
 
+                @php ob_start(); @endphp
                 <h2>Konsultasi {{ $service['name'] }}</h2>
 
                 <p>
@@ -439,6 +462,89 @@
                     pekerjaan, persyaratan dokumen, tahapan pelaksanaan, estimasi waktu, dan
                     kebutuhan teknis lainnya sesuai dengan layanan yang tersedia.
                 </p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
+
+                @php ob_start(); @endphp
+                <h2>Penyedia Jasa {{ $service['name'] }}</h2>
+                <p>Memilih penyedia jasa {{ $service['name'] }} merupakan salah satu tahap yang perlu diperhatikan ketika perusahaan merencanakan kegiatan pelatihan K3. Informasi mengenai program perlu dipahami agar layanan yang dipilih sesuai dengan kebutuhan peserta.</p>
+                <p>Penyedia jasa dapat memberikan informasi mengenai materi, metode pelaksanaan, jadwal, durasi, serta persyaratan yang berkaitan dengan program. Kejelasan informasi membantu perusahaan menyiapkan kegiatan sejak tahap awal.</p>
+                <p>Untuk mengetahui detail penyediaan jasa {{ $service['name'] }}, calon peserta dapat melakukan konsultasi terlebih dahulu.</p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
+
+                @php ob_start(); @endphp
+                <h2>Paket Jasa Pelatihan {{ $service['name'] }}</h2>
+                <p>Paket jasa pelatihan {{ $service['name'] }} dapat menjadi pilihan bagi perusahaan yang ingin mengatur kebutuhan training secara lebih praktis. Paket layanan dapat dibahas berdasarkan jumlah peserta, bentuk pelaksanaan, serta kebutuhan program.</p>
+                <p>Sebelum menentukan paket, perusahaan dapat memperoleh informasi mengenai materi, jadwal, durasi, metode, dan fasilitas yang tersedia.</p>
+                <p>Informasi mengenai paket jasa {{ $service['name'] }} dapat diperoleh melalui konsultasi sebelum menentukan paket dan jadwal pelaksanaan.</p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
+
+                @php ob_start(); @endphp
+                <h2>Jasa In House Training {{ $service['name'] }}</h2>
+                <p>In house training {{ $service['name'] }} dapat menjadi salah satu bentuk layanan pelatihan bagi perusahaan yang ingin melaksanakan pembelajaran untuk tenaga kerja dalam satu kelompok. Pelaksanaan dapat dibicarakan berdasarkan kebutuhan dan kondisi perusahaan.</p>
+                <p>Sebelum kegiatan dilakukan, perusahaan dapat menyampaikan jumlah peserta, lokasi, waktu yang diharapkan, serta kebutuhan materi.</p>
+                <p>Jika perusahaan membutuhkan layanan in house {{ $service['name'] }}, konsultasi dapat dilakukan untuk membahas bentuk pelaksanaan yang tersedia.</p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
+
+                @php ob_start(); @endphp
+                <h2>Jasa Pelatihan K3 untuk Tim Kerja</h2>
+                <p>Jasa {{ $service['name'] }} dapat dimanfaatkan untuk memberikan pembelajaran K3 kepada tim kerja. Pelatihan dalam kelompok dapat membantu peserta memperoleh pemahaman yang sama mengenai topik keselamatan sesuai dengan ruang lingkup program.</p>
+                <p>Materi pembelajaran dapat membantu peserta memahami potensi bahaya, risiko, tindakan pengendalian, serta prosedur kerja yang berkaitan dengan K3.</p>
+                <p>Perusahaan dapat menghubungi penyedia jasa untuk memperoleh informasi lebih lengkap mengenai {{ $service['name'] }}.</p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
+
+                @php ob_start(); @endphp
+                <h2>Jasa Pelatihan {{ $service['name'] }} Terjadwal</h2>
+                <p>Jasa pelatihan {{ $service['name'] }} dengan jadwal tertentu dapat membantu calon peserta merencanakan keikutsertaan sejak awal. Informasi jadwal perlu dikonfirmasi karena waktu pelaksanaan dapat berbeda pada setiap periode.</p>
+                <p>Bagi perusahaan, jadwal pelatihan dapat menjadi bahan untuk mengatur kehadiran tenaga kerja.</p>
+                <p>Informasi terbaru mengenai jadwal dan layanan {{ $service['name'] }} sebaiknya dikonsultasikan sebelum pendaftaran.</p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
+
+                @php ob_start(); @endphp
+                <h2>Jasa Pelatihan {{ $service['name'] }} untuk Individu</h2>
+                <p>Individu yang membutuhkan pembelajaran K3 dapat mempertimbangkan jasa {{ $service['name'] }} sesuai dengan kebutuhan dan persyaratan program.</p>
+                <p>Sebelum mendaftar, calon peserta sebaiknya memahami sasaran, materi, jadwal, durasi, serta persyaratan program.</p>
+                <p>Jika membutuhkan informasi mengenai {{ $service['name'] }}, calon peserta dapat berkonsultasi mengenai jadwal dan ketentuan pendaftaran.</p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
+
+                @php ob_start(); @endphp
+                <h2>Jasa Pelatihan K3 dengan Materi Terarah</h2>
+                <p>Jasa {{ $service['name'] }} memberikan pembelajaran berdasarkan ruang lingkup materi yang telah ditentukan. Materi yang terarah membantu peserta memahami topik K3 sesuai dengan tujuan program.</p>
+                <p>Peserta dapat memperoleh pembahasan mengenai bahaya, risiko, pengendalian, prosedur, dan aspek keselamatan lainnya sesuai dengan karakteristik pelatihan.</p>
+                <p>Untuk mengetahui materi secara lebih lengkap, calon peserta dapat meminta informasi program {{ $service['name'] }} sebelum mendaftar.</p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
+
+                @php ob_start(); @endphp
+                <h2>Jasa Training {{ $service['name'] }} untuk Pengembangan SDM</h2>
+                <p>Pengembangan sumber daya manusia dapat mencakup peningkatan pemahaman mengenai K3. Jasa training {{ $service['name'] }} dapat menjadi salah satu kegiatan yang dipertimbangkan perusahaan dalam program pengembangan tenaga kerja.</p>
+                <p>Perusahaan dapat merencanakan peserta berdasarkan kebutuhan masing-masing bagian sesuai relevansi materi dengan tugas dan aktivitas yang dijalankan.</p>
+                <p>Informasi mengenai jasa training {{ $service['name'] }} dapat diperoleh melalui konsultasi.</p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
+
+                @php ob_start(); @endphp
+                <h2>Jasa Pelatihan K3 untuk Kebutuhan Operasional</h2>
+                <p>Kebutuhan operasional perusahaan dapat melibatkan aktivitas dengan karakteristik dan potensi bahaya yang berbeda. Jasa {{ $service['name'] }} dapat digunakan untuk memberikan pembelajaran K3 yang relevan dengan ruang lingkup program.</p>
+                <p>Pelatihan tidak menggantikan prosedur perusahaan. Hasil pembelajaran tetap perlu diterapkan bersama sistem keselamatan, pengawasan, komunikasi, dan kebijakan yang telah berlaku.</p>
+                <p>Jika perusahaan membutuhkan layanan {{ $service['name'] }}, informasi mengenai program dapat dikonsultasikan terlebih dahulu.</p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
+
+                @php ob_start(); @endphp
+                <h2>Jasa Pelatihan {{ $service['name'] }} dengan Dukungan Administrasi</h2>
+                <p>Selain materi pembelajaran, proses pelatihan juga membutuhkan pengelolaan administrasi. Jasa {{ $service['name'] }} dapat membantu calon peserta memahami kebutuhan dokumen dan tahapan pendaftaran sesuai dengan ketentuan program.</p>
+                <p>Informasi mengenai persyaratan peserta perlu diperhatikan sejak awal, karena dapat berbeda tergantung pada jenis program yang diselenggarakan.</p>
+                <p>Untuk mengetahui kebutuhan administrasi {{ $service['name'] }}, calon peserta dapat melakukan konsultasi.</p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
+
+                @php ob_start(); @endphp
+                <h2>Jasa Pelatihan {{ $service['name'] }} untuk Perusahaan dan Instansi</h2>
+                <p>Perusahaan dan instansi dapat memanfaatkan jasa {{ $service['name'] }} untuk kebutuhan pembelajaran K3 bagi personel yang sesuai dengan sasaran program.</p>
+                <p>Pelaksanaan pelatihan membutuhkan koordinasi mengenai jumlah peserta, jadwal, metode, lokasi, dan persyaratan.</p>
+                <p>Untuk memperoleh informasi mengenai jasa {{ $service['name'] }}, pihak perusahaan atau instansi dapat menghubungi tim layanan.</p>
+                @php $__articleBlocks[] = ob_get_clean(); @endphp
+
+                @php shuffle($__articleBlocks); @endphp
+                @foreach ($__articleBlocks as $__articleBlock)
+                    {!! $__articleBlock !!}
+                @endforeach
 
                 <h2>Dapatkan Informasi {{ $service['name'] }}</h2>
 
@@ -455,8 +561,14 @@
                     sejak awal, proses koordinasi dapat dilakukan dengan lebih terarah dan
                     disesuaikan dengan kebutuhan masing-masing perusahaan.
                 </p>
+
+                @isset($city)
+                    <p>
+                        <strong>Apakah {{ $service['name'] }} tersedia di {{ $city['name'] }}?</strong>
+                        Ya, silakan hubungi tim kami untuk konsultasi kebutuhan di wilayah ini.
+                    </p>
+                @endisset
             </article>
-            @endisset
         </div>
     </section>
 
