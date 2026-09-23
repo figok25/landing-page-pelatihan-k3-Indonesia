@@ -620,4 +620,24 @@ class RegionCatalog
             fn ($city) => $city['province_slug'] === $provinceSlug
         ));
     }
+
+    /**
+     * Seluruh 514 kabupaten/kota, dikelompokkan per provinsi. Dipakai untuk
+     * mengisi dropdown "Pilih Wilayah" di halaman pelatihan/jasa (Level 2),
+     * yang meng-cover semua kota — berbeda dengan SeoPriorityCatalog yang
+     * hanya memuat kombinasi terbatas untuk sitemap.xml.
+     *
+     * @return array<int, array{slug: string, name: string, cities: array<int, array{province_code: string, province: string, province_slug: string, code: string, name: string, type: string, slug: string}>}>
+     */
+    public static function citiesGroupedByProvince(): array
+    {
+        return array_map(
+            fn ($province) => [
+                'slug' => $province['slug'],
+                'name' => $province['name'],
+                'cities' => self::citiesByProvinceSlug($province['slug']),
+            ],
+            self::provinces()
+        );
+    }
 }

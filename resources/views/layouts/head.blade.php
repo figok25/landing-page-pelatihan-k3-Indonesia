@@ -7,7 +7,11 @@
         name="description"
         content="{{ $metaDescription ?? 'Pusat pelatihan dan jasa K3 terpercaya di seluruh Indonesia.' }}" />
     <link rel="canonical" href="{{ url()->current() }}" />
-    <meta name="robots" content="index, follow" />
+    @isset($city)
+        <meta name="robots" content="noindex, follow" />
+    @else
+        <meta name="robots" content="index, follow" />
+    @endisset
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ $title ?? 'Pelatihan K3 Indonesia' }}" />

@@ -177,7 +177,7 @@
 
                     @foreach ($popularTrainings as $training)
 
-                        <a href="{{ route('training.show', ['training' => $training['slug']]) }}"
+                        <a href="{{ route('training.location', ['training' => $training['slug'], 'kota' => $city['slug']]) }}"
                            class="city-training-card">
 
                             <div class="city-training-card-top">

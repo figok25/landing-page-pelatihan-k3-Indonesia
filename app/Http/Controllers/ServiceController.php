@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Data\RegionCatalog;
-use App\Data\SeoPriorityCatalog;
 use App\Data\ServiceCatalog;
 
 class ServiceController extends Controller
@@ -33,13 +32,15 @@ class ServiceController extends Controller
 
         return view('services.show', [
             'service' => $item,
+            'regions' => RegionCatalog::citiesGroupedByProvince(),
         ]);
     }
 
     /**
      * GET /jasa/{service}/{kota}
-     * Sama seperti TrainingController::location() — hanya kombinasi yang
-     * sudah disetujui di SeoPriorityCatalog yang dibuatkan halaman.
+     * Sama seperti TrainingController::location() — dibuka untuk seluruh
+     * 514 kabupaten/kota. sitemap.xml tetap hanya memuat kombinasi
+     * prioritas dari SeoPriorityCatalog.
      */
     public function location(string $service, string $kota)
     {
@@ -48,11 +49,11 @@ class ServiceController extends Controller
 
         abort_if($item === null || $item['type'] !== 'primary', 404);
         abort_if($city === null, 404);
-        abort_unless(SeoPriorityCatalog::isServiceLocationAllowed($service, $kota), 404);
 
         return view('services.show', [
             'service' => $item,
             'city' => $city,
+            'regions' => RegionCatalog::citiesGroupedByProvince(),
         ]);
     }
 }

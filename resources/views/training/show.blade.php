@@ -21,17 +21,42 @@
 
             <div class="training-hero-content">
                 <div class="training-hero-text">
-                    <span class="section-badge">
-                        <i class="bx bx-certification"></i>
-                        Program Pelatihan K3
-                    </span>
-
-                    @isset($city)
-                        <span class="section-badge badge-location">
-                            <i class="bx bx-map-pin"></i>
-                            {{ $city['type'] }} {{ $city['name'] }}
+                    <div class="training-badge-row">
+                        <span class="section-badge">
+                            <i class="bx bx-certification"></i>
+                            Program Pelatihan K3
                         </span>
-                    @endisset
+
+                        @isset($city)
+                            <span class="section-badge badge-location">
+                                <i class="bx bx-map-pin"></i>
+                                {{ $city['type'] }} {{ $city['name'] }}
+                            </span>
+                        @endisset
+
+                        @isset($regions)
+                            <div class="region-select-wrapper">
+                                <i class="bx bx-map-pin"></i>
+                                <select
+                                    class="region-select"
+                                    aria-label="Pilih Wilayah"
+                                    onchange="if (this.value) { window.location.href = this.value; }">
+                                    <option value="">Nasional (Semua Wilayah)</option>
+                                    @foreach ($regions as $province)
+                                        <optgroup label="{{ $province['name'] }}">
+                                            @foreach ($province['cities'] as $regionCity)
+                                                <option
+                                                    value="{{ route('training.location', ['training' => $training['slug'], 'kota' => $regionCity['slug']]) }}"
+                                                    @selected(isset($city) && $city['slug'] === $regionCity['slug'])>
+                                                    {{ $regionCity['type'] }} {{ $regionCity['name'] }}
+                                                </option>
+                                            @endforeach
+                                        </optgroup>
+                                    @endforeach
+                                </select>
+                            </div>
+                        @endisset
+                    </div>
 
                     <h1>{{ $training['name'] }}</h1>
 
@@ -144,6 +169,29 @@
                 <span class="section-badge">Artikel</span>
                 <h2>Mengenal Lebih Dalam {{ $training['name'] }}</h2>
             </div>
+
+            @isset($city)
+                @php
+                    $otherCities = collect(\App\Data\RegionCatalog::citiesByProvinceSlug($city['province_slug']))
+                        ->where('slug', '!=', $city['slug'])
+                        ->take(8);
+                @endphp
+                <div class="training-article-body">
+                    <p>
+                        {{ $training['name'] }} di {{ $city['type'] }} {{ $city['name'] }} dapat diselenggarakan
+                        secara in-house maupun terjadwal, mengikuti kebutuhan peserta di wilayah
+                        {{ $city['province'] }}.
+                    </p>
+
+                    @if ($otherCities->isNotEmpty())
+                        <p>
+                            Selain {{ $city['name'] }}, kami juga melayani wilayah lain di
+                            {{ $city['province'] }}, di antaranya:
+                            {{ $otherCities->map(fn ($c) => $c['type'].' '.$c['name'])->implode(', ') }}.
+                        </p>
+                    @endif
+                </div>
+            @endisset
 
             <article class="training-article-body">
                 {{-- Artikel generik: template sama untuk semua program,
@@ -409,6 +457,13 @@
                         pelaksanaan terbaru, silakan menghubungi tim kami melalui tombol
                         konsultasi yang tersedia pada halaman ini.
                     </p>
+
+                    @isset($city)
+                        <p>
+                            <strong>Apakah {{ $training['name'] }} tersedia di {{ $city['name'] }}?</strong>
+                            Ya, silakan hubungi tim kami untuk jadwal dan penyelenggaraan di wilayah ini.
+                        </p>
+                    @endisset
 
             </article>
         </div>

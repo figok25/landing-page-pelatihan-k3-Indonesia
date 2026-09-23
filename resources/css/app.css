@@ -1188,3 +1188,51 @@ ol {
         padding-right: 1rem;
     }
 }
+
+/* ========================================
+   REGION SELECT (dropdown "Pilih Wilayah")
+   Dipakai di training/show.blade.php dan
+   services/show.blade.php, di sebelah badge
+   program/jasa.
+======================================== */
+
+.training-badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.region-select-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px 6px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-full);
+    background: var(--bg-color);
+    color: var(--text-secondary);
+}
+
+.region-select-wrapper i {
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+
+.region-select {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    max-width: 220px;
+}
+
+.region-select:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}

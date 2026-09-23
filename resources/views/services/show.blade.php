@@ -21,17 +21,42 @@
 
             <div class="service-hero-content">
                 <div class="service-hero-text">
-                    <span class="section-badge">
-                        <i class="bx bx-briefcase-alt-2"></i>
-                        Jasa Konsultasi & Perizinan K3
-                    </span>
-
-                    @isset($city)
-                        <span class="section-badge badge-location">
-                            <i class="bx bx-map-pin"></i>
-                            {{ $city['type'] }} {{ $city['name'] }}
+                    <div class="training-badge-row">
+                        <span class="section-badge">
+                            <i class="bx bx-briefcase-alt-2"></i>
+                            Jasa Konsultasi & Perizinan K3
                         </span>
-                    @endisset
+
+                        @isset($city)
+                            <span class="section-badge badge-location">
+                                <i class="bx bx-map-pin"></i>
+                                {{ $city['type'] }} {{ $city['name'] }}
+                            </span>
+                        @endisset
+
+                        @isset($regions)
+                            <div class="region-select-wrapper">
+                                <i class="bx bx-map-pin"></i>
+                                <select
+                                    class="region-select"
+                                    aria-label="Pilih Wilayah"
+                                    onchange="if (this.value) { window.location.href = this.value; }">
+                                    <option value="">Nasional (Semua Wilayah)</option>
+                                    @foreach ($regions as $province)
+                                        <optgroup label="{{ $province['name'] }}">
+                                            @foreach ($province['cities'] as $regionCity)
+                                                <option
+                                                    value="{{ route('service.location', ['service' => $service['slug'], 'kota' => $regionCity['slug']]) }}"
+                                                    @selected(isset($city) && $city['slug'] === $regionCity['slug'])>
+                                                    {{ $regionCity['type'] }} {{ $regionCity['name'] }}
+                                                </option>
+                                            @endforeach
+                                        </optgroup>
+                                    @endforeach
+                                </select>
+                            </div>
+                        @endisset
+                    </div>
 
                     <h1>{{ $service['name'] }}</h1>
 
@@ -144,6 +169,33 @@
                 <h2>Mengenal Lebih Dalam {{ $service['name'] }}</h2>
             </div>
 
+            @isset($city)
+                @php
+                    $otherCities = collect(\App\Data\RegionCatalog::citiesByProvinceSlug($city['province_slug']))
+                        ->where('slug', '!=', $city['slug'])
+                        ->take(8);
+                @endphp
+                <div class="service-article-body">
+                    <p>
+                        {{ $service['name'] }} dapat kami layani untuk perusahaan di {{ $city['type'] }}
+                        {{ $city['name'] }} dan sekitarnya, mengikuti ketentuan yang berlaku di wilayah
+                        {{ $city['province'] }}.
+                    </p>
+
+                    @if ($otherCities->isNotEmpty())
+                        <p>
+                            Selain {{ $city['name'] }}, kami juga melayani wilayah lain di
+                            {{ $city['province'] }}, di antaranya:
+                            {{ $otherCities->map(fn ($c) => $c['type'].' '.$c['name'])->implode(', ') }}.
+                        </p>
+                    @endif
+
+                    <p>
+                        <strong>Apakah {{ $service['name'] }} tersedia di {{ $city['name'] }}?</strong>
+                        Ya, silakan hubungi tim kami untuk konsultasi kebutuhan di wilayah ini.
+                    </p>
+                </div>
+            @else
             <article class="service-article-body">
                 {{-- Artikel generik: template sama untuk semua jasa,
                 hanya nama layanan yang berubah. Ganti dengan konten resmi
@@ -404,6 +456,7 @@
                     disesuaikan dengan kebutuhan masing-masing perusahaan.
                 </p>
             </article>
+            @endisset
         </div>
     </section>
 

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Data\RegionCatalog;
-use App\Data\SeoPriorityCatalog;
 use App\Data\TrainingCatalog;
 
 class TrainingController extends Controller
@@ -45,15 +44,19 @@ class TrainingController extends Controller
 
         return view('training.show', [
             'training' => $item,
+            'regions' => RegionCatalog::citiesGroupedByProvince(),
         ]);
     }
 
     /**
      * GET /pelatihan/{training}/{kota}
-     * Halaman regional (SEO Level 2) — HANYA untuk kombinasi yang sudah
-     * disetujui di SeoPriorityCatalog. Jangan ubah menjadi "selalu 200"
-     * untuk sembarang slug kota, karena itu sama saja dengan generate
-     * massal yang dilarang blueprint (#38).
+     * Halaman regional (SEO Level 2) — dibuka untuk seluruh 514
+     * kabupaten/kota (bukan hanya whitelist SeoPriorityCatalog), supaya
+     * dropdown "Pilih Wilayah" di halaman ini selalu mengarah ke halaman
+     * yang benar-benar merespons 200. Halaman ini tetap noindex (lihat
+     * layouts/head.blade.php), dan sitemap.xml TETAP hanya memuat
+     * kombinasi prioritas dari SeoPriorityCatalog — jangan generate
+     * sitemap massal dari sini.
      */
     public function location(string $training, string $kota)
     {
@@ -62,11 +65,11 @@ class TrainingController extends Controller
 
         abort_if($item === null, 404);
         abort_if($city === null, 404);
-        abort_unless(SeoPriorityCatalog::isTrainingLocationAllowed($training, $kota), 404);
 
         return view('training.show', [
             'training' => $item,
             'city' => $city,
+            'regions' => RegionCatalog::citiesGroupedByProvince(),
         ]);
     }
 }
