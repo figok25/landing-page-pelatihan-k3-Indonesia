@@ -358,28 +358,153 @@
 
 
 /* ========================================
+   CATALOG HEADING (SEARCH + TABS)
+======================================== */
+
+.city-training-section {
+    padding-top: 72px;
+    padding-bottom: 76px;
+    background: #faf9f7;
+}
+
+.city-catalog-heading {
+    margin-bottom: 26px;
+}
+
+.city-catalog-heading .section-eyebrow {
+    display: inline-block;
+    color: var(--secondary-color);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.city-catalog-heading h2 {
+    margin-top: 10px;
+    max-width: 760px;
+    color: var(--text-primary);
+    font-size: clamp(2rem, 3.8vw, 3rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -1px;
+}
+
+.city-catalog-heading h2 span {
+    display: inline;
+}
+
+.city-catalog-description {
+    max-width: 680px;
+    margin-top: 14px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+.city-catalog-location {
+    margin-top: 8px;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.city-catalog-search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 13px 16px;
+    border: 1px solid #dededb;
+    border-radius: 11px;
+    background: #f7f6f4;
+    box-shadow: none;
+}
+
+.city-catalog-search i {
+    flex-shrink: 0;
+    color: var(--text-muted);
+    font-size: 21px;
+}
+
+.city-catalog-search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text-primary);
+    font-size: 13px;
+}
+
+.city-catalog-search input::placeholder {
+    color: #858585;
+}
+
+.city-catalog-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.city-catalog-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 14px;
+    border: 1px solid #e2e1de;
+    border-radius: 999px;
+    background: #f0efed;
+    color: var(--text-primary);
+    font-size: 11px;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+}
+
+.city-catalog-tab span {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.city-catalog-tab:hover {
+    background: #e7e6e3;
+    color: var(--text-primary);
+}
+
+.city-catalog-tab.is-active {
+    border-color: #171717;
+    background: #171717;
+    color: #fff;
+}
+
+.city-catalog-tab.is-active span {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.city-catalog-count {
+    margin-bottom: 18px;
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+/* ========================================
    TRAINING CARDS
 ======================================== */
 
 .city-training-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
 }
 
 .city-training-card {
     display: flex;
     flex-direction: column;
-
-    min-height: 190px;
-    padding: 24px;
-
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-lg);
-
-    background: var(--bg-color);
-    box-shadow: var(--shadow-sm);
-
+    min-height: 224px;
+    padding: 20px;
+    border: 1px solid #deddd9;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: none;
     transition:
         transform var(--transition-normal),
         box-shadow var(--transition-normal),
@@ -387,9 +512,9 @@
 }
 
 .city-training-card:hover {
-    border-color: rgba(0, 155, 98, 0.3);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-4px);
+    border-color: #c8c7c3;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+    transform: translateY(-3px);
 }
 
 .city-training-card-top {
@@ -399,78 +524,84 @@
     gap: 10px;
 }
 
+.city-training-group {
+    max-width: 58%;
+    overflow: hidden;
+    color: var(--text-muted);
+    font-size: 10px;
+    font-weight: 500;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .city-training-label {
-    color: var(--secondary-color);
-
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 0.7px;
-}
-
-.city-training-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 32px;
-    height: 32px;
-
-    border-radius: var(--radius-full);
-
-    background: var(--bg-light);
-    color: var(--secondary-color);
-
-    font-size: 19px;
-
-    transition: all var(--transition-fast);
-}
-
-.city-training-card:hover .city-training-arrow {
-    background: var(--secondary-color);
-    color: var(--text-light);
+    padding: 5px 8px;
+    border: 1px solid #dddcd8;
+    border-radius: 4px;
+    background: #f1f0ee;
+    color: #333;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
 }
 
 .city-training-card h3 {
-    margin-top: 22px;
-
-    color: var(--text-primary);
-
+    margin-top: 14px;
+    color: #111;
     font-size: 15px;
     font-weight: 700;
-    line-height: 1.5;
+    line-height: 1.4;
+}
+
+.city-training-description {
+    margin-top: 10px;
+    color: var(--text-secondary);
+    font-size: 11px;
+    line-height: 1.65;
+}
+
+.city-training-card-divider {
+    width: 100%;
+    height: 1px;
+    margin-top: auto;
+    margin-bottom: 12px;
+    background: #deddd9;
 }
 
 .city-training-card-footer {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px;
-
-    margin-top: auto;
-    padding-top: 24px;
-
+    gap: 10px;
     color: var(--text-muted);
-
     font-size: 10px;
 }
 
-.city-training-card-footer > span {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.city-training-card-footer i {
+.city-training-status {
+    max-width: 52%;
     color: var(--secondary-color);
-    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.35;
 }
 
 .city-training-detail {
-    color: var(--secondary-color);
-    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+    color: #111;
+    font-weight: 600;
 }
 
+.city-training-detail i {
+    color: var(--secondary-color);
+    font-size: 17px;
+}
+
+.city-training-arrow {
+    display: none;
+}
 
 /* ========================================
    EMPTY STATE
@@ -643,6 +774,14 @@
    RESPONSIVE
 ======================================== */
 
+@media (max-width: 1300px) {
+
+    .city-training-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+}
+
 @media (max-width: 1100px) {
 
     .city-training-grid {
@@ -664,6 +803,14 @@
 }
 
 @media (max-width: 768px) {
+
+    .city-catalog-heading h2 {
+        font-size: clamp(1.8rem, 7vw, 2.35rem);
+    }
+
+    .city-catalog-description {
+        font-size: 12px;
+    }
 
     .city-hero-container {
         padding-top: 22px;
@@ -700,6 +847,20 @@
         align-items: flex-start;
         flex-direction: column;
         gap: 16px;
+    }
+
+    .city-catalog-heading {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .city-catalog-meta {
+        padding-top: 0;
+        text-align: left;
+    }
+
+    .city-catalog-search {
+        width: 100%;
     }
 
     .city-training-grid {
@@ -748,7 +909,8 @@
     }
 
     .city-training-card {
-        padding: 20px;
+        min-height: 210px;
+        padding: 18px;
     }
 
     .city-coverage-card {

@@ -136,7 +136,7 @@
 
 
     {{-- ========================================
-        POPULAR TRAININGS
+        FULL TRAINING CATALOG
     ======================================== --}}
 
     <section class="city-training-section"
@@ -144,94 +144,180 @@
 
         <div class="container">
 
-            <div class="section-heading city-section-heading">
+            <div class="city-catalog-heading">
 
-                <div>
-                    <span class="section-eyebrow">
-                        PROGRAM PELATIHAN
-                    </span>
+                <span class="section-eyebrow">
+                    DIREKTORI LENGKAP
+                </span>
 
-                    <h2>
-                        Pelatihan Populer di
-                        {{ $city['name'] }}
-                    </h2>
+                <h2>
+                    Katalog
+                    <span>{{ count($trainings) }}+ Sertifikasi &amp; Pelatihan</span>
+                    K3
+                </h2>
 
-                    <p>
-                        Temukan program pelatihan K3 yang
-                        sesuai dengan kebutuhan Anda.
-                    </p>
-                </div>
+                <p class="city-catalog-description">
+                    Telusuri berbagai program pelatihan dan sertifikasi K3 berdasarkan kebutuhan industri Anda.
+                </p>
 
-                <a href="{{ route('training.index') }}"
-                   class="section-view-all">
-                    Lihat Semua
-                    <i class="bx bx-right-arrow-alt"></i>
-                </a>
+                <p class="city-catalog-location">
+                    Tersedia Public Batch &amp; In-House di {{ $city['province'] }}
+                </p>
 
             </div>
 
+            <div class="city-catalog-search">
+                <i class="bx bx-search"></i>
+                <input
+                    type="text"
+                    id="cityCatalogSearch"
+                    placeholder="Cari pelatihan: Forklift, Crane, Ahli K3 Umum, Scaffolding, POP Minerba, Boiler..."
+                    aria-label="Cari program pelatihan dan sertifikasi K3">
+            </div>
 
-            @if (count($popularTrainings) > 0)
+            <div class="city-catalog-tabs" id="cityCatalogTabs">
 
-                <div class="city-training-grid">
+                <button type="button"
+                        class="city-catalog-tab is-active"
+                        data-category="all">
+                    Semua Kelompok
+                    <span>{{ count($trainings) }}+</span>
+                </button>
 
-                    @foreach ($popularTrainings as $training)
+                @foreach ($categories as $key => $meta)
 
-                        <a href="{{ route('training.location', ['training' => $training['slug'], 'kota' => $city['slug']]) }}"
-                           class="city-training-card">
+                    @if (count($grouped[$key]['items']) > 0)
 
-                            <div class="city-training-card-top">
+                        <button type="button"
+                                class="city-catalog-tab"
+                                data-category="{{ $key }}">
+                            {{ $meta['label'] }}
+                        </button>
 
-                                <span class="city-training-label">
-                                    PELATIHAN K3
-                                </span>
+                    @endif
 
-                                <div class="city-training-arrow">
-                                    <i class="bx bx-right-arrow-alt"></i>
-                                </div>
+                @endforeach
 
-                            </div>
+            </div>
 
-                            <h3>
-                                {{ $training['name'] }}
-                            </h3>
+            <p class="city-catalog-count" id="cityCatalogCount">
+                Menampilkan {{ count($trainings) }} dari {{ count($trainings) }} program
+            </p>
 
-                            <div class="city-training-card-footer">
+            <div class="city-training-grid" id="cityCatalogGrid">
 
-                                <span>
-                                    <i class="bx bx-map-pin"></i>
-                                    {{ $city['name'] }}
-                                </span>
+                @foreach ($trainings as $training)
 
-                                <span class="city-training-detail">
-                                    Selengkapnya
-                                    <i class="bx bx-chevron-right"></i>
-                                </span>
+                    <a href="{{ route('training.location', ['training' => $training['slug'], 'kota' => $city['slug']]) }}"
+                       class="city-training-card"
+                       data-category="{{ $training['category'] }}"
+                       data-name="{{ strtolower($training['name']) }}">
 
-                            </div>
+                        <div class="city-training-card-top">
 
-                        </a>
+                            <span class="city-training-label">
+                                PELATIHAN K3
+                            </span>
 
-                    @endforeach
+                            <span class="city-training-group">
+                                {{ $categories[$training['category']]['label'] }}
+                            </span>
 
-                </div>
+                        </div>
 
-            @else
+                        <h3>
+                            {{ $training['name'] }}
+                        </h3>
 
-                <div class="city-empty-state">
-                    <i class="bx bx-book-open"></i>
-                    <h3>Program Segera Hadir</h3>
-                    <p>
-                        Hubungi kami untuk informasi
-                        program pelatihan yang tersedia.
-                    </p>
-                </div>
+                        <p class="city-training-description">
+                            Program pelatihan dan sertifikasi K3 sesuai kebutuhan industri Anda.
+                        </p>
 
-            @endif
+                        <div class="city-training-card-divider"></div>
+
+                        <div class="city-training-card-footer">
+
+                            <span class="city-training-status">
+                                Tersedia Public Batch &amp; In-House
+                            </span>
+
+                            <span class="city-training-detail">
+                                Selengkapnya
+                                <i class="bx bx-right-arrow-alt"></i>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                @endforeach
+
+            </div>
+
+            <div class="city-empty-state"
+                 id="cityCatalogEmpty"
+                 hidden>
+                <i class="bx bx-search-alt"></i>
+                <h3>Program Tidak Ditemukan</h3>
+                <p>
+                    Coba kata kunci lain atau pilih kategori
+                    yang berbeda.
+                </p>
+            </div>
 
         </div>
 
     </section>
+
+    @push('scripts')
+        <script>
+            (function () {
+                const searchInput = document.getElementById('cityCatalogSearch');
+                const tabs = document.querySelectorAll('#cityCatalogTabs .city-catalog-tab');
+                const cards = document.querySelectorAll('#cityCatalogGrid .city-training-card');
+                const countEl = document.getElementById('cityCatalogCount');
+                const emptyEl = document.getElementById('cityCatalogEmpty');
+                const totalCount = cards.length;
+
+                let activeCategory = 'all';
+
+                function applyFilter() {
+                    const keyword = (searchInput?.value || '').trim().toLowerCase();
+                    let visible = 0;
+
+                    cards.forEach((card) => {
+                        const matchesCategory = activeCategory === 'all' || card.dataset.category === activeCategory;
+                        const matchesKeyword = keyword === '' || card.dataset.name.includes(keyword);
+                        const show = matchesCategory && matchesKeyword;
+
+                        card.style.display = show ? '' : 'none';
+
+                        if (show) visible++;
+                    });
+
+                    if (countEl) {
+                        countEl.textContent = 'Menampilkan ' + visible + ' dari ' + totalCount + ' program';
+                    }
+
+                    if (emptyEl) {
+                        emptyEl.hidden = visible !== 0;
+                    }
+                }
+
+                tabs.forEach((tab) => {
+                    tab.addEventListener('click', () => {
+                        tabs.forEach((t) => t.classList.remove('is-active'));
+                        tab.classList.add('is-active');
+                        activeCategory = tab.dataset.category;
+                        applyFilter();
+                    });
+                });
+
+                searchInput?.addEventListener('input', applyFilter);
+            })();
+        </script>
+    @endpush
+
 
 
     {{-- ========================================

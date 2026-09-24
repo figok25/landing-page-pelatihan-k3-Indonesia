@@ -10,9 +10,15 @@ class RegionController extends Controller
 {
     /**
      * GET /kota/{kota}
-     * Halaman hub generik per kota: CTA + beberapa link pelatihan prioritas.
-     * TIDAK me-render seluruh 169 program per kota (hindari duplicate
-     * content / mass-generate, sesuai keputusan sebelumnya).
+     * Halaman hub per kota: CTA + katalog lengkap seluruh program
+     * pelatihan, setiap link mengarah ke halaman regional
+     * (training.location) untuk kota terkait.
+     *
+     * CATATAN SEO: sebelumnya halaman ini sengaja hanya menampilkan
+     * beberapa contoh pelatihan (bukan katalog penuh) untuk menghindari
+     * duplicate content dari kombinasi 514 kota x 169 program. Atas
+     * permintaan eksplisit klien, katalog penuh kini ditampilkan di sini.
+     * Perlu dipantau dampaknya ke indexing/SEO ke depannya.
      */
     public function city(string $kota)
     {
@@ -20,11 +26,26 @@ class RegionController extends Controller
 
         abort_if($city === null, 404);
 
+        $trainings = TrainingCatalog::all();
+        $categories = TrainingCatalog::categories();
+
+        $grouped = [];
+        foreach ($categories as $key => $meta) {
+            $grouped[$key] = [
+                'label' => $meta['label'],
+                'items' => array_values(array_filter(
+                    $trainings,
+                    fn ($t) => $t['category'] === $key
+                )),
+            ];
+        }
+
         return view('region.city', [
             'city' => $city,
             'kecamatan' => KecamatanCatalog::forCity($city['code']),
-            // Contoh pelatihan populer sebagai starting point, bukan katalog penuh.
-            'popularTrainings' => array_slice(TrainingCatalog::all(), 0, 6),
+            'trainings' => $trainings,
+            'grouped' => $grouped,
+            'categories' => $categories,
         ]);
     }
 }
