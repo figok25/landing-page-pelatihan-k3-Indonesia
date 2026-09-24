@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="PelatihanK3 Indonesia">
+    <path
+        d="M50 10 L76 20 Q81 22 81 29 L81 48 Q81 66 50 90 Q19 66 19 48 L19 29 Q19 22 24 20 Z"
+        fill="#009b62"
+        stroke="#007a4d"
+        stroke-width="1.2"
+        stroke-linejoin="round" />
+    <path
+        d="M34 52 L46 64 L68 38"
+        fill="none"
+        stroke="#ffffff"
+        stroke-width="7"
+        stroke-linecap="round"
+        stroke-linejoin="round" />
+</svg>
