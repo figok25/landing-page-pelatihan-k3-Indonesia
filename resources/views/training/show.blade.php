@@ -15,7 +15,7 @@
                 <i class="bx bx-chevron-right"></i>
                 <a href="{{ route('training.index') }}">Pelatihan</a>
                 <i class="bx bx-chevron-right"></i>
-                <span>{{ $training['name'] }}</span>
+                <span>{{ $training['name'] }} {{$city['type']}} {{ $city['name'] }}</span>
             </div>
 
             <div class="training-hero-content">
@@ -57,7 +57,7 @@
                         @endisset
                     </div>
 
-                    <h1>{{ $training['name'] }}</h1>
+                    <h1>{{ $training['name'] }} {{$city['type']}} {{ $city['name'] }}</h1>
 
                     <p>
                         Tingkatkan kompetensi dan pemahaman Keselamatan
@@ -175,7 +175,7 @@
         <div class="container">
             <div class="section-heading text-center">
                 <span class="section-badge">Artikel</span>
-                <h2>Mengenal Lebih Dalam {{ $training['name'] }}</h2>
+                <h2>Mengenal Lebih Dalam {{ $training['name'] }} {{$city['type']}} {{ $city['name'] }}</h2>
             </div>
 
             @isset($city)
