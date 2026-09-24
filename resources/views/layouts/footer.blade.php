@@ -101,6 +101,17 @@
 
                 <ul class="footer-contact-list">
                     <li>
+                        <i class="bx bx-map"></i>
+
+                        <div>
+                            <span>Alamat</span>
+                            <span>
+                                Jln. Raya Pondok Indah Sektor 3 Pondok Pinang, Jakarta Selatan
+                            </span>
+                        </div>
+                    </li>
+
+                    <li>
                         <i class="bx bx-phone"></i>
 
                         <div>
@@ -116,7 +127,7 @@
 
                         <div>
                             <span>Email</span>
-                            <a href="mailto:info@pelatihank3indonesia.com"> Cs@pelatihank3indonesia.com </a>
+                            <a href="mailto:marketing@Pelatihank3offshore.com"> marketing@Pelatihank3offshore.com </a>
                         </div>
                     </li>
                 </ul>
