@@ -161,7 +161,7 @@
                 </p>
 
                 <p class="city-catalog-location">
-                    Tersedia Public Batch &amp; In-House di {{ $city['province'] }}
+                    Tersedia Public Batch &amp; In-House di {{ $city['type'] }} {{ $city['name'] }}
                 </p>
 
             </div>
@@ -208,6 +208,8 @@
 
                 @foreach ($trainings as $training)
 
+                    @php $trainingContent = \App\Data\TrainingContent::for($training['slug'], $training['name']); @endphp
+
                     <a href="{{ route('training.location', ['training' => $training['slug'], 'kota' => $city['slug']]) }}"
                        class="city-training-card"
                        data-category="{{ $training['category'] }}"
@@ -216,7 +218,7 @@
                         <div class="city-training-card-top">
 
                             <span class="city-training-label">
-                                PELATIHAN K3
+                                {{ $trainingContent['badge'] }}
                             </span>
 
                             <span class="city-training-group">
@@ -238,7 +240,7 @@
                         <div class="city-training-card-footer">
 
                             <span class="city-training-status">
-                                Tersedia Public Batch &amp; In-House
+                                {{ $city['type'] }} {{ $city['name'] }}
                             </span>
 
                             <span class="city-training-detail">
