@@ -8,6 +8,7 @@
 )
 
 @vite('resources/css/pages/city.css')
+@vite('resources/css/home/katalog.css')
 
 @section('content')
 
@@ -171,8 +172,8 @@
                 <input
                     type="text"
                     id="cityCatalogSearch"
-                    placeholder="Cari pelatihan: Forklift, Crane, Ahli K3 Umum, Scaffolding, POP Minerba, Boiler..."
-                    aria-label="Cari program pelatihan dan sertifikasi K3">
+                    placeholder="Cari pelatihan atau jasa: Forklift, Crane, Ahli K3 Umum, Jasa Riksa Uji Alat..."
+                    aria-label="Cari program pelatihan dan jasa K3">
             </div>
 
             <div class="city-catalog-tabs" id="cityCatalogTabs">
@@ -181,12 +182,26 @@
                         class="city-catalog-tab is-active"
                         data-category="all">
                     Semua Kelompok
-                    <span>{{ count($trainings) }}+</span>
+                    <span>{{ count($trainings) + count($services) }}+</span>
                 </button>
 
                 @foreach ($categories as $key => $meta)
 
                     @if (count($grouped[$key]['items']) > 0)
+
+                        <button type="button"
+                                class="city-catalog-tab"
+                                data-category="{{ $key }}">
+                            Pelatihan: {{ $meta['label'] }}
+                        </button>
+
+                    @endif
+
+                @endforeach
+
+                @foreach ($serviceCategories as $key => $meta)
+
+                    @if (count($groupedServices[$key]['items']) > 0)
 
                         <button type="button"
                                 class="city-catalog-tab"
@@ -201,56 +216,32 @@
             </div>
 
             <p class="city-catalog-count" id="cityCatalogCount">
-                Menampilkan {{ count($trainings) }} dari {{ count($trainings) }} program
+                Menampilkan {{ count($trainings) + count($services) }} dari {{ count($trainings) + count($services) }} program
             </p>
 
-            <div class="city-training-grid" id="cityCatalogGrid">
+            <div class="catalog-groups" id="cityCatalogGrid">
 
-                @foreach ($trainings as $training)
+                @foreach ($categories as $key => $meta)
 
-                    @php $trainingContent = \App\Data\TrainingContent::for($training['slug'], $training['name']); @endphp
+                    @if (count($grouped[$key]['items']) > 0)
 
-                    <a href="{{ route('training.location', ['training' => $training['slug'], 'kota' => $city['slug']]) }}"
-                       class="city-training-card"
-                       data-category="{{ $training['category'] }}"
-                       data-name="{{ strtolower($training['name']) }}">
-
-                        <div class="city-training-card-top">
-
-                            <span class="city-training-label">
-                                {{ $trainingContent['badge'] }}
-                            </span>
-
-                            <span class="city-training-group">
-                                {{ $categories[$training['category']]['label'] }}
-                            </span>
-
+                        <div class="catalog-group" data-category="{{ $key }}">
+                            @include('partials.katalog.group', ['category' => $key, 'type' => 'training', 'city' => $city])
                         </div>
 
-                        <h3>
-                            {{ $training['name'] }}
-                        </h3>
+                    @endif
 
-                        <p class="city-training-description">
-                            Program pelatihan dan sertifikasi K3 sesuai kebutuhan industri Anda.
-                        </p>
+                @endforeach
 
-                        <div class="city-training-card-divider"></div>
+                @foreach ($serviceCategories as $key => $meta)
 
-                        <div class="city-training-card-footer">
+                    @if (count($groupedServices[$key]['items']) > 0)
 
-                            <span class="city-training-status">
-                                {{ $city['type'] }} {{ $city['name'] }}
-                            </span>
-
-                            <span class="city-training-detail">
-                                Selengkapnya
-                                <i class="bx bx-right-arrow-alt"></i>
-                            </span>
-
+                        <div class="catalog-group" data-category="{{ $key }}">
+                            @include('partials.katalog.group', ['category' => $key, 'type' => 'jasa', 'city' => $city])
                         </div>
 
-                    </a>
+                    @endif
 
                 @endforeach
 
@@ -276,10 +267,10 @@
             (function () {
                 const searchInput = document.getElementById('cityCatalogSearch');
                 const tabs = document.querySelectorAll('#cityCatalogTabs .city-catalog-tab');
-                const cards = document.querySelectorAll('#cityCatalogGrid .city-training-card');
+                const groups = document.querySelectorAll('#cityCatalogGrid .catalog-group');
                 const countEl = document.getElementById('cityCatalogCount');
                 const emptyEl = document.getElementById('cityCatalogEmpty');
-                const totalCount = cards.length;
+                const totalCount = document.querySelectorAll('#cityCatalogGrid .catalog-item').length;
 
                 let activeCategory = 'all';
 
@@ -287,14 +278,24 @@
                     const keyword = (searchInput?.value || '').trim().toLowerCase();
                     let visible = 0;
 
-                    cards.forEach((card) => {
-                        const matchesCategory = activeCategory === 'all' || card.dataset.category === activeCategory;
-                        const matchesKeyword = keyword === '' || card.dataset.name.includes(keyword);
-                        const show = matchesCategory && matchesKeyword;
+                    groups.forEach((group) => {
+                        const matchesCategory = activeCategory === 'all' || group.dataset.category === activeCategory;
+                        const items = group.querySelectorAll('.catalog-item');
+                        let groupVisible = 0;
 
-                        card.style.display = show ? '' : 'none';
+                        items.forEach((item) => {
+                            const matchesKeyword = keyword === '' || item.dataset.name.includes(keyword);
+                            const show = matchesCategory && matchesKeyword;
 
-                        if (show) visible++;
+                            item.style.display = show ? '' : 'none';
+
+                            if (show) {
+                                groupVisible++;
+                                visible++;
+                            }
+                        });
+
+                        group.style.display = groupVisible > 0 ? '' : 'none';
                     });
 
                     if (countEl) {

@@ -1,7 +1,9 @@
 @vite ('resources/css/home/katalog.css')
 @php
     $categories = \App\Data\TrainingCatalog::categories();
+    $serviceCategories = \App\Data\ServiceCatalog::categories();
     $total = count(\App\Data\TrainingCatalog::all());
+    $serviceTotal = count(\App\Data\ServiceCatalog::primary());
     $icons = [
         'personil-manajemen' => 'ri-shield-star-fill',
         'alat-berat-angkat-angkut' => 'ri-truck-fill',
@@ -10,6 +12,12 @@
         'hse-migas-tambang-offshore' => 'ri-oil-fill',
         'lingkungan-limbah' => 'ri-leaf-fill',
         'sektoral-umum' => 'ri-briefcase-fill',
+    ];
+    $serviceIcons = [
+        'jasa-perizinan-riksa-uji' => 'ri-file-shield-2-fill',
+        'jasa-kajian-teknis' => 'ri-file-search-fill',
+        'jasa-lingkungan-limbah' => 'ri-recycle-fill',
+        'jasa-lainnya' => 'ri-briefcase-4-fill',
     ];
 @endphp
 <section class="catalog-section">
@@ -23,17 +31,28 @@
                 K3
             </h2>
 
-            <p class="catalog-description">Telusuri berbagai program pelatihan dan sertifikasi K3 berdasarkan kebutuhan industri Anda.</p>
+            <p class="catalog-description">Telusuri berbagai program pelatihan dan jasa K3 sesuai kebutuhan industri Anda.</p>
         </div>
 
         {{-- Category Filter --}}
         <div class="catalog-filters" role="tablist" aria-label="Kelompok katalog">
             <button type="button" class="catalog-filter active" data-category="all" role="tab" aria-selected="true">
                 Semua Kelompok
-                <span>{{ $total }}+</span>
+                <span>{{ $total + $serviceTotal }}+</span>
             </button>
 
             @foreach ($categories as $key => $meta)
+                <button
+                    type="button"
+                    class="catalog-filter"
+                    data-category="{{ $key }}"
+                    role="tab"
+                    aria-selected="false">
+                    Pelatihan: {{ $meta['label'] }}
+                </button>
+            @endforeach
+
+            @foreach ($serviceCategories as $key => $meta)
                 <button
                     type="button"
                     class="catalog-filter"
@@ -49,7 +68,13 @@
         <div class="catalog-groups">
             @foreach ($categories as $key => $meta)
                 <div class="catalog-group" data-category="{{ $key }}">
-                    @include ('partials.katalog.group', ['category' => $key, 'icon' => $icons[$key]])
+                    @include ('partials.katalog.group', ['category' => $key, 'icon' => $icons[$key], 'type' => 'training'])
+                </div>
+            @endforeach
+
+            @foreach ($serviceCategories as $key => $meta)
+                <div class="catalog-group" data-category="{{ $key }}">
+                    @include ('partials.katalog.group', ['category' => $key, 'icon' => $serviceIcons[$key], 'type' => 'jasa'])
                 </div>
             @endforeach
         </div>

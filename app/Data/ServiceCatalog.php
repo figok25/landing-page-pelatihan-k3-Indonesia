@@ -59,16 +59,24 @@ class ServiceCatalog
     }
 
     /**
-     * @return array<string, string>
+     * Kategori jasa + huruf grup (Direktori Lengkap), lanjutan huruf
+     * training (A-G) supaya konsisten satu urutan di halaman katalog.
+     *
+     * @return array<string, array{label: string, letter: string}>
      */
     public static function categories(): array
     {
         return [
-            'jasa-perizinan-riksa-uji' => 'Jasa Perizinan & Riksa Uji Teknis',
-            'jasa-kajian-teknis' => 'Jasa Kajian Teknis & Keselamatan',
-            'jasa-lingkungan-limbah' => 'Jasa Lingkungan & Pengelolaan Limbah',
-            'jasa-lainnya' => 'Jasa Lainnya',
+            'jasa-perizinan-riksa-uji' => ['label' => 'Jasa Perizinan & Riksa Uji Teknis', 'letter' => 'H'],
+            'jasa-kajian-teknis' => ['label' => 'Jasa Kajian Teknis & Keselamatan', 'letter' => 'I'],
+            'jasa-lingkungan-limbah' => ['label' => 'Jasa Lingkungan & Pengelolaan Limbah', 'letter' => 'J'],
+            'jasa-lainnya' => ['label' => 'Jasa Lainnya', 'letter' => 'K'],
         ];
+    }
+
+    public static function byCategory(string $category): array
+    {
+        return array_values(array_filter(self::primary(), fn ($item) => $item['category'] === $category));
     }
 
     public static function findBySlug(string $slug): ?array

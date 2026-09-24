@@ -63,7 +63,7 @@
                         @endisset
                     </div>
 
-                    <h1>{{ $training['name'] }}{{ $cityLabel }}</h1>
+                    <h1>Pelatihan {{ $training['name'] }}{{ $cityLabel }}</h1>
 
                     <p>
                         Tingkatkan kompetensi dan pemahaman Keselamatan
@@ -181,7 +181,7 @@
         <div class="container">
             <div class="section-heading text-center">
                 <span class="section-badge">Artikel</span>
-                <h2>Mengenal Lebih Dalam {{ $training['name'] }}{{ $cityLabel }}</h2>
+                <h2>Mengenal Lebih Dalam Pelatihan {{ $training['name'] }}{{ $cityLabel }}</h2>
             </div>
 
             @isset($city)

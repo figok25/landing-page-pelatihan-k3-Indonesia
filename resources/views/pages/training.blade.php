@@ -34,7 +34,7 @@
                                 </div>
 
                                 <div>
-                                    <h2 class="training-group-title">{{ $group['label'] }}</h2>
+                                    <h2 class="training-group-title">Pelatihan {{ $group['label'] }}</h2>
 
                                     <p class="training-group-count">
                                         {{ count($group['items']) }} program pelatihan tersedia
@@ -45,17 +45,18 @@
                             {{-- Training Cards --}}
                             <div class="training-grid">
                                 @foreach ($group['items'] as $training)
+                                    @php $trainingContent = \App\Data\TrainingContent::for($training['slug'], $training['name']); @endphp
                                     <a
                                         href="{{ route('training.show', ['training' => $training['slug']]) }}"
                                         class="training-card">
                                         <div class="training-card-content">
                                             <div class="training-card-top">
-                                                <span class="training-card-badge"> PELATIHAN K3 </span>
+                                                <span class="training-card-badge"> {{ $trainingContent['badge'] }} </span>
 
                                                 <i class="bx bx-right-arrow-alt training-card-arrow"></i>
                                             </div>
 
-                                            <h3 class="training-card-title">{{ $training['name'] }}</h3>
+                                            <h3 class="training-card-title">Pelatihan {{ $training['name'] }}</h3>
 
                                             <p class="training-card-link">
                                                 Lihat detail program

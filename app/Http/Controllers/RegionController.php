@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Data\KecamatanCatalog;
 use App\Data\RegionCatalog;
+use App\Data\ServiceCatalog;
 use App\Data\TrainingCatalog;
 
 class RegionController extends Controller
@@ -40,12 +41,31 @@ class RegionController extends Controller
             ];
         }
 
+        // Jasa: disamakan dengan katalog di beranda (partials.katalog),
+        // yang sebelumnya tidak ditampilkan sama sekali di halaman kota.
+        $services = ServiceCatalog::primary();
+        $serviceCategories = ServiceCatalog::categories();
+
+        $groupedServices = [];
+        foreach ($serviceCategories as $key => $meta) {
+            $groupedServices[$key] = [
+                'label' => $meta['label'],
+                'items' => array_values(array_filter(
+                    $services,
+                    fn ($s) => $s['category'] === $key
+                )),
+            ];
+        }
+
         return view('region.city', [
             'city' => $city,
             'kecamatan' => KecamatanCatalog::forCity($city['code']),
             'trainings' => $trainings,
             'grouped' => $grouped,
             'categories' => $categories,
+            'services' => $services,
+            'groupedServices' => $groupedServices,
+            'serviceCategories' => $serviceCategories,
         ]);
     }
 }

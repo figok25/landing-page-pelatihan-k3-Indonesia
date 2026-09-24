@@ -26,7 +26,7 @@
 
             {{-- Service Categories --}}
             <div class="services-groups">
-                @foreach ($categories as $key => $label)
+                @foreach ($categories as $key => $meta)
                     @php
                     $items = array_values(
                         array_filter(
@@ -45,7 +45,7 @@
                                 </div>
 
                                 <div>
-                                    <h2 class="services-group-title">{{ $label }}</h2>
+                                    <h2 class="services-group-title">{{ $meta['label'] }}</h2>
 
                                     <p class="services-group-count">{{ count($items) }} layanan tersedia</p>
                                 </div>
@@ -54,12 +54,13 @@
                             {{-- Service Cards --}}
                             <div class="services-grid">
                                 @foreach ($items as $service)
+                                    @php $serviceContent = \App\Data\ServiceContent::for($service['slug'], $service['name']); @endphp
                                     <a
                                         href="{{ route('service.show', ['service' => $service['slug']]) }}"
                                         class="service-card">
                                         <div class="service-card-content">
                                             <div class="service-card-top">
-                                                <span class="service-card-badge"> JASA K3 </span>
+                                                <span class="service-card-badge"> {{ $serviceContent['badge'] }} </span>
 
                                                 <div class="service-card-icon">
                                                     <i class="bx bx-right-arrow-alt"></i>
