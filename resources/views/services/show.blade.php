@@ -8,6 +8,10 @@
 @vite('resources/css/pages/service-show.css')
 
 @section('content')
+    @php
+        // $city hanya ada saat dibuka lewat /jasa/{slug}/{kota}.
+        $cityLabel = isset($city) ? ' '.$city['type'].' '.$city['name'] : '';
+    @endphp
     {{-- Service Hero --}}
     <section class="service-hero">
         <div class="container">
@@ -16,7 +20,7 @@
                 <i class="bx bx-chevron-right"></i>
                 <a href="{{ route('service.index') }}">Jasa</a>
                 <i class="bx bx-chevron-right"></i>
-                <span>{{ $service['name'] }}</span>
+                <span>{{ $service['name'] }}{{ $cityLabel }}</span>
             </div>
 
             <div class="service-hero-content">
@@ -58,7 +62,7 @@
                         @endisset
                     </div>
 
-                    <h1>{{ $service['name'] }}</h1>
+                    <h1>{{ $service['name'] }}{{ $cityLabel }}</h1>
 
                     <p>
                         Dapatkan layanan konsultasi dan perizinan K3 yang sesuai dengan
@@ -166,7 +170,7 @@
         <div class="container">
             <div class="section-heading text-center">
                 <span class="section-badge">Artikel</span>
-                <h2>Mengenal Lebih Dalam {{ $service['name'] }}</h2>
+                <h2>Mengenal Lebih Dalam {{ $service['name'] }}{{ $cityLabel }}</h2>
             </div>
 
             @isset($city)

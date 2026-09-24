@@ -7,6 +7,12 @@
 @vite('resources/css/pages/training-show.css')
 
 @section('content')
+    @php
+        // $city hanya ada saat dibuka lewat /pelatihan/{slug}/{kota}.
+        // $cityLabel dipakai supaya breadcrumb/h1/heading artikel aman
+        // dibuka dari 2 arah: dengan atau tanpa wilayah.
+        $cityLabel = isset($city) ? ' '.$city['type'].' '.$city['name'] : '';
+    @endphp
     {{-- Training Hero --}}
     <section class="training-hero">
         <div class="container">
@@ -15,7 +21,7 @@
                 <i class="bx bx-chevron-right"></i>
                 <a href="{{ route('training.index') }}">Pelatihan</a>
                 <i class="bx bx-chevron-right"></i>
-                <span>{{ $training['name'] }} {{$city['type']}} {{ $city['name'] }}</span>
+                <span>{{ $training['name'] }}{{ $cityLabel }}</span>
             </div>
 
             <div class="training-hero-content">
@@ -57,7 +63,7 @@
                         @endisset
                     </div>
 
-                    <h1>{{ $training['name'] }} {{$city['type']}} {{ $city['name'] }}</h1>
+                    <h1>{{ $training['name'] }}{{ $cityLabel }}</h1>
 
                     <p>
                         Tingkatkan kompetensi dan pemahaman Keselamatan
@@ -175,7 +181,7 @@
         <div class="container">
             <div class="section-heading text-center">
                 <span class="section-badge">Artikel</span>
-                <h2>Mengenal Lebih Dalam {{ $training['name'] }} {{$city['type']}} {{ $city['name'] }}</h2>
+                <h2>Mengenal Lebih Dalam {{ $training['name'] }}{{ $cityLabel }}</h2>
             </div>
 
             @isset($city)
