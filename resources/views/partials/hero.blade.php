@@ -77,7 +77,7 @@
                 </a>
 
                 <a href="{{ route('contact') }}" class="btn btn-outline-light hero-btn">
-                    <i class="bx bx-phone"></i>
+                    <i class="bx bxl-whatsapp"></i>
                     Hubungi Kami
                 </a>
             </div>

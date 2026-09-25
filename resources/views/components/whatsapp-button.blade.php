@@ -1,13 +1,23 @@
-@props (['message' => 'Halo Admin, saya ingin mendapatkan informasi mengenai pelatihan K3.'])
+```blade
+@props(['message' => 'Halo Admin, saya ingin mendapatkan informasi mengenai pelatihan K3.'])
 
 <a
-    href="https://wa.me/628118500177?text={{ urlencode($message) }}"
+    href="https://wa.me/6281234567890?text={{ urlencode($message) }}"
     target="_blank"
     rel="noopener noreferrer"
-    class="whatsapp-button"
-    aria-label="Hubungi kami via WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.6 5.9L0 24l6.3-1.6A12 12 0 0 0 12 24c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5ZM12 22a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22Z" />
-    </svg>
-    <span class="hidden sm:inline">Konsultasi Sekarang</span>
+    aria-label="Hubungi Admin melalui WhatsApp"
+    class="group fixed right-6 bottom-6 z-50 flex items-center gap-3"
+>
+    <span
+        class="pointer-events-none rounded-lg bg-slate-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-lg transition-opacity duration-300 group-hover:opacity-100"
+    >
+        Hubungi Admin
+    </span>
+
+    <span
+        class="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-[#20bd5a] group-hover:shadow-xl"
+    >
+        <i class="bx bxl-whatsapp text-3xl"></i>
+    </span>
 </a>
+```
