@@ -1,4 +1,4 @@
-```blade
+
 @props(['message' => 'Halo Admin, saya ingin mendapatkan informasi mengenai pelatihan K3.'])
 
 <a
@@ -20,4 +20,3 @@
         <i class="bx bxl-whatsapp text-3xl"></i>
     </span>
 </a>
-```

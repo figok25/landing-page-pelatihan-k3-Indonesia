@@ -9,12 +9,12 @@
     --primary-color: #0b253d;
     --primary-dark: #071b2d;
     --primary-light: #163d5a;
-
+    
     /* Secondary Colors */
-    --secondary-color: #009b62;
-    --secondary-dark: #007a4d;
-    --secondary-light: #19b879;
-
+    --secondary-color: #d4a900;
+    --secondary-dark: #a67f00;
+    --secondary-light: #e6c33a;
+    
     /* Accent Colors */
     --accent-color: #d6b626;
     --accent-light: #e8d36b;
