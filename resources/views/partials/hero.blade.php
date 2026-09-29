@@ -16,15 +16,16 @@
             </span>
 
             <h1 class="hero-title">
-                Portal Resmi Informasi <span>Pelatihan</span>, <span>Sertifikasi Profesi K3</span>, dan
-                <span>Jasa Riksa Uji Nasional</span>
+                Satu Pintu untuk <span>Sertifikasi K3</span>, <span>Pelatihan Kompetensi</span>, dan
+                <span>Jasa Riksa Uji</span> di Seluruh Indonesia
             </h1>
 
-            <p class="hero-description">Pusat rujukan regulasi Kemnaker RI, BNSP, KLHK, dan Ditjen Migas. Menjangkau lebih dari
+            <p class="hero-description">Dari identifikasi bahaya di lapangan hingga sertifikat yang diakui
+            Kemnaker RI, BNSP, KLHK, dan Ditjen Migas — kami memetakan
             <strong>{{ $stats['total_trainings'] }}</strong>
             program pelatihan dan
             <strong>{{ $stats['total_services'] }}</strong>
-            jenis jasa yang didukung oleh tenaga ahli berpengalaman dan berstandar nasional.</p>
+            jenis jasa K3 ke dalam satu portal yang mudah ditelusuri, didampingi tenaga ahli bersertifikat nasional.</p>
 
             {{-- Hero Features --}}
             <div class="hero-features">
