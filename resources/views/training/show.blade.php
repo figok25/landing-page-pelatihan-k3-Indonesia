@@ -120,12 +120,6 @@
                 {!! $article['html'] !!}
             </article>
 
-            <div class="training-article-meta">
-                <div class="training-article-meta-item"><span>Slug</span><strong>{{ $meta['slug'] ?? $training['slug'] }}</strong></div>
-                <div class="training-article-meta-item"><span>Status konten</span><strong>{{ $meta['status'] ?? 'final' }}</strong></div>
-                <div class="training-article-meta-item"><span>Meta title</span><strong>{{ $meta['meta_title'] ?? $training['name'] }}</strong></div>
-                <div class="training-article-meta-item"><span>CTA</span><strong>{{ $meta['cta'] ?? 'Konsultasikan kebutuhan pelatihan' }}</strong></div>
-            </div>
         </div>
     </section>
 

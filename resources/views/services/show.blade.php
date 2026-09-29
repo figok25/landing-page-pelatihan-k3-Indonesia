@@ -69,8 +69,6 @@
             @endisset
 
             <article class="service-article-body">{!! $article['html'] !!}</article>
-
-            <div class="service-article-meta"><div class="service-article-meta-item"><span>Slug</span><strong>{{ $meta['slug'] ?? $service['slug'] }}</strong></div><div class="service-article-meta-item"><span>Status konten</span><strong>{{ $meta['status'] ?? 'final' }}</strong></div><div class="service-article-meta-item"><span>Meta title</span><strong>{{ $meta['meta_title'] ?? $service['name'] }}</strong></div><div class="service-article-meta-item"><span>CTA</span><strong>{{ $meta['cta'] ?? 'Konsultasikan kebutuhan layanan' }}</strong></div></div>
         </div>
     </section>
 
