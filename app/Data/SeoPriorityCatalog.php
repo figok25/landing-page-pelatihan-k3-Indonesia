@@ -7,7 +7,7 @@ namespace App\Data;
  * untuk dibuatkan halaman SEO Level 2 (/pelatihan/{slug}/{kota} dan
  * /jasa/{slug}/{kota}).
  *
- * Mengikuti prinsip blueprint #38 & #39: dengan 169 pelatihan x 514
+ * Mengikuti prinsip blueprint #38 & #39: dengan 207 pelatihan x 514
  * kabupaten/kota = 86.966 kemungkinan kombinasi, TIDAK BOLEH digenerate
  * otomatis semuanya. Halaman regional hanya dibuat untuk kombinasi
  * high-value keyword + lokasi relevan yang benar-benar punya konten

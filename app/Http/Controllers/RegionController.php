@@ -17,7 +17,7 @@ class RegionController extends Controller
      *
      * CATATAN SEO: sebelumnya halaman ini sengaja hanya menampilkan
      * beberapa contoh pelatihan (bukan katalog penuh) untuk menghindari
-     * duplicate content dari kombinasi 514 kota x 169 program. Atas
+     * duplicate content dari kombinasi 514 kota x 207 program. Atas
      * permintaan eksplisit klien, katalog penuh kini ditampilkan di sini.
      * Perlu dipantau dampaknya ke indexing/SEO ke depannya.
      */

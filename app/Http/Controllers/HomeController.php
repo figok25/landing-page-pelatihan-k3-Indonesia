@@ -15,7 +15,7 @@ class HomeController extends Controller
 
         return view('index', [
             // Program unggulan: tampilkan beberapa contoh saja di homepage,
-            // JANGAN tampilkan seluruh 169 program sekaligus (blueprint #20).
+            // JANGAN tampilkan seluruh 207 program sekaligus (blueprint #20).
             'featuredTrainings' => array_slice($trainings, 0, 6),
             'featuredServices' => array_slice($services, 0, 6),
             'stats' => [

@@ -2,17 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Data\ArticleRepository;
 use App\Data\RegionCatalog;
 use App\Data\ServiceCatalog;
 
 class ServiceController extends Controller
 {
-    /**
-     * GET /jasa
-     * Hanya menampilkan layanan utama (type=primary) — 3 baris
-     * "keyword_variant" di data client tidak ditampilkan sebagai card
-     * terpisah, lihat catatan di ServiceCatalog.
-     */
+    /** GET /jasa */
     public function index()
     {
         return view('pages.services', [
@@ -21,27 +17,23 @@ class ServiceController extends Controller
         ]);
     }
 
-    /**
-     * GET /jasa/{service}
-     */
+    /** GET /jasa/{service} */
     public function show(string $service)
     {
         $item = ServiceCatalog::findBySlug($service);
-
         abort_if($item === null || $item['type'] !== 'primary', 404);
+
+        $article = ArticleRepository::find('jasa', $service);
+        abort_if($article === null, 404);
 
         return view('services.show', [
             'service' => $item,
+            'article' => $article,
             'regions' => RegionCatalog::citiesGroupedByProvince(),
         ]);
     }
 
-    /**
-     * GET /jasa/{service}/{kota}
-     * Sama seperti TrainingController::location() — dibuka untuk seluruh
-     * 514 kabupaten/kota. sitemap.xml tetap hanya memuat kombinasi
-     * prioritas dari SeoPriorityCatalog.
-     */
+    /** GET /jasa/{service}/{kota} */
     public function location(string $service, string $kota)
     {
         $item = ServiceCatalog::findBySlug($service);
@@ -50,8 +42,12 @@ class ServiceController extends Controller
         abort_if($item === null || $item['type'] !== 'primary', 404);
         abort_if($city === null, 404);
 
+        $article = ArticleRepository::find('jasa', $service);
+        abort_if($article === null, 404);
+
         return view('services.show', [
             'service' => $item,
+            'article' => $article,
             'city' => $city,
             'regions' => RegionCatalog::citiesGroupedByProvince(),
         ]);

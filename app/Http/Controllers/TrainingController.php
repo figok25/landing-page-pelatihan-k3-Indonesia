@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Data\ArticleRepository;
 use App\Data\RegionCatalog;
 use App\Data\TrainingCatalog;
 
 class TrainingController extends Controller
 {
-    /**
-     * GET /pelatihan
-     * Katalog seluruh 169 program, dikelompokkan per kategori.
-     */
+    /** GET /pelatihan */
     public function index()
     {
         $trainings = TrainingCatalog::all();
@@ -27,37 +25,26 @@ class TrainingController extends Controller
             ];
         }
 
-        return view('pages.training', [
-            'grouped' => $grouped,
-        ]);
+        return view('pages.training', ['grouped' => $grouped]);
     }
 
-    /**
-     * GET /pelatihan/{training}
-     * Halaman detail satu program (SEO Level 1).
-     */
+    /** GET /pelatihan/{training} */
     public function show(string $training)
     {
         $item = TrainingCatalog::findBySlug($training);
-
         abort_if($item === null, 404);
+
+        $article = ArticleRepository::find('pelatihan', $training);
+        abort_if($article === null, 404);
 
         return view('training.show', [
             'training' => $item,
+            'article' => $article,
             'regions' => RegionCatalog::citiesGroupedByProvince(),
         ]);
     }
 
-    /**
-     * GET /pelatihan/{training}/{kota}
-     * Halaman regional (SEO Level 2) — dibuka untuk seluruh 514
-     * kabupaten/kota (bukan hanya whitelist SeoPriorityCatalog), supaya
-     * dropdown "Pilih Wilayah" di halaman ini selalu mengarah ke halaman
-     * yang benar-benar merespons 200. Halaman ini tetap noindex (lihat
-     * layouts/head.blade.php), dan sitemap.xml TETAP hanya memuat
-     * kombinasi prioritas dari SeoPriorityCatalog — jangan generate
-     * sitemap massal dari sini.
-     */
+    /** GET /pelatihan/{training}/{kota} */
     public function location(string $training, string $kota)
     {
         $item = TrainingCatalog::findBySlug($training);
@@ -66,8 +53,12 @@ class TrainingController extends Controller
         abort_if($item === null, 404);
         abort_if($city === null, 404);
 
+        $article = ArticleRepository::find('pelatihan', $training);
+        abort_if($article === null, 404);
+
         return view('training.show', [
             'training' => $item,
+            'article' => $article,
             'city' => $city,
             'regions' => RegionCatalog::citiesGroupedByProvince(),
         ]);

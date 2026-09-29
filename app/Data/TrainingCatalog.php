@@ -3,14 +3,8 @@
 namespace App\Data;
 
 /**
- * Master data 169 program pelatihan K3.
- * Sumber: List_Pelatihan-7.docx (dokumen client).
- * JANGAN mengubah nama program tanpa instruksi client.
- *
- * Kategori 'sektoral-umum' (Group G) adalah kelompok pelatihan yang TIDAK
- * ada padanannya di skema Grup A-F milik pelatihank3indonesia.com (mis.
- * Pertanian, Kelapa Sawit, HRD, Akuntansi) — atas keputusan client, ini
- * diberi grup sendiri, bukan digabung ke grup lain.
+ * Katalog pelatihan sinkron dengan 207 artikel dari list.md.
+ * Konten detail artikel disimpan sebagai Markdown di resources/articles/pelatihan.
  */
 class TrainingCatalog
 {
@@ -67,19 +61,22 @@ class TrainingCatalog
             ['name' => 'Basic First Aid', 'slug' => 'basic-first-aid', 'category' => 'personil-manajemen'],
             ['name' => 'Basic Fire Fighting', 'slug' => 'basic-fire-fighting', 'category' => 'personil-manajemen'],
             ['name' => 'Rigger (Juru Ikat)', 'slug' => 'rigger-juru-ikat', 'category' => 'alat-berat-angkat-angkut'],
+            ['name' => 'Asisten Rigger', 'slug' => 'asisten-rigger', 'category' => 'alat-berat-angkat-angkut'],
             ['name' => 'Operator K3 Cargo Hoist Crane Kelas 3 (Lift Barang)', 'slug' => 'operator-k3-cargo-hoist-crane-kelas-3-lift-barang', 'category' => 'alat-berat-angkat-angkut'],
-            ['name' => 'Pesawat Angkat & Pesawat Angkut', 'slug' => 'pesawat-angkat-pesawat-angkut', 'category' => 'alat-berat-angkat-angkut'],
-            ['name' => 'Lift & Eskalator', 'slug' => 'lift-eskalator', 'category' => 'pesawat-tenaga-produksi-uap'],
+            ['name' => 'Pesawat Angkat & Pesawat Angkut', 'slug' => 'pesawat-angkat-dan-pesawat-angkut', 'category' => 'alat-berat-angkat-angkut'],
+            ['name' => 'Lift', 'slug' => 'lift', 'category' => 'pesawat-tenaga-produksi-uap'],
+            ['name' => 'Eskalator', 'slug' => 'eskalator', 'category' => 'pesawat-tenaga-produksi-uap'],
             ['name' => 'Operator Genset', 'slug' => 'operator-genset', 'category' => 'pesawat-tenaga-produksi-uap'],
-            ['name' => 'Turbin Uap & Gas', 'slug' => 'turbin-uap-gas', 'category' => 'pesawat-tenaga-produksi-uap'],
-            ['name' => 'Operator Mesin Produksi & Perkakas', 'slug' => 'operator-mesin-produksi-perkakas', 'category' => 'pesawat-tenaga-produksi-uap'],
+            ['name' => 'Turbin Uap & Gas', 'slug' => 'turbin-uap-dan-gas', 'category' => 'pesawat-tenaga-produksi-uap'],
+            ['name' => 'Operator Mesin Produksi & Perkakas', 'slug' => 'operator-mesin-produksi-dan-perkakas', 'category' => 'pesawat-tenaga-produksi-uap'],
             ['name' => 'Operator Tanur', 'slug' => 'operator-tanur', 'category' => 'pesawat-tenaga-produksi-uap'],
-            ['name' => 'Operator Pesawat Tenaga & Produksi (PTP)', 'slug' => 'operator-pesawat-tenaga-produksi-ptp', 'category' => 'sektoral-umum'],
+            ['name' => 'Operator Pesawat Tenaga & Produksi (PTP)', 'slug' => 'operator-pesawat-tenaga-dan-produksi-ptp', 'category' => 'pesawat-tenaga-produksi-uap'],
             ['name' => 'Pesawat Uap Boiler Kelas 1', 'slug' => 'pesawat-uap-boiler-kelas-1', 'category' => 'pesawat-tenaga-produksi-uap'],
             ['name' => 'Pesawat Uap Boiler Kelas 2', 'slug' => 'pesawat-uap-boiler-kelas-2', 'category' => 'pesawat-tenaga-produksi-uap'],
-            ['name' => 'Teknisi Bejana Tekan & Tangki Timbun', 'slug' => 'teknisi-bejana-tekan-tangki-timbun', 'category' => 'personil-manajemen'],
-            ['name' => 'Ahli Bejana Tekan & Tangki Timbun', 'slug' => 'ahli-bejana-tekan-tangki-timbun', 'category' => 'personil-manajemen'],
+            ['name' => 'Teknisi Bejana Tekan & Tangki Timbun', 'slug' => 'teknisi-bejana-tekan-dan-tangki-timbun', 'category' => 'pesawat-tenaga-produksi-uap'],
+            ['name' => 'Ahli Bejana Tekan & Tangki Timbun', 'slug' => 'ahli-bejana-tekan-dan-tangki-timbun', 'category' => 'pesawat-tenaga-produksi-uap'],
             ['name' => 'Petugas P3K', 'slug' => 'petugas-p3k', 'category' => 'personil-manajemen'],
+            ['name' => 'Gantry Crane', 'slug' => 'gantry-crane', 'category' => 'alat-berat-angkat-angkut'],
             ['name' => 'First Aider', 'slug' => 'first-aider', 'category' => 'personil-manajemen'],
             ['name' => 'K3 Rumah Sakit', 'slug' => 'k3-rumah-sakit', 'category' => 'personil-manajemen'],
             ['name' => 'Hiperkes Paramedic / Perawat', 'slug' => 'hiperkes-paramedic-perawat', 'category' => 'personil-manajemen'],
@@ -87,6 +84,7 @@ class TrainingCatalog
             ['name' => 'K3 Kebakaran DAMKAR DCBA', 'slug' => 'k3-kebakaran-damkar-dcba', 'category' => 'personil-manajemen'],
             ['name' => 'Ahli K3 Kimia', 'slug' => 'ahli-k3-kimia', 'category' => 'personil-manajemen'],
             ['name' => 'Petugas K3 Kimia', 'slug' => 'petugas-k3-kimia', 'category' => 'personil-manajemen'],
+            ['name' => 'Truck Crane', 'slug' => 'truck-crane', 'category' => 'alat-berat-angkat-angkut'],
             ['name' => 'Operator Dongkrak', 'slug' => 'operator-dongkrak', 'category' => 'sektoral-umum'],
             ['name' => 'Ahli K3 Muda Lingkungan Kerja', 'slug' => 'ahli-k3-muda-lingkungan-kerja', 'category' => 'personil-manajemen'],
             ['name' => 'K3 Ruang Terbatas', 'slug' => 'k3-ruang-terbatas', 'category' => 'sektoral-umum'],
@@ -117,7 +115,7 @@ class TrainingCatalog
             ['name' => 'Coating and Painting', 'slug' => 'coating-and-painting', 'category' => 'personil-manajemen'],
             ['name' => 'Supply Chain Management', 'slug' => 'supply-chain-management', 'category' => 'sektoral-umum'],
             ['name' => 'Management Gudang', 'slug' => 'management-gudang', 'category' => 'sektoral-umum'],
-            ['name' => 'Blasting & Coating', 'slug' => 'blasting-coating', 'category' => 'personil-manajemen'],
+            ['name' => 'Blasting & Coating', 'slug' => 'blasting-dan-coating', 'category' => 'konstruksi-las-ketinggian'],
             ['name' => 'Authorizer Gas Tester', 'slug' => 'authorizer-gas-tester', 'category' => 'hse-migas-tambang-offshore'],
             ['name' => 'DDT (Defensive Driving Training)', 'slug' => 'ddt-defensive-driving-training', 'category' => 'hse-migas-tambang-offshore'],
             ['name' => 'Operator K3 Migas', 'slug' => 'operator-k3-migas', 'category' => 'sektoral-umum'],
@@ -129,17 +127,17 @@ class TrainingCatalog
             ['name' => 'Insiden Investigator', 'slug' => 'insiden-investigator', 'category' => 'hse-migas-tambang-offshore'],
             ['name' => 'Penanggungjawab Operasional Pengolahan Air Limbah (POPAL)', 'slug' => 'penanggungjawab-operasional-pengolahan-air-limbah-popal', 'category' => 'lingkungan-limbah'],
             ['name' => 'Penanggungjawab Pengendalian Pencemaran Air (PPPA)', 'slug' => 'penanggungjawab-pengendalian-pencemaran-air-pppa', 'category' => 'lingkungan-limbah'],
-            ['name' => 'Penanggungjawab Pengendalian Pencemaran Udara (PPPU) &', 'slug' => 'penanggungjawab-pengendalian-pencemaran-udara-pppu', 'category' => 'lingkungan-limbah'],
+            ['name' => 'Penanggungjawab Pengendalian Pencemaran Udara (PPPU) &', 'slug' => 'penanggungjawab-pengendalian-pencemaran-udara-pppu-dan', 'category' => 'lingkungan-limbah'],
             ['name' => 'POIPPU (Operator Pengendalian Pencemaran Udara)', 'slug' => 'poippu-operator-pengendalian-pencemaran-udara', 'category' => 'lingkungan-limbah'],
             ['name' => 'PLB3 (Penanggung Jawab Pengelolaan B3)', 'slug' => 'plb3-penanggung-jawab-pengelolaan-b3', 'category' => 'lingkungan-limbah'],
             ['name' => 'OLB3 (Operator Pengelola Limbah B3)', 'slug' => 'olb3-operator-pengelola-limbah-b3', 'category' => 'lingkungan-limbah'],
             ['name' => 'Pengambil Contoh Uji Air (PCUA)', 'slug' => 'pengambil-contoh-uji-air-pcua', 'category' => 'lingkungan-limbah'],
             ['name' => 'Manajemen Risiko', 'slug' => 'manajemen-risiko', 'category' => 'personil-manajemen'],
-            ['name' => 'Sea Survival HUET BOSIET & T-BOSIET', 'slug' => 'sea-survival-huet-bosiet-t-bosiet', 'category' => 'hse-migas-tambang-offshore'],
+            ['name' => 'Sea Survival HUET BOSIET & T-BOSIET', 'slug' => 'sea-survival-huet-bosiet-dan-t-bosiet', 'category' => 'hse-migas-tambang-offshore'],
             ['name' => 'Compressor', 'slug' => 'compressor', 'category' => 'hse-migas-tambang-offshore'],
             ['name' => 'Drilling', 'slug' => 'drilling', 'category' => 'hse-migas-tambang-offshore'],
             ['name' => 'Advance Fire Fighting', 'slug' => 'advance-fire-fighting', 'category' => 'personil-manajemen'],
-            ['name' => 'Pelatihan Perkapalan', 'slug' => 'pelatihan-perkapalan', 'category' => 'personil-manajemen'],
+            ['name' => 'Perkapalan', 'slug' => 'perkapalan', 'category' => 'hse-migas-tambang-offshore'],
             ['name' => 'NDT (Non Destructive Test)', 'slug' => 'ndt-non-destructive-test', 'category' => 'personil-manajemen'],
             ['name' => 'K3 Pertambangan', 'slug' => 'k3-pertambangan', 'category' => 'hse-migas-tambang-offshore'],
             ['name' => 'Oil Spill Response', 'slug' => 'oil-spill-response', 'category' => 'personil-manajemen'],
@@ -186,14 +184,43 @@ class TrainingCatalog
             ['name' => 'Manggala Agni', 'slug' => 'manggala-agni', 'category' => 'sektoral-umum'],
             ['name' => 'Kehutanan', 'slug' => 'kehutanan', 'category' => 'sektoral-umum'],
             ['name' => 'PLATFORM OFFSHORE', 'slug' => 'platform-offshore', 'category' => 'hse-migas-tambang-offshore'],
+            ['name' => 'Kelautan', 'slug' => 'kelautan', 'category' => 'hse-migas-tambang-offshore'],
+            ['name' => 'Manajemen', 'slug' => 'manajemen', 'category' => 'sektoral-umum'],
+            ['name' => 'Metalurgi', 'slug' => 'metalurgi', 'category' => 'pesawat-tenaga-produksi-uap'],
+            ['name' => 'Trafo', 'slug' => 'trafo', 'category' => 'pesawat-tenaga-produksi-uap'],
+            ['name' => 'Kendaraan Laut Darat dan Udara', 'slug' => 'kendaraan-laut-darat-dan-udara', 'category' => 'hse-migas-tambang-offshore'],
+            ['name' => 'SCADA', 'slug' => 'scada', 'category' => 'pesawat-tenaga-produksi-uap'],
+            ['name' => 'AUTOCAD', 'slug' => 'autocad', 'category' => 'sektoral-umum'],
+            ['name' => 'Pasca Sekolah', 'slug' => 'pasca-sekolah', 'category' => 'sektoral-umum'],
+            ['name' => '7 Habits', 'slug' => '7-habits', 'category' => 'sektoral-umum'],
+            ['name' => 'CSMS', 'slug' => 'csms', 'category' => 'personil-manajemen'],
+            ['name' => 'ISO 22000', 'slug' => 'iso-22000', 'category' => 'sektoral-umum'],
+            ['name' => 'ISO 9001', 'slug' => 'iso-9001', 'category' => 'sektoral-umum'],
+            ['name' => 'ISO 14001', 'slug' => 'iso-14001', 'category' => 'sektoral-umum'],
+            ['name' => 'ISO 37001', 'slug' => 'iso-37001', 'category' => 'sektoral-umum'],
+            ['name' => 'ISO 37009', 'slug' => 'iso-37009', 'category' => 'sektoral-umum'],
+            ['name' => 'ISO 26000', 'slug' => 'iso-26000', 'category' => 'sektoral-umum'],
+            ['name' => 'ISO 19011', 'slug' => 'iso-19011', 'category' => 'sektoral-umum'],
+            ['name' => 'ISO 19600', 'slug' => 'iso-19600', 'category' => 'sektoral-umum'],
+            ['name' => 'ISO 20121', 'slug' => 'iso-20121', 'category' => 'sektoral-umum'],
+            ['name' => 'NEBOSH', 'slug' => 'nebosh', 'category' => 'personil-manajemen'],
+            ['name' => 'Korosi Perkaratan Alat', 'slug' => 'korosi-perkaratan-alat', 'category' => 'pesawat-tenaga-produksi-uap'],
+            ['name' => 'Food Handler', 'slug' => 'food-handler', 'category' => 'sektoral-umum'],
+            ['name' => 'Operator K3 Mesin', 'slug' => 'operator-k3-mesin', 'category' => 'pesawat-tenaga-produksi-uap'],
+            ['name' => 'DDC (Defensive Driving Course)', 'slug' => 'ddc-defensive-driving-course', 'category' => 'sektoral-umum'],
+            ['name' => 'Operator Penggerak Mula Kelas 1', 'slug' => 'operator-penggerak-mula-kelas-1', 'category' => 'pesawat-tenaga-produksi-uap'],
+            ['name' => 'Operator Penggerak Mula Kelas 2', 'slug' => 'operator-penggerak-mula-kelas-2', 'category' => 'pesawat-tenaga-produksi-uap'],
+            ['name' => 'Geoteknik', 'slug' => 'geoteknik', 'category' => 'hse-migas-tambang-offshore'],
+            ['name' => 'Jalan dan Jembatan', 'slug' => 'jalan-dan-jembatan', 'category' => 'konstruksi-las-ketinggian'],
+            ['name' => 'Manajemen 5S/5R', 'slug' => 'manajemen-5s-5r', 'category' => 'sektoral-umum'],
+            ['name' => 'DRONE', 'slug' => 'drone', 'category' => 'sektoral-umum'],
+            ['name' => 'Data Analyst', 'slug' => 'data-analyst', 'category' => 'sektoral-umum'],
+            ['name' => 'Data Center', 'slug' => 'data-center', 'category' => 'sektoral-umum'],
+            ['name' => 'Asbes', 'slug' => 'asbes', 'category' => 'lingkungan-limbah'],
+            ['name' => 'Mercury', 'slug' => 'mercury', 'category' => 'lingkungan-limbah'],
         ];
     }
 
-    /**
-     * Kategori pelatihan + huruf grup (Direktori Lengkap), urut A-G.
-     *
-     * @return array<string, array{label: string, letter: string}>
-     */
     public static function categories(): array
     {
         return [
