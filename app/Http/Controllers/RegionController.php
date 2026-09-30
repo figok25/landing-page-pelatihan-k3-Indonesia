@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Data\CatalogBuilder;
 use App\Data\KecamatanCatalog;
 use App\Data\RegionCatalog;
 use App\Data\ServiceCatalog;
@@ -66,6 +67,7 @@ class RegionController extends Controller
             'services' => $services,
             'groupedServices' => $groupedServices,
             'serviceCategories' => $serviceCategories,
+            'catalogGroups' => CatalogBuilder::groups($city),
         ]);
     }
 }

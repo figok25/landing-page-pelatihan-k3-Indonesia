@@ -23,8 +23,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link href="{{ asset('css/landing.css') }}?v=2" rel="stylesheet" />
-    @stack ('styles')
+    <link href="{{ asset('css/landing.css') }}?v=1" rel="stylesheet" />
 </head>
 <body>
     @php $wa = 'https://wa.me/628118500177?text='; @endphp
@@ -32,7 +31,7 @@
     <div class="topbar">
         <div class="wrap topbar-in">
             <span><b>PORTAL INDUK</b> &nbsp;Regulasi: Kemnaker RI • BNSP • Ditjen Migas • KLHK</span>
-            <span class="topbar-r"><i class="bx bx-medal"></i> Akreditasi PJK3 No. KEP.562/2022 &nbsp;•&nbsp; {{ count(\App\Data\TrainingCatalog::all()) }}+ Program Aktif</span>
+            <span class="topbar-r"><i class="bx bx-medal"></i> Akreditasi PJK3 No. KEP.562/2022 &nbsp;•&nbsp; {{ $stats['total_trainings'] ?? '109' }}+ Program Aktif</span>
         </div>
     </div>
 
@@ -44,22 +43,22 @@
             </a>
 
             <nav class="menu" id="menu">
-                <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Beranda</a>
+                <a href="{{ route('home') }}">Beranda</a>
                 <div class="dd">
-                    <button type="button" class="{{ request()->is('pelatihan*') ? 'active' : '' }}">Pelatihan <i class="bx bx-chevron-down"></i></button>
+                    <button type="button">Pelatihan <i class="bx bx-chevron-down"></i></button>
                     <div class="dd-m">
                         <a href="{{ route('training.index') }}"><i class="bx bx-book-open"></i> Semua Pelatihan</a>
                         <a href="{{ route('training.index') }}"><i class="bx bx-certification"></i> Program Sertifikasi</a>
                     </div>
                 </div>
                 <div class="dd">
-                    <button type="button" class="{{ request()->is('jasa*') ? 'active' : '' }}">Jasa <i class="bx bx-chevron-down"></i></button>
+                    <button type="button">Jasa <i class="bx bx-chevron-down"></i></button>
                     <div class="dd-m">
                         <a href="{{ route('service.index') }}"><i class="bx bx-briefcase"></i> Semua Jasa</a>
                         <a href="{{ route('service.index') }}"><i class="bx bx-shield-quarter"></i> Konsultasi K3</a>
                     </div>
                 </div>
-                <a href="{{ route('home') }}#tentang">Tentang Kami</a>
+                <a href="#tentang">Tentang Kami</a>
                 <a href="#kontak">Kontak</a>
                 <a class="btn btn-y menu-wa" href="{{ $wa }}{{ rawurlencode('Halo Admin, saya ingin bertanya mengenai pelatihan K3.') }}" target="_blank" rel="noopener"><i class="bx bxl-whatsapp"></i> Hubungi Kami</a>
             </nav>
@@ -85,7 +84,7 @@
                     <li><a href="{{ route('home') }}">Beranda</a></li>
                     <li><a href="{{ route('training.index') }}">Pelatihan</a></li>
                     <li><a href="{{ route('service.index') }}">Jasa</a></li>
-                    <li><a href="{{ route('home') }}#tentang">Tentang Kami</a></li>
+                    <li><a href="#tentang">Tentang Kami</a></li>
                     <li><a href="#kontak">Kontak</a></li>
                 </ul>
             </div>
@@ -117,7 +116,6 @@
 
     <a class="wa-float" href="{{ $wa }}{{ rawurlencode('Halo Admin, saya ingin mendapatkan informasi mengenai pelatihan K3.') }}" target="_blank" rel="noopener" aria-label="Hubungi Admin melalui WhatsApp"><i class="bx bxl-whatsapp"></i></a>
 
-    <script src="{{ asset('js/landing.js') }}?v=2" defer></script>
-    @stack ('scripts')
+    <script src="{{ asset('js/landing.js') }}?v=1" defer></script>
 </body>
 </html>

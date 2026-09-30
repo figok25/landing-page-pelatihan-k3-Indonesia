@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Data\CatalogBuilder;
+use App\Data\KecamatanCatalog;
 use App\Data\RegionCatalog;
 use App\Data\ServiceCatalog;
 use App\Data\TrainingCatalog;
@@ -13,11 +15,22 @@ class HomeController extends Controller
         $trainings = TrainingCatalog::all();
         $services = ServiceCatalog::primary();
 
+        $catalogGroups = CatalogBuilder::groups();
+
+        // Seluruh wilayah: provinsi -> kota/kabupaten -> kecamatan.
+        $regionGroups = [];
+        foreach (RegionCatalog::provinces() as $province) {
+            $cities = array_map(fn ($city) => [
+                'name' => trim($city['type'] . ' ' . $city['name']),
+                'url' => route('region.city', ['kota' => $city['slug']]),
+                'kecamatan' => KecamatanCatalog::forCity($city['code']),
+            ], RegionCatalog::citiesByProvinceSlug($province['slug']));
+            $regionGroups[] = ['slug' => $province['slug'], 'name' => $province['name'], 'cities' => $cities];
+        }
+
         return view('index', [
-            // Program unggulan: tampilkan beberapa contoh saja di homepage,
-            // JANGAN tampilkan seluruh 207 program sekaligus (blueprint #20).
-            'featuredTrainings' => array_slice($trainings, 0, 6),
-            'featuredServices' => array_slice($services, 0, 6),
+            'catalogGroups' => $catalogGroups,
+            'regionGroups' => $regionGroups,
             'stats' => [
                 'total_trainings' => count($trainings),
                 'total_services' => count($services),
